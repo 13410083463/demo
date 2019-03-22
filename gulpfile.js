@@ -36,7 +36,7 @@ gulp.task('default',["script","style","image"], function () {
     gulp.watch("*.html").on("change", reload);
     
 });
-
+var a = 10;
 //构建js文件
 gulp.task("script",function(){
     gulp.src("./src/script/**/*.js")
