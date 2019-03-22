@@ -65,8 +65,7 @@
                             </td>
                             <td id="select">
                                 <select class="prov"></select>
-                                <select class="city"></select>
-                                <input name="TextBoxUnitSeat" type="text" maxlength="128" id="TextBoxUnitSeat" class="inp_01">
+                                <select class="city" ></select>
                             </td>
                         </tr>
                         <tr>
@@ -207,9 +206,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2" class="middle" style="overflow:hidden;padding-left:200px;">
-                                <input type="submit" name="ButtonRegister" value="" class="but_01" style="float:left;">
-                                <a href="login.html" target="_self" class="link_back" style="float:left">返回</a>
+                            <td colspan="2" class="middle">
+                                <div id="ValidationSummary1" style="color:Red;display:none;">
+        
+                                </div>
+                                <input type="submit" name="ButtonRegister" value=""  
+                                    id="ButtonRegister" class="but_01"><a href="login.html" target="_self" class="link_back">返回</a>
                             </td>
                         </tr>
                     </tbody>
@@ -222,7 +224,6 @@
                 技术支持：中国物流与采购联合会网络部&nbsp;&nbsp;&nbsp;&nbsp;联系电话：83775701</h2>
         </div>
     </div>
-
     <script src="lib/jquery.min.js"></script>
     <script src="lib/jquery.cityselect.js"></script>
     <script src="dest/script/register.js"></script>
