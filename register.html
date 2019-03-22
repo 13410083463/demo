@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A级物流企业网上申报系统————注册</title>
+    <link rel="stylesheet" href="dest/css/register.css">
+</head>
+<body>
+    <div id="back">
+        <div id="box2">
+            <h1>
+                <img src="dest/img/logo.jpg" width="284" height="28" alt="A级物流企业网上申报系统——注册"></h1>
+            <div class="clear">
+            </div>
+            <div id="DivRegister" class="register">
+                <table class="formTable">
+                    <tbody>
+                        <tr>
+                            <td class="tdh">
+                                （用户名）<b>*</b>统一社会信用代码：
+                            </td>
+                            <td>
+                                <span id="UpdatePanel1">
+                                    <input name="TextBoxRegisteredID" type="text" maxlength="18" id="TextBoxRegisteredID" class="inp_01">
+                                    <a onclick="return checkLength();" id="LinkButtonCheckName" href="javascript:__doPostBack('LinkButtonCheckName','')">检测用户名</a>
+                                    <input type="hidden" name="HiddenFieldValid" id="HiddenFieldValid" value="1">
+                                    <input type="hidden" name="HiddenFieldMsg" id="HiddenFieldMsg">
+                                </span>
+                                <span id="RequiredFieldRegisteredID" style="color:Red;display:none;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                <b>*</b>密码：
+                            </td>
+                            <td>
+                                <input name="TextBoxPassword1" type="password" maxlength="16" id="TextBoxPassword1" class="inp_01">
+                                <span id="RequiredFieldPassword1" style="color:Red;display:none;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                <b>*</b>重复密码：
+                            </td>
+                            <td>
+                                <input name="TextBoxPassword2" type="password" maxlength="16" id="TextBoxPassword2" class="inp_01">
+                                <span id="RequiredFieldPassword2" style="color:Red;display:none;"></span>
+                                <span id="CompareValidatorPassword" style="color:Red;display:none;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                <b>*</b>企业名称：
+                            </td>
+                            <td>
+                                <input name="TextBoxUnitName" type="text" maxlength="50" id="TextBoxUnitName" class="inp_01">
+                                <span id="RequiredFieldUnitName" style="color:Red;display:none;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                <b>*</b>地址：
+                            </td>
+                            <td id="select">
+                                <select class="prov"></select>
+                                <select class="city"></select>
+                                <input name="TextBoxUnitSeat" type="text" maxlength="128" id="TextBoxUnitSeat" class="inp_01">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                企业网址：
+                            </td>
+                            <td>
+                                <input name="TextBoxWebSite" type="text" maxlength="128" id="TextBoxWebSite" class="inp_01">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                <b>*</b>E-mail：
+                            </td>
+                            <td>
+                                <input name="TextBoxContactEmail" type="text" maxlength="128" id="TextBoxContactEmail" class="inp_01">
+                                <span id="RequiredFieldContactEmail" style="color:Red;display:none;"></span>
+                                <span id="RegularExpressionContactEmail" style="color:Red;display:none;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                <b>*</b>法人代表：
+                            </td>
+                            <td>
+                                <input name="TextBoxChargePerson" type="text" maxlength="50" id="TextBoxChargePerson" class="inp_01">
+                                <span id="RequiredFieldChargePerson" style="color:Red;display:none;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                <b>*</b>电话：
+                            </td>
+                            <td>
+                                <input name="TextBoxCP_Tel" type="text" maxlength="128" id="TextBoxCP_Tel" class="inp_01">
+                                <span id="RequiredFieldCP_Tel" style="color:Red;display:none;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                <b>*</b>联系人：
+                            </td>
+                            <td>
+                                <input name="TextBoxContactName" type="text" maxlength="50" id="TextBoxContactName" class="inp_01">
+                                <span id="RequiredFieldContactName" style="color:Red;display:none;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                <b>*</b>职务：
+                            </td>
+                            <td>
+                                <input name="TextBoxContactPosition" type="text" maxlength="128" id="TextBoxContactPosition"
+                                    class="inp_01">
+                                <span id="RequiredFieldContactPosition" style="color:Red;display:none;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                <b>*</b>联系电话：
+                            </td>
+                            <td>
+                                <input name="TextBoxContactTelAC" type="text" maxlength="4" id="TextBoxContactTelAC" class="inp_01"
+                                    style="width:40px;"> -
+                                <input name="TextBoxContactTel" type="text" maxlength="120" id="TextBoxContactTel" class="inp_01"
+                                    style="width:144px;">
+                                <span id="RequiredFieldContactTel" style="color:Red;display:none;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                <b>*</b>手机：
+                            </td>
+                            <td>
+                                <input name="TextBoxContactMobil" type="text" maxlength="128" id="TextBoxContactMobil" class="inp_01">
+                                <span id="RequiredFieldContactMobil" style="color:Red;display:none;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                <b>*</b>传真：
+                            </td>
+                            <td>
+                                <input name="TextBoxContactFaxAC" type="text" maxlength="4" id="TextBoxContactFaxAC" class="inp_01"
+                                    style="width:40px;"> -
+                                <input name="TextBoxContactFax" type="text" maxlength="120" id="TextBoxContactFax" class="inp_01"
+                                    style="width:144px;">
+                                <span id="RequiredFieldContactFax" style="color:Red;display:none;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                <b>*</b>邮编：
+                            </td>
+                            <td>
+                                <input name="TextBoxPostCode" type="text" maxlength="128" id="TextBoxPostCode" class="inp_01">
+                                <span id="RequiredFieldPostCode" style="color:Red;display:none;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                是否是联合会会员：
+                            </td>
+                            <td>
+                                <input id="RadioIsMember" type="radio" name="Member" value="RadioIsMember"><label for="RadioIsMember">是</label>
+                                <input id="RadioNotMember" type="radio" name="Member" value="RadioNotMember"><label for="RadioNotMember">不是</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                <b>*</b>企业性质：
+                            </td>
+                            <td>
+                                <select name="DDLUnitNature" id="DDLUnitNature" onchange="NatureChange(this.value)">
+                                    <option selected="selected" value="">请选择</option>
+                                    <option value="SOE">国有企业</option>
+                                    <option value="Private">民营企业</option>
+                                    <option value="JointVenture">外商投资企业</option>
+                                    <option value="Other">其它</option>
+        
+                                </select>
+                                <span id="RequiredFieldUnitNature" style="color:Red;display:none;"></span>
+                                <div id="span_Nature" style="display: none;">
+                                    <input id="RadioIsCEnterprises" type="radio" name="CEnterprises" value="RadioIsCEnterprises"><label
+                                        for="RadioIsCEnterprises">央企</label>
+                                    <input id="RadioNotCEnterprises" type="radio" name="CEnterprises" value="RadioNotCEnterprises"
+                                        checked="checked"><label for="RadioNotCEnterprises">非央企</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdh">
+                                <b>*</b>企业简介：
+                            </td>
+                            <td>
+                                <textarea name="TextBoxIntroduction" rows="5" cols="40" id="TextBoxIntroduction"></textarea>
+                                <span id="RequiredFieldIntroduction" style="color:Red;display:none;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="middle" style="overflow:hidden;padding-left:200px;">
+                                <input type="submit" name="ButtonRegister" value="" class="but_01" style="float:left;">
+                                <a href="login.html" target="_self" class="link_back" style="float:left">返回</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="clear">
+            </div>
+            <h2>
+                技术支持：中国物流与采购联合会网络部&nbsp;&nbsp;&nbsp;&nbsp;联系电话：83775701</h2>
+        </div>
+    </div>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/jquery.cityselect.js"></script>
+    <script src="dest/script/register.js"></script>
+</body>
+</html>

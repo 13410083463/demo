@@ -1,0 +1,1 @@
+$(function(){$("#time").html(function(){var t=new Date;return t.getFullYear()+"-"+(t.getMonth()<9?"0"+t.getMonth():t.getMonth())+"-"+t.getDate()})});

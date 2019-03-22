@@ -1,0 +1,92 @@
+ *{padding:0;margin:0;font-family: "宋体" ,Arial, Helvetica, sans-serif;}
+body{
+    font-size:12px;
+}
+#box2 {
+    width: 569px;
+    margin: 0 auto;
+    margin-top: 125px;
+}
+#box2 h1 {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+#back{
+    width:1000px;
+    margin:0 auto;
+    background:url(../img/register_back.jpg)no-repeat;
+    background-size:1000px 650px;
+    overflow:hidden;
+}
+#box2 div.register {
+    background: url(../img/register_form_back.jpg) no-repeat;
+    width: 569px;
+    height: 702px;
+    padding-top: 10px;
+    margin:0 auto;
+}
+.formTable {
+    width: 523px;
+}
+.formTable tr {
+    height: 32px;
+}
+.formTable td.tdh {
+    width: 180px;
+    text-align: right;
+}
+
+td {
+    padding-right: 20px;
+}
+.formTable td.middle {
+    text-align: center;
+    padding-top: 40px;
+}
+a:link, a:visited {
+    color: #890101;
+}
+a {
+    color: #890101;
+    text-decoration: none;
+}
+.inp_01 {
+    background: url(../img/input_back.jpg) repeat-x;
+    width: 208px;
+    height: 26px;
+    line-height: 26px;
+    padding-left: 4px;
+    border-right: solid 1px #fff;
+    border-bottom: solid 1px #fff;
+    border-top: solid 1px #c5c5c5;
+    border-left: solid 1px #c5c5c5;
+}
+.formTable td.middle {
+    text-align: center;
+    padding-top: 40px;
+}
+.but_01 {
+    background: url(../img/register_btn.gif) no-repeat;
+    width: 95px;
+    height: 28px;
+    border: 0px;
+}
+a.link_back {
+    font-size: 18px;
+    font-family: "微软雅黑";
+    margin-left: 20px;
+}
+#box2 h2 {
+    font-weight: normal;
+    color: #191919;
+    text-align: center;
+    padding-top: 55px;
+    padding-bottom: 40px;
+}
+    b{
+    color:red;
+}
+.prov,.city{
+    width:100px;
+}
