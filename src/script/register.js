@@ -108,4 +108,14 @@ $(function () {
             console.log("全部正确")
         }
     });
+
+    $("#DDLUnitNature").on("click",function(){
+        var value = $(this).val();
+        console.log(value)
+        if(value == "SOE"){
+            $("#span_Nature").show();
+        }else{
+            $("#span_Nature").hide();
+        }
+    })
 });

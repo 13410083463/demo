@@ -1,1 +1,1 @@
-$(function(){$("#time").html(function(){var t=new Date;return t.getFullYear()+"-"+(t.getMonth()<9?"0"+t.getMonth():t.getMonth())+"-"+t.getDate()})});
+$(function(){$("#time").html(function(){var t=new Date;return t.getFullYear()+"-"+(t.getMonth()<9?"0"+t.getMonth():t.getMonth())+"-"+t.getDate()}),$("#MenuAll li").on("click",function(){$("#MenuAll li").removeClass("li_back"),$(this).addClass("li_back")})});

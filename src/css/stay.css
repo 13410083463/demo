@@ -13,3 +13,7 @@ div, form, img, ul, ol, li, dl, dt, dd, p {
     padding: 0;
     border: 0;
 }
+#stay .title{
+    height:30px;
+    border-bottom:1px solid;
+}

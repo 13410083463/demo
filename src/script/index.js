@@ -8,4 +8,18 @@ $(function(){
         return time;
     }
     $("#time").html(time);
+
+
+    // $("#MenuAll li").hover(function(){
+    //     $(this).addClass("li_back")
+    //     $(this).find(".jiantou").addClass("jian_color")
+    // },function(){
+    //     $(this).removeClass("li_back")
+    //     $(this).find(".jiantou").removeClass("jian_color")
+    // })
+    $("#MenuAll li").on("click",function(){
+        $("#MenuAll li").removeClass("li_back")
+        $(this).addClass("li_back")
+       
+    })
 })
