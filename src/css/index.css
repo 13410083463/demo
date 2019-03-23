@@ -41,7 +41,6 @@ div, form, img, ul, ol, li, dl, dt, dd, p {
 #right {
     float: right;
     width: 720px;
-    overflow: hidden;
 }
 #left {
     float: left;

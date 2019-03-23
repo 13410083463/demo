@@ -20,6 +20,18 @@ $(function(){
     $("#MenuAll li").on("click",function(){
         $("#MenuAll li").removeClass("li_back")
         $(this).addClass("li_back")
-       
+       var index = $(this).index();
+       console.log(index)
+       if(index == 1){
+           $("#right iframe").attr("src","nodeDone.html")
+       }else if(index == 0){
+           $("#right iframe").attr("src", "stay.html")
+       }else if(index == 2){
+           $("#right iframe").attr("src", "info.html")
+       }else if(index == 3){
+           $("#right iframe").attr("src", "resetpass.html")
+       }else if(index == 4){
+           $("#right iframe").attr("src", "out.html")
+       }
     })
 })
