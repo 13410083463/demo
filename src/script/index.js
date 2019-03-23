@@ -8,15 +8,6 @@ $(function(){
         return time;
     }
     $("#time").html(time);
-
-
-    // $("#MenuAll li").hover(function(){
-    //     $(this).addClass("li_back")
-    //     $(this).find(".jiantou").addClass("jian_color")
-    // },function(){
-    //     $(this).removeClass("li_back")
-    //     $(this).find(".jiantou").removeClass("jian_color")
-    // })
     $("#MenuAll li").on("click",function(){
         $("#MenuAll li").removeClass("li_back")
         $(this).addClass("li_back")
@@ -31,7 +22,9 @@ $(function(){
        }else if(index == 3){
            $("#right iframe").attr("src", "resetpass.html")
        }else if(index == 4){
-           $("#right iframe").attr("src", "out.html")
+           setTimeout(function(){
+                window.location.href = "login.html"
+           },1500)
        }
     })
 })
