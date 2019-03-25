@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>A级企业综合评估申请表</title>
+    <link rel="stylesheet" href="lib/datepicker/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="lib/datepicker/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="lib/datepicker/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_907472_vc6og4vdh2.css">
     <style>
         *{padding:0;margin:0;}
         body{font-size:12px;}
-        ul,li{list-style:none;padding:0;margin:0;}
+       
         h1,h2,h3,h4,h5,h6{
             padding:0;
             margin:0;
@@ -27,9 +31,352 @@
             font-weight: bold;
             font-size: 20px;
         }
+        .fullWidth {
+            width: 100%;
+        }
+
+        .titleForm {
+        }
+        table {
+            background-color: transparent;
+        }
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        .titleForm th {
+            font-weight: bold;
+            width: 80px;
+            text-align: right;
+        }
+        .titleForm th, .titleForm td {
+            padding: 5px;
+        }
+        th {
+            text-align: left;
+        }
+        td, th {
+            padding: 0;
+        }
+        button, input, select, textarea {
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+
+        button, select {
+            text-transform: none;
+        }
+        button, input, optgroup, select, textarea {
+            margin: 0;
+            font: inherit;
+            color: inherit;
+        }
+        .titleForm td {
+            text-align: left;
+        }
+        a:link {
+             color: #0a4173;
+             text-decoration: none;
+        }
+        a {
+            color: #337ab7;
+            text-decoration: none;
+        }
+
+        a {
+            background-color: transparent;
+        }
+        img {
+            vertical-align: bottom;
+            border: none;
+        }
+        .datepicker{
+            top:100px!important;
+        }
+        .formTable {
+            margin: 0 auto;
+            border-collapse: collapse;
+            text-align: left;
+            width: 100%;
+        }
+        .formTable thead th, .formTable thead td {
+            text-align: center;
+            background: #8DACC8;
+            padding: 5px;
+        }
+        ol, ul {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .formTable th, .formTable td {
+            background: #e6e6fa;
+            border: solid 1px #95B0CB;
+        }
+        .formTable tbody th, .formTable tbody td {
+            padding: 5px;
+        }
+        .button {
+            font-size: 12px;
+            overflow: visible;
+            padding: 2px 10px 0 10px;
+            height: 20px;
+            border: 1px #93b9dc solid;
+            line-height:17px;
+            background: url(dest/img/button_bg.gif) repeat;
+        }
+        ul, li {
+            list-style: decimal;
+        }
+        ol, ul {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        #DivForm ul{
+            margin-left:35px;
+        }
+         #DivForm ul li{
+            margin-bottom:5px;
+        }
+        
+      
+        .pForm2 {
+            margin: 0;
+            padding: 8px;
+            color: #333;
+            text-align: center;
+        }
+        table.formdata {
+            border: solid 1px #95B0CB;
+            padding: 0;
+            border-collapse: collapse;
+            font-family: verdana;
+        }
+        .formdata td {
+            /* border: solid 1px #95B0CB; */
+            text-align: left;
+            color: black;
+            padding: 4px 0 3px 4px;
+            font-size: 10pt;
+        }
+        table.clearformdata {
+            border: 0;
+            padding: 0;
+            border-collapse: collapse;
+        }
+
+        input[type=checkbox], input[type=radio] {
+            margin: 4px 0 0;
+            margin-top: 1px\9;
+            line-height: normal;
+        }
+
+        input[type=checkbox], input[type=radio] {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0;
+        }
+        button, input, select, textarea {
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+        label {
+            display: inline-block;
+            max-width: 100%;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        @media (min-width: 576px){
+        .modal-dialog {
+            max-width: 800px;
+            margin: 1.75rem auto;
+        }
+        }
+        .icon-guanbi{
+            font-size:13px;
+            font-weight:700;
+        }
     </style>
 </head>
 <body>
+    <div class="modal fade in" id="chooseJudgerModal" tabindex="-1" role="dialog" aria-labelledby="chooseJudgerModalLabel">
+        <div class="modal-dialog" role="document" style="width: 800px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6>选择审核机构</h6>
+                    <i class="iconfont icon-guanbi"></i>
+                </div>
+                <div class="modal-body" id="chooseJudgerBody">
+                    <form name="form1" method="post" action="./ChooseJudgerModel.aspx?id=" id="form1">
+                        <div class="pForm2">
+                            <table class="formdata fullWidth">
+                                <tbody>
+                                    <tr style="border:1px solid #95B0CB;">
+                                        <td>
+                                            <table id="RadioButtonListCentre" class="clearformdata" 
+                                                border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td><input id="RadioButtonListCentre_0" type="radio" name="RadioButtonListCentre"
+                                                                value="1"><label for="RadioButtonListCentre_0">中物联评估办</label></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table id="RadioButtonListLocal" class="clearformdata" 
+                                                border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td><input id="RadioButtonListLocal_0" type="radio" name="RadioButtonListLocal"
+                                                                value="2"><label for="RadioButtonListLocal_0">北京市评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_1" type="radio" name="RadioButtonListLocal"
+                                                                value="3"><label for="RadioButtonListLocal_1">天津市评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_2" type="radio" name="RadioButtonListLocal"
+                                                                value="4"><label for="RadioButtonListLocal_2">上海市评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_3" type="radio" name="RadioButtonListLocal"
+                                                                value="5"><label for="RadioButtonListLocal_3">重庆市评估办</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input id="RadioButtonListLocal_4" type="radio" name="RadioButtonListLocal"
+                                                                value="6"><label for="RadioButtonListLocal_4">河北省评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_5" type="radio" name="RadioButtonListLocal"
+                                                                value="7"><label for="RadioButtonListLocal_5">山西省评估办（物流）</label></td>
+                                                        <td><input id="RadioButtonListLocal_6" type="radio" name="RadioButtonListLocal"
+                                                                value="8"><label for="RadioButtonListLocal_6">山西省评估办（采购）</label></td>
+                                                        <td><input id="RadioButtonListLocal_7" type="radio" name="RadioButtonListLocal"
+                                                                value="9"><label for="RadioButtonListLocal_7">内蒙古评估办</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input id="RadioButtonListLocal_8" type="radio" name="RadioButtonListLocal"
+                                                                value="10"><label for="RadioButtonListLocal_8">大连市评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_9" type="radio" name="RadioButtonListLocal"
+                                                                value="42"><label for="RadioButtonListLocal_9">沈阳评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_10" type="radio" name="RadioButtonListLocal"
+                                                                value="45"><label for="RadioButtonListLocal_10">营口市评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_11" type="radio" name="RadioButtonListLocal"
+                                                                value="11"><label for="RadioButtonListLocal_11">吉林省评估办</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input id="RadioButtonListLocal_12" type="radio" name="RadioButtonListLocal"
+                                                                value="107"><label for="RadioButtonListLocal_12">长春市评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_13" type="radio" name="RadioButtonListLocal"
+                                                                value="12"><label for="RadioButtonListLocal_13">黑龙江省评估办（采购）</label></td>
+                                                        <td><input id="RadioButtonListLocal_14" type="radio" name="RadioButtonListLocal"
+                                                                value="104"><label for="RadioButtonListLocal_14">黑龙江评估办（物流商会）</label></td>
+                                                        <td><input id="RadioButtonListLocal_15" type="radio" name="RadioButtonListLocal"
+                                                                value="13"><label for="RadioButtonListLocal_15">江苏省评估办</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input id="RadioButtonListLocal_16" type="radio" name="RadioButtonListLocal"
+                                                                value="14"><label for="RadioButtonListLocal_16">浙江省评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_17" type="radio" name="RadioButtonListLocal"
+                                                                value="15"><label for="RadioButtonListLocal_17">宁波市评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_18" type="radio" name="RadioButtonListLocal"
+                                                                value="16"><label for="RadioButtonListLocal_18">安徽省评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_19" type="radio" name="RadioButtonListLocal"
+                                                                value="17"><label for="RadioButtonListLocal_19">福建省评估办</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input id="RadioButtonListLocal_20" type="radio" name="RadioButtonListLocal"
+                                                                value="18"><label for="RadioButtonListLocal_20">厦门市评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_21" type="radio" name="RadioButtonListLocal"
+                                                                value="19"><label for="RadioButtonListLocal_21">江西省评估办（交通）</label></td>
+                                                        <td><input id="RadioButtonListLocal_22" type="radio" name="RadioButtonListLocal"
+                                                                value="50"><label for="RadioButtonListLocal_22">江西省评估办（采购）</label></td>
+                                                        <td><input id="RadioButtonListLocal_23" type="radio" name="RadioButtonListLocal"
+                                                                value="49"><label for="RadioButtonListLocal_23">赣州市评估办</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input id="RadioButtonListLocal_24" type="radio" name="RadioButtonListLocal"
+                                                                value="20"><label for="RadioButtonListLocal_24">山东省评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_25" type="radio" name="RadioButtonListLocal"
+                                                                value="21"><label for="RadioButtonListLocal_25">青岛市评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_26" type="radio" name="RadioButtonListLocal"
+                                                                value="41"><label for="RadioButtonListLocal_26">烟台市评估分办</label></td>
+                                                        <td><input id="RadioButtonListLocal_27" type="radio" name="RadioButtonListLocal"
+                                                                value="22"><label for="RadioButtonListLocal_27">河南省评估办（物流）</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input id="RadioButtonListLocal_28" type="radio" name="RadioButtonListLocal"
+                                                                value="105"><label for="RadioButtonListLocal_28">河南省评估办（采购）</label></td>
+                                                        <td><input id="RadioButtonListLocal_29" type="radio" name="RadioButtonListLocal"
+                                                                value="23"><label for="RadioButtonListLocal_29">湖北省评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_30" type="radio" name="RadioButtonListLocal"
+                                                                value="48"><label for="RadioButtonListLocal_30">湖北省评估分办（促进会）</label></td>
+                                                        <td><input id="RadioButtonListLocal_31" type="radio" name="RadioButtonListLocal"
+                                                                value="24"><label for="RadioButtonListLocal_31">武汉市评估办</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input id="RadioButtonListLocal_32" type="radio" name="RadioButtonListLocal"
+                                                                value="25"><label for="RadioButtonListLocal_32">湖南省评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_33" type="radio" name="RadioButtonListLocal"
+                                                                value="26"><label for="RadioButtonListLocal_33">广东省评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_34" type="radio" name="RadioButtonListLocal"
+                                                                value="27"><label for="RadioButtonListLocal_34">深圳市评估办（供应链）</label></td>
+                                                        <td><input id="RadioButtonListLocal_35" type="radio" name="RadioButtonListLocal"
+                                                                value="47"><label for="RadioButtonListLocal_35">深圳市评估办（货运物流）</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input id="RadioButtonListLocal_36" type="radio" name="RadioButtonListLocal"
+                                                                value="28"><label for="RadioButtonListLocal_36">广州市评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_37" type="radio" name="RadioButtonListLocal"
+                                                                value="29"><label for="RadioButtonListLocal_37">广西评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_38" type="radio" name="RadioButtonListLocal"
+                                                                value="30"><label for="RadioButtonListLocal_38">海南省评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_39" type="radio" name="RadioButtonListLocal"
+                                                                value="31"><label for="RadioButtonListLocal_39">四川省评估办</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input id="RadioButtonListLocal_40" type="radio" name="RadioButtonListLocal"
+                                                                value="43"><label for="RadioButtonListLocal_40">成都市评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_41" type="radio" name="RadioButtonListLocal"
+                                                                value="32"><label for="RadioButtonListLocal_41">贵州省评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_42" type="radio" name="RadioButtonListLocal"
+                                                                value="33"><label for="RadioButtonListLocal_42">云南省评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_43" type="radio" name="RadioButtonListLocal"
+                                                                value="34"><label for="RadioButtonListLocal_43">陕西省评估办</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input id="RadioButtonListLocal_44" type="radio" name="RadioButtonListLocal"
+                                                                value="106"><label for="RadioButtonListLocal_44">西安市评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_45" type="radio" name="RadioButtonListLocal"
+                                                                value="35"><label for="RadioButtonListLocal_45">甘肃省评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_46" type="radio" name="RadioButtonListLocal"
+                                                                value="36"><label for="RadioButtonListLocal_46">青海省评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_47" type="radio" name="RadioButtonListLocal"
+                                                                value="37"><label for="RadioButtonListLocal_47">宁夏评估办</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input id="RadioButtonListLocal_48" type="radio" name="RadioButtonListLocal"
+                                                                value="38"><label for="RadioButtonListLocal_48">新疆评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_49" type="radio" name="RadioButtonListLocal"
+                                                                value="39"><label for="RadioButtonListLocal_49">汽车物流分会评估办</label></td>
+                                                        <td><input id="RadioButtonListLocal_50" type="radio" name="RadioButtonListLocal"
+                                                                value="44"><label for="RadioButtonListLocal_50">中物联冷链委评估办</label></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="saveJudger">保存更改</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="mainCon">
         <div class="pForm">
             <h3 class="title">
@@ -68,7 +415,7 @@
                             申报级别：
                         </th>
                         <td>
-                            <select name="DDLRank" id="DDLRank">
+                            <select name="DDLRank" id="DDLRank" >
                                 <option selected="selected" value="A">A</option>
                                 <option value="AA">AA</option>
                                 <option value="AAA">AAA</option>
@@ -81,12 +428,8 @@
                             申报日期：
                         </th>
                         <td>
-                            <span id="LabelApplyDate"></span>
-                            <input name="TextBoxApplyDate" type="text" value="2019-03-25" id="TextBoxApplyDate" class="EditBox"
-                                onclick="document.getElementById('imgApplyDate').click();" style="width:100px;">
-                            <img alt="" id="imgApplyDate" align="absMiddle" height="16" onclick="WdatePicker({el:$dp.$('TextBoxApplyDate'),dateFmt:'yyyy-MM-dd',startDate:'%y-%M-%d'})"
-                                src="../App_Themes/Default/Images/btn_calendar.gif" style="cursor: hand;" width="16">
-                            <span id="RequiredTextBoxApplyDate" style="color:Red;display:none;"></span>
+                            <input name="TextBoxApplyDate" type="text"  id="TextBoxApplyDate" class="EditBox" style="width:100px;">
+                            <img alt="" id="imgApplyDate" align="absMiddle" height="16" src="dest/img/btn_calendar.gif" style="cursor: hand;" width="16">
                         </td>
                     </tr>
                     <tr>
@@ -99,8 +442,8 @@
                             <input type="hidden" name="HiddenFieldJudgerId" id="HiddenFieldJudgerId">
                             <input type="hidden" name="HiddenFieldJudgerType" id="HiddenFieldJudgerType">
         
-                            <a id="LinkButtonChooseJudger" data-toggle="modal" data-target="#chooseJudgerModal" href="javascript:__doPostBack('LinkButtonChooseJudger','')"><img
-                                    src="../App_Themes/Default/Images/chakan.gif" alt=""> 选择</a>
+                            <a id="LinkButtonChooseJudger" data-toggle="modal" data-target="#chooseJudgerModal"><img
+                                    src="dest/img/chakan.gif" alt=""> 选择</a>
                         </td>
                         <th>
                             批　　次：
@@ -112,6 +455,551 @@
                 </tbody>
             </table>
         </div>
+        <div class="pForm">
+            <table class="formTable fullWidth">
+                <thead>
+                    <tr>
+                        <th colspan="4">
+                            企业信息
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th style="width: 12%">
+                            企业名称：
+                        </th>
+                        <td style="width: 38%">
+                            <span id="LabelUnitName"></span>
+                        </td>
+                        <th style="width: 12%">
+                            网址：
+                        </th>
+                        <td style="width: 38%">
+                            <span id="LabelWebSite"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            法人代表：
+                        </th>
+                        <td>
+                            <span id="LabelChargePerson"></span>
+                        </td>
+                        <th>
+                            电话：
+                        </th>
+                        <td>
+                            <span id="LabelCP_Tel"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            联系人：
+                        </th>
+                        <td>
+                            <span id="LabelContactName"></span>
+                        </td>
+                        <th>
+                            职务：
+                        </th>
+                        <td>
+                            <span id="LabelContactPosition"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            联系电话：
+                        </th>
+                        <td>
+                            <span id="LabelContactTel"></span>
+                        </td>
+                        <th>
+                            手机：
+                        </th>
+                        <td>
+                            <span id="LabelContactMobil"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            传真：
+                        </th>
+                        <td>
+                            <span id="LabelContactFax"></span>
+                        </td>
+                        <th>
+                            E-mail：
+                        </th>
+                        <td>
+                            <span id="LabelContactEmail"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            地址：
+                        </th>
+                        <td>
+                            <span id="LabelUnitSeat"></span>
+                        </td>
+                        <th>
+                            企业性质：
+                        </th>
+                        <td>
+                            <span id="LabelUnitNature"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pForm">
+            <table class="formTable fullWidth">
+                <tbody>
+                    <tr>
+                        <th style="width: 12%">
+                            员工总数：
+                        </th>
+                        <td>
+                            <input name="TextBoxEmployeesNum" type="text" maxlength="9" id="TextBoxEmployeesNum">&nbsp;人
+                            <span id="RegularEmployeesNum" style="color:Red;display:none;"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            服务模式：
+                        </th>
+                        <td class="verticalAlign">
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceMode_ctl00_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceMode$ctl00$CheckBoxClass" ><label
+                                    for="RepeaterServiceMode_ctl00_CheckBoxClass">运输</label></span>
+                            （<span id="RepeaterServiceMode_ctl00_CheckBoxList" ><input
+                                    id="RepeaterServiceMode_ctl00_CheckBoxList_0" type="checkbox" name="RepeaterServiceMode$ctl00$CheckBoxList$0"><label
+                                    for="RepeaterServiceMode_ctl00_CheckBoxList_0">公路</label><input id="RepeaterServiceMode_ctl00_CheckBoxList_1"
+                                    type="checkbox" name="RepeaterServiceMode$ctl00$CheckBoxList$1"><label for="RepeaterServiceMode_ctl00_CheckBoxList_1">铁路</label><input
+                                    id="RepeaterServiceMode_ctl00_CheckBoxList_2" type="checkbox" name="RepeaterServiceMode$ctl00$CheckBoxList$2"><label
+                                    for="RepeaterServiceMode_ctl00_CheckBoxList_2">海运</label><input id="RepeaterServiceMode_ctl00_CheckBoxList_3"
+                                    type="checkbox" name="RepeaterServiceMode$ctl00$CheckBoxList$3"><label for="RepeaterServiceMode_ctl00_CheckBoxList_3">内河航运</label><input
+                                    id="RepeaterServiceMode_ctl00_CheckBoxList_4" type="checkbox" name="RepeaterServiceMode$ctl00$CheckBoxList$4"><label
+                                    for="RepeaterServiceMode_ctl00_CheckBoxList_4">航空</label><input id="RepeaterServiceMode_ctl00_CheckBoxList_5"
+                                    type="checkbox" name="RepeaterServiceMode$ctl00$CheckBoxList$5"><label for="RepeaterServiceMode_ctl00_CheckBoxList_5">多式联运</label><input
+                                    id="RepeaterServiceMode_ctl00_CheckBoxList_6" type="checkbox" name="RepeaterServiceMode$ctl00$CheckBoxList$6"><label
+                                    for="RepeaterServiceMode_ctl00_CheckBoxList_6">大件</label><input id="RepeaterServiceMode_ctl00_CheckBoxList_7"
+                                    type="checkbox" name="RepeaterServiceMode$ctl00$CheckBoxList$7"><label for="RepeaterServiceMode_ctl00_CheckBoxList_7">危险品</label><input
+                                    id="RepeaterServiceMode_ctl00_CheckBoxList_8" type="checkbox" name="RepeaterServiceMode$ctl00$CheckBoxList$8"><label
+                                    for="RepeaterServiceMode_ctl00_CheckBoxList_8">快运</label></span><span id="RepeaterServiceMode_ctl00_LabelOtherSub">
+                                其他</span><input name="RepeaterServiceMode$ctl00$TextBoxOtherSub" type="text" maxlength="50" id="RepeaterServiceMode_ctl00_TextBoxOtherSub"style="width:80px;">）
+        
+                            <br>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceMode_ctl01_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceMode$ctl01$CheckBoxClass" ><label
+                                    for="RepeaterServiceMode_ctl01_CheckBoxClass">枢纽</label></span>
+                            （<span id="RepeaterServiceMode_ctl01_CheckBoxList" ><input
+                                    id="RepeaterServiceMode_ctl01_CheckBoxList_0" type="checkbox" name="RepeaterServiceMode$ctl01$CheckBoxList$0"><label
+                                    for="RepeaterServiceMode_ctl01_CheckBoxList_0">港口</label><input id="RepeaterServiceMode_ctl01_CheckBoxList_1"
+                                    type="checkbox" name="RepeaterServiceMode$ctl01$CheckBoxList$1"><label for="RepeaterServiceMode_ctl01_CheckBoxList_1">机场</label><input
+                                    id="RepeaterServiceMode_ctl01_CheckBoxList_2" type="checkbox" name="RepeaterServiceMode$ctl01$CheckBoxList$2"><label
+                                    for="RepeaterServiceMode_ctl01_CheckBoxList_2">公路场站</label><input id="RepeaterServiceMode_ctl01_CheckBoxList_3"
+                                    type="checkbox" name="RepeaterServiceMode$ctl01$CheckBoxList$3"><label for="RepeaterServiceMode_ctl01_CheckBoxList_3">铁路货站</label></span>）
+        
+                            <br>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceMode_ctl02_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceMode$ctl02$CheckBoxClass"><label for="RepeaterServiceMode_ctl02_CheckBoxClass">仓储</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceMode_ctl03_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceMode$ctl03$CheckBoxClass"><label for="RepeaterServiceMode_ctl03_CheckBoxClass">货代</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceMode_ctl04_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceMode$ctl04$CheckBoxClass"><label for="RepeaterServiceMode_ctl04_CheckBoxClass">船代</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceMode_ctl05_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceMode$ctl05$CheckBoxClass"><label for="RepeaterServiceMode_ctl05_CheckBoxClass">配送</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceMode_ctl06_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceMode$ctl06$CheckBoxClass"><label for="RepeaterServiceMode_ctl06_CheckBoxClass">物流园区</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceMode_ctl07_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceMode$ctl07$CheckBoxClass"><label for="RepeaterServiceMode_ctl07_CheckBoxClass">快递</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceMode_ctl08_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceMode$ctl08$CheckBoxClass"><label for="RepeaterServiceMode_ctl08_CheckBoxClass">冷链</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceMode_ctl09_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceMode$ctl09$CheckBoxClass"><label for="RepeaterServiceMode_ctl09_CheckBoxClass">信息</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceMode_ctl10_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceMode$ctl10$CheckBoxClass"><label for="RepeaterServiceMode_ctl10_CheckBoxClass">供应链</label></span>
+                            <br>
+                            <span id="RepeaterServiceMode_ctl11_LabelOther" style="font-weight:bold;"> 其他</span>
+                            <input name="RepeaterServiceMode$ctl11$TextBoxOther" type="text" id="RepeaterServiceMode_ctl11_TextBoxOther">
+        
+        
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            服务领域：
+                        </th>
+                        <td class="verticalAlign">
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl00_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceRange$ctl00$CheckBoxClass" ><label
+                                    for="RepeaterServiceRange_ctl00_CheckBoxClass">金属</label></span>
+                            （<span id="RepeaterServiceRange_ctl00_CheckBoxList" ><input
+                                    id="RepeaterServiceRange_ctl00_CheckBoxList_0" type="checkbox" name="RepeaterServiceRange$ctl00$CheckBoxList$0"><label
+                                    for="RepeaterServiceRange_ctl00_CheckBoxList_0">黑色</label><input id="RepeaterServiceRange_ctl00_CheckBoxList_1"
+                                    type="checkbox" name="RepeaterServiceRange$ctl00$CheckBoxList$1"><label for="RepeaterServiceRange_ctl00_CheckBoxList_1">有色</label></span>）
+        
+                            <br>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl01_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceRange$ctl01$CheckBoxClass"><label
+                                    for="RepeaterServiceRange_ctl01_CheckBoxClass">农业</label></span>
+        
+        
+                            （<span id="RepeaterServiceRange_ctl01_CheckBoxList"><input
+                                    id="RepeaterServiceRange_ctl01_CheckBoxList_0" type="checkbox" name="RepeaterServiceRange$ctl01$CheckBoxList$0"><label
+                                    for="RepeaterServiceRange_ctl01_CheckBoxList_0">鲜活农产品</label><input id="RepeaterServiceRange_ctl01_CheckBoxList_1"
+                                    type="checkbox" name="RepeaterServiceRange$ctl01$CheckBoxList$1"><label for="RepeaterServiceRange_ctl01_CheckBoxList_1">粮食</label><input
+                                    id="RepeaterServiceRange_ctl01_CheckBoxList_2" type="checkbox" name="RepeaterServiceRange$ctl01$CheckBoxList$2"><label
+                                    for="RepeaterServiceRange_ctl01_CheckBoxList_2">农资</label></span><span id="RepeaterServiceRange_ctl01_LabelOtherSub">
+                                其他</span><input name="RepeaterServiceRange$ctl01$TextBoxOtherSub" type="text" maxlength="50" id="RepeaterServiceRange_ctl01_TextBoxOtherSub"
+                                 style="width:80px;">）
+        
+                            <br>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl02_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceRange$ctl02$CheckBoxClass" ><label
+                                    for="RepeaterServiceRange_ctl02_CheckBoxClass">能源</label></span>
+                            （<span id="RepeaterServiceRange_ctl02_CheckBoxList" ><input
+                                    id="RepeaterServiceRange_ctl02_CheckBoxList_0" type="checkbox" name="RepeaterServiceRange$ctl02$CheckBoxList$0"><label
+                                    for="RepeaterServiceRange_ctl02_CheckBoxList_0">煤炭</label><input id="RepeaterServiceRange_ctl02_CheckBoxList_1"
+                                    type="checkbox" name="RepeaterServiceRange$ctl02$CheckBoxList$1"><label for="RepeaterServiceRange_ctl02_CheckBoxList_1">电力</label><input
+                                    id="RepeaterServiceRange_ctl02_CheckBoxList_2" type="checkbox" name="RepeaterServiceRange$ctl02$CheckBoxList$2"><label
+                                    for="RepeaterServiceRange_ctl02_CheckBoxList_2">石油</label><input id="RepeaterServiceRange_ctl02_CheckBoxList_3"
+                                    type="checkbox" name="RepeaterServiceRange$ctl02$CheckBoxList$3"><label for="RepeaterServiceRange_ctl02_CheckBoxList_3">新能源</label></span><span
+                                id="RepeaterServiceRange_ctl02_LabelOtherSub"> 其他</span><input name="RepeaterServiceRange$ctl02$TextBoxOtherSub"
+                                type="text" maxlength="50" id="RepeaterServiceRange_ctl02_TextBoxOtherSub"
+                                style="width:80px;">）
+        
+                            <br>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl03_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceRange$ctl03$CheckBoxClass" ><label
+                                    for="RepeaterServiceRange_ctl03_CheckBoxClass">制造业</label></span>
+        
+        
+                            （<span id="RepeaterServiceRange_ctl03_CheckBoxList" ><input
+                                    id="RepeaterServiceRange_ctl03_CheckBoxList_0" type="checkbox" name="RepeaterServiceRange$ctl03$CheckBoxList$0"><label
+                                    for="RepeaterServiceRange_ctl03_CheckBoxList_0">装备制造业</label></span><span id="RepeaterServiceRange_ctl03_LabelOtherSub">
+                                其他</span><input name="RepeaterServiceRange$ctl03$TextBoxOtherSub" type="text" maxlength="50" id="RepeaterServiceRange_ctl03_TextBoxOtherSub"
+                                style="width:80px;">）
+        
+                            <br>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl04_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceRange$ctl04$CheckBoxClass"><label for="RepeaterServiceRange_ctl04_CheckBoxClass">汽车</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl05_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceRange$ctl05$CheckBoxClass"><label for="RepeaterServiceRange_ctl05_CheckBoxClass">电子</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl06_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceRange$ctl06$CheckBoxClass"><label for="RepeaterServiceRange_ctl06_CheckBoxClass">化工</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl07_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceRange$ctl07$CheckBoxClass"><label for="RepeaterServiceRange_ctl07_CheckBoxClass">轻工纺织</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl08_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceRange$ctl08$CheckBoxClass"><label for="RepeaterServiceRange_ctl08_CheckBoxClass">园区</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl09_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceRange$ctl09$CheckBoxClass"><label for="RepeaterServiceRange_ctl09_CheckBoxClass">商贸</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl10_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceRange$ctl10$CheckBoxClass"><label for="RepeaterServiceRange_ctl10_CheckBoxClass">快速消费品</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl11_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceRange$ctl11$CheckBoxClass"><label for="RepeaterServiceRange_ctl11_CheckBoxClass">医药</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl12_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceRange$ctl12$CheckBoxClass"><label for="RepeaterServiceRange_ctl12_CheckBoxClass">电信</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl13_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceRange$ctl13$CheckBoxClass"><label for="RepeaterServiceRange_ctl13_CheckBoxClass">建材</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl14_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceRange$ctl14$CheckBoxClass"><label for="RepeaterServiceRange_ctl14_CheckBoxClass">工程</label></span>
+                            <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl15_CheckBoxClass"
+                                    type="checkbox" name="RepeaterServiceRange$ctl15$CheckBoxClass"><label for="RepeaterServiceRange_ctl15_CheckBoxClass">会展</label></span>
+                            <br>
+                            <span id="RepeaterServiceRange_ctl16_LabelOther" style="font-weight:bold;"> 其他</span>
+                            <input name="RepeaterServiceRange$ctl16$TextBoxOther" type="text" id="RepeaterServiceRange_ctl16_TextBoxOther">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            已获得资质&nbsp;
+                            <br>
+                            证书情况：
+                        </th>
+                        <td>
+                            <textarea name="TextBoxCertificate" rows="5" cols="20" id="TextBoxCertificate" maxlen="2048"
+                                 style="width:99%;"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pForm" style="text-align: left; padding: 0 10px;">
+            <img id="ImagePS" src="dest/img/info.gif" style="border-width:0px;vertical-align: middle; margin-right: 3px;">已获得资质证书情况：包括各类证明企业具备某种能力或某种市场准入资格的证明文件，例如道路运输经营许可证、道路危险货物运输许可证、水路运输许可证、无船承运业务经营资格登记证、信用等级证书、ISO14000等等。
+        </div>
+        <div class="pForm" style="text-align: left; padding: 0 10px;">
+            <img id="Image1" src="dest/img/info.gif" style="border-width:0px;vertical-align: middle; margin-right: 3px;">附件大小请限制在32M以内。
+        </div>
+        <div id="DivButtonNew" class="pForm" style="padding-top: 10px;">
+            <input type="submit" name="ButtonNext" value="下一步" id="ButtonNext"
+                class="button">
+        </div>
+        <div id="DivForm" class="pForm" style="display:none;">
+        
+            <table class="formTable fullWidth">
+                <thead>
+                    <tr>
+                        <th colspan="4">
+                            申报信息
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th style="width: 12%; color: Red;">
+                            评估指标表：
+                        </th>
+                        <td>
+                            <a id="LinkButtonFill" ><img src="dest/img/bianji.gif"alt="填写评估指标表"> 填写</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            附表：
+                        </th>
+                        <td>
+                            <ul>
+                                <li>
+                                    <a 
+                                        id="TransportForm1_LinkButtonIncome">附表一：物流业务收入构成清单</a>
+                                </li>
+                                <li>
+                                    <a 
+                                        id="TransportForm1_LinkButtonOtherIncome" >附表二：非物流业务收入构成清单</a>
+                                </li>
+                                <li>附表五：自有货运车辆清单<a href="table/附表五：自有货运车辆清单.xls" target="_blank" style="margin-left: 15px;">模板下载</a>
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;" ><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                                <li>附表七：中高层管理人员清单<a href="table/附表七：中高层管理人员清单.xls" target="_blank" style="margin-left: 15px;">模板下载</a>
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;" ><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                                <li>附表八：业务人员清单<a href="table/附表八：业务人员清单.xls" target="_blank" style="margin-left: 15px;">模板下载</a>
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                                <li>附表九：运营网点清单<a href="table/附表九：运营网点清单.xls" target="_blank" style="margin-left: 15px;">模板下载</a>
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                                <li>
+                                    附表十一：物流服务方案与实施
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                            </ul>
+                            <a id="anchorMiddle" href="#LinkButtonFill"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            附件：
+                        </th>
+                        <td>
+                            <ul>
+                                <li>企业简介【企业发展状况简介】
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                                <li>营业执照(扫描上传)
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                                <li>组织机构代码(扫描上传)
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                                <li>税务登记证(扫描上传)
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                                <li>企业章程
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                                <li>其他专业资质证书(扫描上传)
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                                <li>审计报告(扫描上传)
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                                <li>ISO9001或其他质量管理体系认证证书（正在办理的，上传与认证机构签订的认证合同及认证机构出具的认证进度与预期取得证书日期的说明）(扫描上传)
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                                <li>业务辐射面分布图
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                                <li>组织机构图及相关指标职能分配表
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;" ><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                                <li>信息化简介（包括网络系统、电子单证管理、货物跟踪和客户查询等情况）【信息化发展情况简介】
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                                <li>其他
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                                <li id="TransportForm1_MembershipForm">入会申请表<a href="../Template/入会申请表.doc" target="_blank"
+                                        style="margin-left: 15px;">点击下载《入会申请表》模板</a>
+        
+        
+                                    <div style="display:block">
+                                        <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
+        
+                                        &nbsp;
+        
+                                    </div>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="DivButtonApply" class="pForm" style="padding: 10px 0 25px;display:none;">
+            <input type="submit" name="ButtonApply" value="提交申请" id="ButtonApply" class="button">
+            &nbsp; &nbsp; &nbsp; &nbsp;
+            <input type="submit" name="ButtonSave" value="保存草稿" id="ButtonSave" class="button">
+        </div>
     </div>
+    
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/datepicker/js/bootstrap.min.js"></script>
+    <script src="lib/datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="lib/datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script>
+        $(function(){
+            $("#TextBoxApplyDate").datepicker({
+                todayHighlight: true,
+                format: "yyyy-mm-dd",
+                todayBtn: "linked",
+                clearBtn: !0,
+                language:"zh-CN"
+            })
+
+            $("#ButtonNext").on("click",function(){
+                var query = confirm("请确认您选择了正确的申报类型和申报级别，一旦确定不可随意更改！")
+                if(query == true){
+                    $("#DivForm").show();
+                    $("#DivButtonApply").show();
+                    $("#DDLCorpType").attr("disabled","disabled")
+                    $("#DDLRank").attr("disabled","disabled")
+                    $("#DivButtonNew").hide();
+                }  
+            })
+        })
+    </script>
 </body>
 </html>
