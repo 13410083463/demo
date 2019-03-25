@@ -72,3 +72,9 @@ a:link, a:visited {
     padding-top: 20px;
     font-size:12px;
 }
+ul,li{
+    list-style:none;
+}
+#ValidationSummary1 li{
+    display: none;
+}

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="dest/css/resetpass.css">
 </head>
 <body>
+    <!--startprint-->
+    
     <div id="resetpass">
         <div class="title">
             <h1>修改密码</h1>
@@ -16,21 +18,22 @@
             <form action="">
                 <div class="box">
                     <p>
-                        <span><b>*</b>原密码: </span><input type="password">
+                        <span><b>*</b>原密码: </span><input id="pass" type="password">
                     </p>
                     <p>
-                        <span><b>*</b>新密码: </span><input type="password">
+                        <span><b>*</b>新密码: </span><input id="newPass" type="password">
                     </p>
                     <p>
-                        <span><b>*</b>确认新密码: </span><input type="password">
+                        <span><b>*</b>确认新密码: </span><input id="confirmPass" type="password">
                     </p>
                     <p>
-                        <button>保存</button>
+                        <button type="submit">保存</button>
                     </p>
                 </div>
             </form>
         </div>
     </div>
+    <!--endprint-->
 
     <script src="lib/jquery.min.js"></script>
     <script src="dest/script/resetpass.js"></script>

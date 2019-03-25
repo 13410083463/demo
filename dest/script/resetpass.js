@@ -1,1 +1,1 @@
-$(function(){$("form").submit(function(){})});
+$(function(){var s,t,l;$("form").submit(function(){l=t=s="";var n=$("#pass").val(),a=$("#newPass").val(),r=$("#confirmPass").val();return""==n&&(s="- 请输入原密码\n\n"),""==a&&(t="- 请输入新密码\n\n"),""==r&&(l="- 请确认新密码"),""==n||""==a||""==r?alert(s+t+l):a!=r&&alert("- 新密码不一致，请重新输入"),!1})});

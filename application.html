@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A级企业综合评估申请表</title>
+    <style>
+        *{padding:0;margin:0;}
+        body{font-size:12px;}
+        ul,li{list-style:none;padding:0;margin:0;}
+        h1,h2,h3,h4,h5,h6{
+            padding:0;
+            margin:0;
+        }
+        .mainCon {
+            margin: 7px;
+            padding-bottom: 10px;
+        }
+        .pForm {
+            width: 780px;
+            margin: 8px auto;
+            color: #333;
+            text-align: center;
+        }
+        h3.title {
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainCon">
+        <div class="pForm">
+            <h3 class="title">
+                A级企业综合评估申请表
+            </h3>
+        </div>
+        <div class="pForm">
+            <table class="titleForm fullWidth">
+                <tbody>
+                    <tr>
+                        <th>
+                            申请性质：
+                        </th>
+                        <td style="width: 345px;">
+                            <select name="DDLApplyType" id="DDLApplyType">
+                                <option selected="selected" value="Apply">初次申请</option>
+                                <option value="Renew">复核申请</option>
+                                <option value="Update">升级申请</option>
+        
+                            </select>
+                        </td>
+                        <th>
+                            申报类型：
+                        </th>
+                        <td>
+                            <select name="DDLCorpType" id="DDLCorpType">
+                                <option selected="selected" value="Transport">运输型</option>
+                                <option value="Storage">仓储型</option>
+                                <option value="Service">综合服务型</option>
+        
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            申报级别：
+                        </th>
+                        <td>
+                            <select name="DDLRank" id="DDLRank">
+                                <option selected="selected" value="A">A</option>
+                                <option value="AA">AA</option>
+                                <option value="AAA">AAA</option>
+                                <option value="AAAA">AAAA</option>
+                                <option value="AAAAA">AAAAA</option>
+        
+                            </select>
+                        </td>
+                        <th>
+                            申报日期：
+                        </th>
+                        <td>
+                            <span id="LabelApplyDate"></span>
+                            <input name="TextBoxApplyDate" type="text" value="2019-03-25" id="TextBoxApplyDate" class="EditBox"
+                                onclick="document.getElementById('imgApplyDate').click();" style="width:100px;">
+                            <img alt="" id="imgApplyDate" align="absMiddle" height="16" onclick="WdatePicker({el:$dp.$('TextBoxApplyDate'),dateFmt:'yyyy-MM-dd',startDate:'%y-%M-%d'})"
+                                src="../App_Themes/Default/Images/btn_calendar.gif" style="cursor: hand;" width="16">
+                            <span id="RequiredTextBoxApplyDate" style="color:Red;display:none;"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            审核机构：
+                        </th>
+                        <td>
+                            <span id="LabelJudger"></span>
+                            <input name="TextBoxJudger" type="text" id="TextBoxJudger" style="display: none;">
+                            <input type="hidden" name="HiddenFieldJudgerId" id="HiddenFieldJudgerId">
+                            <input type="hidden" name="HiddenFieldJudgerType" id="HiddenFieldJudgerType">
+        
+                            <a id="LinkButtonChooseJudger" data-toggle="modal" data-target="#chooseJudgerModal" href="javascript:__doPostBack('LinkButtonChooseJudger','')"><img
+                                    src="../App_Themes/Default/Images/chakan.gif" alt=""> 选择</a>
+                        </td>
+                        <th>
+                            批　　次：
+                        </th>
+                        <td>
+                            <span id="LabelBatch"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

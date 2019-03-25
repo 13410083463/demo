@@ -17,3 +17,13 @@ div, form, img, ul, ol, li, dl, dt, dd, p {
     height:30px;
     border-bottom:1px solid;
 }
+.open_btn{
+    text-align:right;
+}
+.open_btn a{
+    margin-top:10px;
+    border:1px #93b9dc solid;
+    background:#dce9f9;
+    font-size:12px;
+    text-decoration: none;
+}

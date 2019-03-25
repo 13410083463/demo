@@ -9,9 +9,10 @@ $(function(){
     }
     $("#time").html(time);
     $("#MenuAll li").on("click",function(){
+        var index = $(this).index();
         $("#MenuAll li").removeClass("li_back")
         $(this).addClass("li_back")
-       var index = $(this).index();
+       
        console.log(index)
        if(index == 1){
            $("#right iframe").attr("src","nodeDone.html")
