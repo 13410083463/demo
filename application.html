@@ -199,9 +199,46 @@
             font-size:13px;
             font-weight:700;
         }
+        .modal-header {
+            padding: 15px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .pb5 {
+            padding-bottom: 5px;
+        }
+        table.formdata {
+            border: solid 1px #95B0CB;
+            padding: 0;
+            border-collapse: collapse;
+            font-family: verdana;
+        }
+        .formMod th {
+            text-align: center;
+        }
+        .formdata th {
+            border: solid 1px #95B0CB;
+            color: #003366;
+            height: 28px;
+            font-weight: normal;
+            white-space: nowrap;
+        }
+        .formMod td {
+            padding: 4px;
+        }
+        .formdata td {
+            border: solid 1px #95B0CB;
+            text-align: left;
+            color: black;
+            padding: 4px 0 3px 4px;
+            font-size: 10pt;
+        }
+         #frameModalLabel{
+            font-size:18px;
+        }
     </style>
 </head>
 <body>
+    <!-- 选择审核机构 -->
     <div class="modal fade in" id="chooseJudgerModal" tabindex="-1" role="dialog" aria-labelledby="chooseJudgerModalLabel">
         <div class="modal-dialog" role="document" style="width: 800px;">
             <div class="modal-content">
@@ -377,6 +414,588 @@
             </div>
         </div>
     </div>
+    <!-- 评估指标表 -->
+    <div class="modal fade in" id="frameModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="width: 800px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position:absolute;right:20px;"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="frameModalLabel"></h4>
+                </div>
+                <div class="modal-body" style="overflow-y:auto;height:550px;">
+                    <div class="pForm2" id="zhibiao" style="width: 707px;display:none;">
+                        <div id="ctl00_ContentPlaceHolder1_TransportData1_PanelService" class="pb5" style="text-align:left;">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td style="white-space: nowrap; vertical-align: top;">
+                                            注1：
+                                        </td>
+                                        <td>
+                                            表中标注*的指标为企业达到评估等级的必备指标项目，其它为参考指标项目。
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="white-space: nowrap; vertical-align: top;">
+                                            注2：
+                                        </td>
+                                        <td>
+                                            表中的货运营业收入指企业完成货物运输收入、运输代理收入、货物快递收入及其它与货物运输有关增值服务所取得的收入。
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="white-space: nowrap; vertical-align: top;">
+                                            注3：
+                                        </td>
+                                        <td>
+                                            表中的营业时间是指企业《营业执照》上公司成立的日期至今的年限。
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="white-space: nowrap; vertical-align: top;">
+                                            注4：
+                                        </td>
+                                        <td>
+                                            表中运营网点是指在经营覆盖范围内，由本企业自行设立、可以承接并完成企业基本业务的分支机构。长期合作伙伴（有合作协议，且合作期一年以上）也可视同为企业的运营网点，但要提供相应的合作协议等证明材料。
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="white-space: nowrap; vertical-align: top;">
+                                            注5：
+                                        </td>
+                                        <td>
+                                            表中顾客投诉率是指在年度周期内客户对不满意业务的投诉总量与企业业务总量的比率。
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="white-space: nowrap; vertical-align: top;">
+                                            注6：
+                                        </td>
+                                        <td>
+                                            表中顾客满意度是指在年度周期内企业对顾客满意情况的调查统计。
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table id="ctl00_ContentPlaceHolder1_TransportData1_TableForm" class="formdata formMod fullWidth" border="0">
+                            <tbody>
+                                <tr>
+                                    <th>项目</th>
+                                    <th>指标</th>
+                                    <th>本次申报情况</th>
+                                </tr>
+                                <tr>
+                                    <th rowspan="3" style="width: 10%">
+                                        经营状况
+                                    </th>
+                                    <td style="width: 25%">
+                                        年总营业收入（元）
+                                    </td>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxTotalIncome" style="width:97%;">
+                                        <span id="ctl00_ContentPlaceHolder1_TransportData1_RequiredFieldValidator1" style="color:Red;display:none;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 25%">
+                                        年物流营业收入（元）*
+                                    </td>
+                                    <td><input onkeyup="MoneyOnly(this)"  type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxIncome" style="width:97%;">
+                                        <span id="ctl00_ContentPlaceHolder1_TransportData1_RequiredFieldValidator2" style="color:Red;display:none;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        营业时间（年）*
+                                    </td>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)"  type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxBusinessHours" style="width:97%;">
+                                        <span id="ctl00_ContentPlaceHolder1_TransportData1_RequiredFieldValidator3" style="color:Red;display:none;"></span>
+                                     </td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">
+                                        资产
+                                    </th>
+                                    <td>
+                                        资产总额（元）*
+                                    </td>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxTotalAssets" style="width:97%;">
+                                        <span id="ctl00_ContentPlaceHolder1_TransportData1_RequiredFieldValidator4"style="color:Red;display:none;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        资产负债率（%）*
+                                    </td>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxAssetLiabilityRatio" style="width:97%;">
+                                        <span id="ctl00_ContentPlaceHolder1_TransportData1_RequiredFieldValidator5" style="color:Red;display:none;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">
+                                        设备设施
+                                    </th>
+                                    <td>
+                                        自有货运车辆/辆*<br>
+                                        （或总载重量/吨）*
+                                    </td>
+                                    <td>
+                                        货运车辆：
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxFreight" style="width:97%;"><br>
+                                        总载重量：
+                                        <input name="ctl00$ContentPlaceHolder1$TransportData1$TextBoxFreightWeight" type="text"maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxFreightWeight" style="width:97%;">
+                                        <span id="ctl00_ContentPlaceHolder1_TransportData1_CustomValidator1" style="color:Red;display:none;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        运营网点（个）*
+                                    </td>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxBusinessNetwork"  style="width:97%;">
+                                        <span id="ctl00_ContentPlaceHolder1_TransportData1_RequiredFieldValidator7" style="color:Red;display:none;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="5">
+                                        管理及服务
+                                    </th>
+                                    <td>
+                                        管理制度*
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxManagementPrinciples" style="width:97%;">
+                                        <span id="ctl00_ContentPlaceHolder1_TransportData1_RequiredFieldValidator8" style="color:Red;display:none;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        质量管理
+                                    </td>
+                                    <td>
+                                        <input  type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxQualityControl" style="width:97%;">
+                                        <span id="ctl00_ContentPlaceHolder1_TransportData1_RequiredFieldValidator9" style="color:Red;display:none;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        业务辐射面*
+                                    </td>
+                                    <td>
+                                        <input  type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxBusinessArea" style="width:97%;">
+                                        <span id="ctl00_ContentPlaceHolder1_TransportData1_RequiredFieldValidator10" style="color:Red;display:none;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        物流服务方案与实施
+                                    </td>
+                                    <td>
+                                        请到附表中上传相关文件
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        客户投诉率或客户满意度
+                                    </td>
+                                    <td>
+                                        <input  type="text"maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxCustomerFeedback" style="width:97%;">
+                                        <span id="ctl00_ContentPlaceHolder1_TransportData1_RequiredFieldValidator11" style="color:Red;display:none;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">
+                                        人员素质
+                                    </th>
+                                    <td>
+                                        中高层管理人员*
+                                    </td>
+                                    <td><input name="ctl00$ContentPlaceHolder1$TransportData1$TextBoxManagerNum" type="text" maxlength="128"
+                                            id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxManagerNum" style="width:97%;"><span id="ctl00_ContentPlaceHolder1_TransportData1_RequiredFieldValidator12"
+                                            style="color:Red;display:none;"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        基层物流业务人员
+                                    </td>
+                                    <td>
+                                        <input  type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxSalesManNum" style="width:97%;">
+                                            <span id="ctl00_ContentPlaceHolder1_TransportData1_RequiredFieldValidator13" style="color:Red;display:none;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="4">
+                                        信息化水平
+                                    </th>
+                                    <td>
+                                        信息系统*
+                                    </td>
+                                    <td><input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxNetworkSystem" style="width:97%;">
+                                            <span id="ctl00_ContentPlaceHolder1_TransportData1_RequiredFieldValidator14" style="color:Red;display:none;"></span>
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        电子单证管理
+                                    </td>
+                                    <td>
+                                        <input  type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxInformationDegree" style="width:97%;">
+                                            <span id="ctl00_ContentPlaceHolder1_TransportData1_RequiredFieldValidator15" style="color:Red;display:none;"></span>
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        货物物流状态跟踪*
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxCargoTrack" style="width:97%;">
+                                        <span id="ctl00_ContentPlaceHolder1_TransportData1_RequiredFieldValidator16" style="color:Red;display:none;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        客户查询*
+                                    </td>
+                                    <td>
+                                        <input  type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TransportData1_TextBoxCustomerQuery" style="width:97%;">
+                                        <span id="ctl00_ContentPlaceHolder1_TransportData1_RequiredFieldValidator17" style="color:Red;display:none;"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    
+                        <div id="ctl00_ContentPlaceHolder1_ValidationSummary1" style="color:Red;display:none;">
+                    
+                        </div>
+                        <div style="padding: 10px 0 30px;">
+                            <input type="hidden" id="ctl00_ContentPlaceHolder1_HiddenFieldError">
+                            <input type="submit" name="ctl00$ContentPlaceHolder1$ButtonSave" value="保 存" id="ctl00_ContentPlaceHolder1_ButtonSave" class="button">
+                        </div>
+                    </div>
+                    <div class="pForm2" id="shouru" style="width: 685px;display:none;">
+                        <table class="clearformdata fullWidth">
+                            <tbody>
+                                <tr style="height: 30px;">
+                                    <td style="width: 50%; text-align: left; padding-left: 5px;">
+                                        <span id="ctl00_ContentPlaceHolder1_LabelUnitName">深圳万国集通国际货运代理有限公司</span>：
+                                    </td>
+                                    <td style="width: 50%; text-align: right; padding-right: 3px;">
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="5" id="ctl00_ContentPlaceHolder1_TextBoxYear">&nbsp;年
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="formdata formMod fullWidth">
+                            <tbody>
+                                <tr>
+                                    <th style="text-align: center;">
+                                        项&nbsp; &nbsp; 目
+                                    </th>
+                                    <th style="text-align: center;">
+                                        营业收入（元）
+                                    </th>
+                                    <th style="text-align: center;">
+                                        备&nbsp; &nbsp; 注
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        总营业收入
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxIncome" style="width:250px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxIncomeRemark" style="width:280px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        物流营业收入合计
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxLogistics" style="width:250px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxLogisticsRemark" style="width:280px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        其中：运输收入
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxTransport" style="width:250px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxTransportRemark" style="width:280px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 41px;">
+                                        储存收入
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxStorage" style="width:250px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxStorageRemark" style="width:280px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 41px;">
+                                        装卸收入
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxLoadUnload" style="width:250px;">
+                                    </td>
+                                    <td>
+                                        <input name="ctl00$ContentPlaceHolder1$TextBoxLoadUnloadRemark" type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxLoadUnloadRemark"
+                                            style="width:280px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 41px;">
+                                        搬运收入
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)"  type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxCarry" style="width:250px;">
+                                    </td>
+                                    <td>
+                                        <input name="ctl00$ContentPlaceHolder1$TextBoxCarryRemark" type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxCarryRemark"
+                                            style="width:280px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 41px;">
+                                        包装收入
+                                    </th>
+                                    <td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxPack" style="width:250px;">
+                                    </td>
+                                    <td>
+                                        <input name="ctl00$ContentPlaceHolder1$TextBoxPackRemark" type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxPackRemark"
+                                            style="width:280px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 41px;">
+                                        流通加工收入
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxProcess" style="width:250px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxProcessRemark" style="width:280px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 41px;">
+                                        配送收入
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxDispatching" style="width:250px;">
+                                    </td>
+                                    <td>
+                                        <input  type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxDispatchingRemark"
+                                            style="width:280px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 41px;">
+                                        信息管理收入
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxInformation" style="width:250px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxInformationRemark" style="width:280px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 41px;">
+                                        货代收入
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxFreight" style="width:250px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxFreightRemark" style="width:280px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 41px;">
+                                        综合服务收入
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxComplex" style="width:250px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxComplexRemark" style="width:280px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 41px;">
+                                        其它
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxOther" style="width:250px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxOtherRemark" style="width:280px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding: 5px;">
+                                        物流营业收入占总营<br>
+                                        业收入的比例（%）
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxPercentage" style="width:250px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxPercentageRemark" style="width:280px;">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="padding: 10px 0 30px;">
+                            <input type="submit" value="保 存" id="ctl00_ContentPlaceHolder1_ButtonSave" class="button">
+                        </div>
+                    </div>
+                    <div class="pForm2" id="shouru2" style="width: 680px;display:none;">
+                        <table class="clearformdata fullWidth">
+                            <tbody>
+                                <tr style="height: 30px;">
+                                    <td style="width: 50%; text-align: left; padding-left: 5px;">
+                                        <span id="ctl00_ContentPlaceHolder1_LabelUnitName">深圳万国集通国际货运代理有限公司</span>：
+                                    </td>
+                                    <td style="width: 50%; text-align: right; padding-right: 3px;">
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="5" id="ctl00_ContentPlaceHolder1_TextBoxYear">&nbsp;年
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="formdata formMod fullWidth">
+                            <tbody>
+                                <tr>
+                                    <th style="text-align: center;">
+                                        项&nbsp; &nbsp; 目
+                                    </th>
+                                    <th style="text-align: center;">
+                                        营业收入（元）
+                                    </th>
+                                    <th style="text-align: center;">
+                                        备&nbsp; &nbsp; 注
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        总营业收入
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxIncome" style="width:225px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxIncomeRemark" style="width:255px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        非物流营业收入合计
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxNotlogistic" style="width:225px;">
+                                    </td>
+                                    <td>
+                                        <input  type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxNotlogisticRemark" style="width:255px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        其中：商品贸易收入
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxMerchandise" style="width:225px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxMerchandiseRemark" style="width:255px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 41px;">
+                                        仓储设施租赁收入
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxStorage" style="width:225px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxStorageRemark" style="width:255px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 41px;">
+                                        运输设备租赁收入
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxTransport" style="width:225px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxTransportRemark" style="width:255px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 41px;">
+                                        客运收入
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxPassenger" style="width:225px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxPassengerRemark" style="width:255px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 41px;">
+                                        物业管理收入
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxProperty" style="width:225px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxPropertyRemark" style="width:255px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 41px;">
+                                        其它
+                                    </th>
+                                    <td>
+                                        <input onkeyup="MoneyOnly(this)" type="text" maxlength="50" id="ctl00_ContentPlaceHolder1_TextBoxOther" style="width:225px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_TextBoxOtherRemark" style="width:255px;">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="padding: 10px 0 30px;">
+                            <input type="submit" value="保 存" id="ctl00_ContentPlaceHolder1_ButtonSave" class="button">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 附表：物流业务收入构成清单 -->
+
     <div class="mainCon">
         <div class="pForm">
             <h3 class="title">
@@ -560,7 +1179,7 @@
                             员工总数：
                         </th>
                         <td>
-                            <input name="TextBoxEmployeesNum" type="text" maxlength="9" id="TextBoxEmployeesNum">&nbsp;人
+                            <input onkeyup="MoneyOnly(this)" name="TextBoxEmployeesNum" type="text" maxlength="9" id="TextBoxEmployeesNum">&nbsp;人
                             <span id="RegularEmployeesNum" style="color:Red;display:none;"></span>
                         </td>
                     </tr>
@@ -753,7 +1372,7 @@
                             评估指标表：
                         </th>
                         <td>
-                            <a id="LinkButtonFill" ><img src="dest/img/bianji.gif"alt="填写评估指标表"> 填写</a>
+                            <a id="LinkButtonFill"><img src="dest/img/bianji.gif"alt="填写评估指标表"> 填写</a>
                         </td>
                     </tr>
                     <tr>
@@ -771,54 +1390,34 @@
                                         id="TransportForm1_LinkButtonOtherIncome" >附表二：非物流业务收入构成清单</a>
                                 </li>
                                 <li>附表五：自有货运车辆清单<a href="table/附表五：自有货运车辆清单.xls" target="_blank" style="margin-left: 15px;">模板下载</a>
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;" ><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                                 <li>附表七：中高层管理人员清单<a href="table/附表七：中高层管理人员清单.xls" target="_blank" style="margin-left: 15px;">模板下载</a>
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;" ><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                                 <li>附表八：业务人员清单<a href="table/附表八：业务人员清单.xls" target="_blank" style="margin-left: 15px;">模板下载</a>
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                                 <li>附表九：运营网点清单<a href="table/附表九：运营网点清单.xls" target="_blank" style="margin-left: 15px;">模板下载</a>
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                                 <li>
                                     附表十一：物流服务方案与实施
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                             </ul>
@@ -852,13 +1451,9 @@
                                     </div>
                                 </li>
                                 <li>组织机构代码(扫描上传)
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                                 <li>税务登记证(扫描上传)
@@ -872,94 +1467,58 @@
                                     </div>
                                 </li>
                                 <li>企业章程
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                                 <li>其他专业资质证书(扫描上传)
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                                 <li>审计报告(扫描上传)
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                                 <li>ISO9001或其他质量管理体系认证证书（正在办理的，上传与认证机构签订的认证合同及认证机构出具的认证进度与预期取得证书日期的说明）(扫描上传)
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                                 <li>业务辐射面分布图
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                                 <li>组织机构图及相关指标职能分配表
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;" ><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                                 <li>信息化简介（包括网络系统、电子单证管理、货物跟踪和客户查询等情况）【信息化发展情况简介】
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                                 <li>其他
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
-                                <li id="TransportForm1_MembershipForm">入会申请表<a href="../Template/入会申请表.doc" target="_blank"
+                                <li id="TransportForm1_MembershipForm">入会申请表<a href="table/入会申请表.doc" target="_blank"
                                         style="margin-left: 15px;">点击下载《入会申请表》模板</a>
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;"><img src="dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                             </ul>
@@ -999,7 +1558,54 @@
                     $("#DivButtonNew").hide();
                 }  
             })
+            $("#LinkButtonFill").on("click",function(){
+                $("#frameModal").modal("show");
+                $("#frameModalLabel").html('评估指标表')
+                $("#zhibiao").show();
+                $("#shouru").hide();
+                $("#shouru2").hide();
+            })
+            $("#TransportForm1_LinkButtonIncome").on("click",function(){
+                $("#frameModal").modal("show");
+                $("#frameModalLabel").html('附表一：物流业务收入构成清单')
+                $("#zhibiao").hide();
+                $("#shouru").show();
+                $("#shouru2").hide();
+            })
+            $("#TransportForm1_LinkButtonOtherIncome").on("click",function(){
+                $("#frameModal").modal("show");
+                $("#frameModalLabel").html('附表二：非物流业务收入构成清单')
+                $("#zhibiao").hide();
+                $("#shouru").hide();
+                $("#shouru2").show();
+            })
+            $("#RepeaterServiceMode_ctl00_CheckBoxList input").on("click", function () {
+                $("#RepeaterServiceMode_ctl00_CheckBoxClass").prop("checked", true)
+            })
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+            $("#RepeaterServiceMode_ctl01_CheckBoxList input").on("click", function () {
+                $("#RepeaterServiceMode_ctl01_CheckBoxClass").prop("checked", true)
+            })
+            
+            $("#RepeaterServiceRange_ctl00_CheckBoxList input").on("click",function(){
+                $("#RepeaterServiceRange_ctl00_CheckBoxClass").prop("checked",true)
+            })
+            $("#RepeaterServiceRange_ctl01_CheckBoxList input").on("click",function(){
+                $("#RepeaterServiceRange_ctl01_CheckBoxClass").prop("checked", true)
+            })
+            $("#RepeaterServiceRange_ctl02_CheckBoxList input").on("click",function(){
+                $("#RepeaterServiceRange_ctl02_CheckBoxClass").prop("checked", true)
+            })
+            $("#RepeaterServiceRange_ctl03_CheckBoxList input").on("click", function () {
+                $("#RepeaterServiceRange_ctl03_CheckBoxClass").prop("checked", true)
+            })
         })
+       
+        function MoneyOnly(e) {
+            //判断输入是否为数字类型
+            e.value = e.value.replace(/\D/g,"");
+        }
+        
     </script>
 </body>
 </html>
