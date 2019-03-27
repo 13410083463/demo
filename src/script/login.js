@@ -13,7 +13,7 @@ $(function(){
             $("#ValidationSummary1 li").eq(1).hide();
         }
         if(user !="" && pass !=""){
-           window.location.href = "index.html"
+           window.location.href = "../../index.html"
         }
         return false;
     })

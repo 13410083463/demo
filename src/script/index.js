@@ -15,16 +15,16 @@ $(function(){
        
        console.log(index)
        if(index == 1){
-           $("#right iframe").attr("src","nodeDone.html")
+           $("#right iframe").attr("src","../../pages/iframe/myProfile.html")
        }else if(index == 0){
-           $("#right iframe").attr("src", "stay.html")
+           $("#right iframe").attr("src", "../../pages/iframe/myApply.html")
        }else if(index == 2){
-           $("#right iframe").attr("src", "info.html")
+           $("#right iframe").attr("src", "../../pages/iframe/thereport.html")
        }else if(index == 3){
-           $("#right iframe").attr("src", "resetpass.html")
+           $("#right iframe").attr("src", "../../pages/iframe/resetpass.html")
        }else if(index == 4){
            setTimeout(function(){
-                window.location.href = "login.html"
+                window.location.href = "../../login.html"
            },1500)
        }
     })

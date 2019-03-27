@@ -22,7 +22,7 @@ gulp.task('default',["script","style","image"], function () {
     // 将你的默认的任务代码放在这
     browserSycn.init({
         server: {
-            base: "/",
+            base:"/",
             index: "login.html"
         },
         open: true
@@ -32,7 +32,8 @@ gulp.task('default',["script","style","image"], function () {
     gulp.watch("./src/css/**/*.css",["style"]);
     gulp.watch("./src/img/*.{jpg,png,gif}",["image"]);
 
-    //监听页面修改
+    //监听页面修改y
+    gulp.watch("./pages/**/*.html").on("change", reload);
     gulp.watch("*.html").on("change", reload);
     
 });

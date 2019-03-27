@@ -19,7 +19,7 @@ $(function () {
         Unitintroduction2:""
     }
     $("#select").citySelect({
-        url: "lib/city.min.js",
+        url: "../../lib/city.min.js",
         prov: "请选择",
         city: "请选择",
         required: false
