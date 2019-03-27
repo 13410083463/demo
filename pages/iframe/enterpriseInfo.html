@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>企业信息查询</title>
+    <link rel="stylesheet" href="../../dest/css/enterpriseInfo.css">
+</head>
+<body>
+    <div id="enterpriseInfo">
+        <div class="title">
+            <h1>企业信息查询</h1>
+        </div>
+        <div class="searchPanel" style="height: 80px;">
+            <table class="formdata2">
+                <tbody>
+                    <tr>
+                        <th>
+                            申报类型：
+                        </th>
+                        <td>
+                            <select name="DDLCorpType" id="DDLCorpType">
+                                <option selected="selected" value="">全部</option>
+                                <option value="Transport">运输型</option>
+                                <option value="Storage">仓储型</option>
+                                <option value="Service">综合服务型</option>
+        
+                            </select>
+                        </td>
+                        <th>
+                            申报级别：
+                        </th>
+                        <td>
+                            <select name="DDLRank" id="DDLRank">
+                                <option selected="selected" value="">全部</option>
+                                <option value="A">A</option>
+                                <option value="AA">AA</option>
+                                <option value="AAA">AAA</option>
+                                <option value="AAAA">AAAA</option>
+                                <option value="AAAAA">AAAAA</option>
+        
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            批　　次：
+                        </th>
+                        <td>
+                            <input name="TextBoxBatch" type="text" id="TextBoxBatch" style="width:100px;">
+                        </td>
+                        <th>
+                            企业名称：
+                        </th>
+                        <td>
+                            <input name="TextBoxUnitName" type="text" id="TextBoxUnitName" style="width:230px;">
+                            <input type="submit" name="btnSearch" value="查 询" id="btnSearch" class="button">
+                            <input type="submit" name="btnReset" value="重 置" id="btnReset" class="button">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../../lib/jquery.min.js"></script>
+    <script src="../../dest/script/enterpriseInfo.js"></script>
+</body>
+</html>

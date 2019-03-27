@@ -1,0 +1,50 @@
+h1 {
+    font-size: 14px;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: normal;
+}
+div, form, img, ul, ol, li, dl, dt, dd, p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body{font-size:12px;}
+#myTodo .title{
+    height:30px;
+    border-bottom:1px solid;
+}
+.searchPanel {
+    background: #FFF url(../img/bg1.gif) repeat-x;
+    padding: 10px 5px 0;
+    /* height: 50px; */
+}
+table.formdata2 {
+    border: 0px;
+    border-collapse: collapse;
+    font-family: verdana;
+}
+.searchPanel table {
+    width: 100%;
+}
+.formdata2 th {
+    border: 0px;
+    padding-right: 10px;
+    color: #003366;
+    height: 35px;
+    text-align: right;
+    font-weight: normal;
+    white-space: nowrap;
+}
+.button {
+    cursor: hand;
+    font-size: 12px;
+    overflow: visible;
+    padding: 2px 10px 0 10px;
+    height: 20px;
+    border: 1px #93b9dc solid;
+    background: url(../img/button_bg.gif) repeat;
+}

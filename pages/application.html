@@ -9,233 +9,7 @@
     <link rel="stylesheet" href="../lib/datepicker/css/bootstrap-datepicker3.min.css">
     <link rel="stylesheet" href="../lib/datepicker/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_907472_vc6og4vdh2.css">
-    <style>
-        *{padding:0;margin:0;}
-        body{font-size:12px;}
-       
-        h1,h2,h3,h4,h5,h6{
-            padding:0;
-            margin:0;
-        }
-        .mainCon {
-            margin: 7px;
-            padding-bottom: 10px;
-        }
-        .pForm {
-            width: 780px;
-            margin: 8px auto;
-            color: #333;
-            text-align: center;
-        }
-        h3.title {
-            font-weight: bold;
-            font-size: 20px;
-        }
-        .fullWidth {
-            width: 100%;
-        }
-
-        .titleForm {
-        }
-        table {
-            background-color: transparent;
-        }
-        table {
-            border-spacing: 0;
-            border-collapse: collapse;
-        }
-        .titleForm th {
-            font-weight: bold;
-            width: 80px;
-            text-align: right;
-        }
-        .titleForm th, .titleForm td {
-            padding: 5px;
-        }
-        th {
-            text-align: left;
-        }
-        td, th {
-            padding: 0;
-        }
-        button, input, select, textarea {
-            font-family: inherit;
-            font-size: inherit;
-            line-height: inherit;
-        }
-
-        button, select {
-            text-transform: none;
-        }
-        button, input, optgroup, select, textarea {
-            margin: 0;
-            font: inherit;
-            color: inherit;
-        }
-        .titleForm td {
-            text-align: left;
-        }
-        a:link {
-             color: #0a4173;
-             text-decoration: none;
-        }
-        a {
-            color: #337ab7;
-            text-decoration: none;
-        }
-
-        a {
-            background-color: transparent;
-        }
-        img {
-            vertical-align: bottom;
-            border: none;
-        }
-        .datepicker{
-            top:100px!important;
-        }
-        .formTable {
-            margin: 0 auto;
-            border-collapse: collapse;
-            text-align: left;
-            width: 100%;
-        }
-        .formTable thead th, .formTable thead td {
-            text-align: center;
-            background: #8DACC8;
-            padding: 5px;
-        }
-        ol, ul {
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        .formTable th, .formTable td {
-            background: #e6e6fa;
-            border: solid 1px #95B0CB;
-        }
-        .formTable tbody th, .formTable tbody td {
-            padding: 5px;
-        }
-        .button {
-            font-size: 12px;
-            overflow: visible;
-            padding: 2px 10px 0 10px;
-            height: 20px;
-            border: 1px #93b9dc solid;
-            line-height:17px;
-            background: url(../dest/img/button_bg.gif) repeat;
-        }
-        ul, li {
-            list-style: decimal;
-        }
-        ol, ul {
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        #DivForm ul{
-            margin-left:35px;
-        }
-         #DivForm ul li{
-            margin-bottom:5px;
-        }
-        
-      
-        .pForm2 {
-            margin: 0;
-            padding: 8px;
-            color: #333;
-            text-align: center;
-        }
-        table.formdata {
-            border: solid 1px #95B0CB;
-            padding: 0;
-            border-collapse: collapse;
-            font-family: verdana;
-        }
-        .formdata td {
-            /* border: solid 1px #95B0CB; */
-            text-align: left;
-            color: black;
-            padding: 4px 0 3px 4px;
-            font-size: 10pt;
-        }
-        table.clearformdata {
-            border: 0;
-            padding: 0;
-            border-collapse: collapse;
-        }
-
-        input[type=checkbox], input[type=radio] {
-            margin: 4px 0 0;
-            margin-top: 1px\9;
-            line-height: normal;
-        }
-
-        input[type=checkbox], input[type=radio] {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            padding: 0;
-        }
-        button, input, select, textarea {
-            font-family: inherit;
-            font-size: inherit;
-            line-height: inherit;
-        }
-        label {
-            display: inline-block;
-            max-width: 100%;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-        @media (min-width: 576px){
-        .modal-dialog {
-            max-width: 800px;
-            margin: 1.75rem auto;
-        }
-        }
-        .icon-guanbi{
-            font-size:13px;
-            font-weight:700;
-        }
-        .modal-header {
-            padding: 15px;
-            border-bottom: 1px solid #e5e5e5;
-        }
-        .pb5 {
-            padding-bottom: 5px;
-        }
-        table.formdata {
-            border: solid 1px #95B0CB;
-            padding: 0;
-            border-collapse: collapse;
-            font-family: verdana;
-        }
-        .formMod th {
-            text-align: center;
-        }
-        .formdata th {
-            border: solid 1px #95B0CB;
-            color: #003366;
-            height: 28px;
-            font-weight: normal;
-            white-space: nowrap;
-        }
-        .formMod td {
-            padding: 4px;
-        }
-        .formdata td {
-            border: solid 1px #95B0CB;
-            text-align: left;
-            color: black;
-            padding: 4px 0 3px 4px;
-            font-size: 10pt;
-        }
-         #frameModalLabel{
-            font-size:18px;
-        }
-    </style>
+    <link rel="stylesheet" href="../dest/css/application.css">
 </head>
 <body>
     <!-- 选择审核机构 -->
@@ -1219,7 +993,6 @@
                                     id="RepeaterServiceMode_ctl01_CheckBoxList_2" type="checkbox" name="RepeaterServiceMode$ctl01$CheckBoxList$2"><label
                                     for="RepeaterServiceMode_ctl01_CheckBoxList_2">公路场站</label><input id="RepeaterServiceMode_ctl01_CheckBoxList_3"
                                     type="checkbox" name="RepeaterServiceMode$ctl01$CheckBoxList$3"><label for="RepeaterServiceMode_ctl01_CheckBoxList_3">铁路货站</label></span>）
-        
                             <br>
                             <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceMode_ctl02_CheckBoxClass"
                                     type="checkbox" name="RepeaterServiceMode$ctl02$CheckBoxClass"><label for="RepeaterServiceMode_ctl02_CheckBoxClass">仓储</label></span>
@@ -1242,9 +1015,6 @@
                             <br>
                             <span id="RepeaterServiceMode_ctl11_LabelOther" style="font-weight:bold;"> 其他</span>
                             <input name="RepeaterServiceMode$ctl11$TextBoxOther" type="text" id="RepeaterServiceMode_ctl11_TextBoxOther">
-        
-        
-        
                         </td>
                     </tr>
                     <tr>
@@ -1259,13 +1029,10 @@
                                     id="RepeaterServiceRange_ctl00_CheckBoxList_0" type="checkbox" name="RepeaterServiceRange$ctl00$CheckBoxList$0"><label
                                     for="RepeaterServiceRange_ctl00_CheckBoxList_0">黑色</label><input id="RepeaterServiceRange_ctl00_CheckBoxList_1"
                                     type="checkbox" name="RepeaterServiceRange$ctl00$CheckBoxList$1"><label for="RepeaterServiceRange_ctl00_CheckBoxList_1">有色</label></span>）
-        
                             <br>
                             <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl01_CheckBoxClass"
                                     type="checkbox" name="RepeaterServiceRange$ctl01$CheckBoxClass"><label
                                     for="RepeaterServiceRange_ctl01_CheckBoxClass">农业</label></span>
-        
-        
                             （<span id="RepeaterServiceRange_ctl01_CheckBoxList"><input
                                     id="RepeaterServiceRange_ctl01_CheckBoxList_0" type="checkbox" name="RepeaterServiceRange$ctl01$CheckBoxList$0"><label
                                     for="RepeaterServiceRange_ctl01_CheckBoxList_0">鲜活农产品</label><input id="RepeaterServiceRange_ctl01_CheckBoxList_1"
@@ -1274,7 +1041,6 @@
                                     for="RepeaterServiceRange_ctl01_CheckBoxList_2">农资</label></span><span id="RepeaterServiceRange_ctl01_LabelOtherSub">
                                 其他</span><input name="RepeaterServiceRange$ctl01$TextBoxOtherSub" type="text" maxlength="50" id="RepeaterServiceRange_ctl01_TextBoxOtherSub"
                                  style="width:80px;">）
-        
                             <br>
                             <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl02_CheckBoxClass"
                                     type="checkbox" name="RepeaterServiceRange$ctl02$CheckBoxClass" ><label
@@ -1289,19 +1055,15 @@
                                 id="RepeaterServiceRange_ctl02_LabelOtherSub"> 其他</span><input name="RepeaterServiceRange$ctl02$TextBoxOtherSub"
                                 type="text" maxlength="50" id="RepeaterServiceRange_ctl02_TextBoxOtherSub"
                                 style="width:80px;">）
-        
                             <br>
                             <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl03_CheckBoxClass"
                                     type="checkbox" name="RepeaterServiceRange$ctl03$CheckBoxClass" ><label
                                     for="RepeaterServiceRange_ctl03_CheckBoxClass">制造业</label></span>
-        
-        
                             （<span id="RepeaterServiceRange_ctl03_CheckBoxList" ><input
                                     id="RepeaterServiceRange_ctl03_CheckBoxList_0" type="checkbox" name="RepeaterServiceRange$ctl03$CheckBoxList$0"><label
                                     for="RepeaterServiceRange_ctl03_CheckBoxList_0">装备制造业</label></span><span id="RepeaterServiceRange_ctl03_LabelOtherSub">
                                 其他</span><input name="RepeaterServiceRange$ctl03$TextBoxOtherSub" type="text" maxlength="50" id="RepeaterServiceRange_ctl03_TextBoxOtherSub"
                                 style="width:80px;">）
-        
                             <br>
                             <span maxlength="50" style="font-weight:bold;"><input id="RepeaterServiceRange_ctl04_CheckBoxClass"
                                     type="checkbox" name="RepeaterServiceRange$ctl04$CheckBoxClass"><label for="RepeaterServiceRange_ctl04_CheckBoxClass">汽车</label></span>
@@ -1431,23 +1193,15 @@
                         <td>
                             <ul>
                                 <li>企业简介【企业发展状况简介】
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;"><img src="../dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                                 <li>营业执照(扫描上传)
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;"><img src="../dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                                 <li>组织机构代码(扫描上传)
@@ -1457,13 +1211,9 @@
                                     </div>
                                 </li>
                                 <li>税务登记证(扫描上传)
-        
-        
                                     <div style="display:block">
                                         <a href="javascript:;"><img src="../dest/img/btn_AddFilesUpLoad.gif"></a>
-        
                                         &nbsp;
-        
                                     </div>
                                 </li>
                                 <li>企业章程
@@ -1538,74 +1288,6 @@
     <script src="../lib/datepicker/js/bootstrap.min.js"></script>
     <script src="../lib/datepicker/js/bootstrap-datepicker.min.js"></script>
     <script src="../lib/datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
-    <script>
-        $(function(){
-            $("#TextBoxApplyDate").datepicker({
-                todayHighlight: true,
-                format: "yyyy-mm-dd",
-                todayBtn: "linked",
-                clearBtn: !0,
-                language:"zh-CN"
-            })
-
-            $("#ButtonNext").on("click",function(){
-                var query = confirm("请确认您选择了正确的申报类型和申报级别，一旦确定不可随意更改！")
-                if(query == true){
-                    $("#DivForm").show();
-                    $("#DivButtonApply").show();
-                    $("#DDLCorpType").attr("disabled","disabled")
-                    $("#DDLRank").attr("disabled","disabled")
-                    $("#DivButtonNew").hide();
-                }  
-            })
-            $("#LinkButtonFill").on("click",function(){
-                $("#frameModal").modal("show");
-                $("#frameModalLabel").html('评估指标表')
-                $("#zhibiao").show();
-                $("#shouru").hide();
-                $("#shouru2").hide();
-            })
-            $("#TransportForm1_LinkButtonIncome").on("click",function(){
-                $("#frameModal").modal("show");
-                $("#frameModalLabel").html('附表一：物流业务收入构成清单')
-                $("#zhibiao").hide();
-                $("#shouru").show();
-                $("#shouru2").hide();
-            })
-            $("#TransportForm1_LinkButtonOtherIncome").on("click",function(){
-                $("#frameModal").modal("show");
-                $("#frameModalLabel").html('附表二：非物流业务收入构成清单')
-                $("#zhibiao").hide();
-                $("#shouru").hide();
-                $("#shouru2").show();
-            })
-            $("#RepeaterServiceMode_ctl00_CheckBoxList input").on("click", function () {
-                $("#RepeaterServiceMode_ctl00_CheckBoxClass").prop("checked", true)
-            })
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-            $("#RepeaterServiceMode_ctl01_CheckBoxList input").on("click", function () {
-                $("#RepeaterServiceMode_ctl01_CheckBoxClass").prop("checked", true)
-            })
-            
-            $("#RepeaterServiceRange_ctl00_CheckBoxList input").on("click",function(){
-                $("#RepeaterServiceRange_ctl00_CheckBoxClass").prop("checked",true)
-            })
-            $("#RepeaterServiceRange_ctl01_CheckBoxList input").on("click",function(){
-                $("#RepeaterServiceRange_ctl01_CheckBoxClass").prop("checked", true)
-            })
-            $("#RepeaterServiceRange_ctl02_CheckBoxList input").on("click",function(){
-                $("#RepeaterServiceRange_ctl02_CheckBoxClass").prop("checked", true)
-            })
-            $("#RepeaterServiceRange_ctl03_CheckBoxList input").on("click", function () {
-                $("#RepeaterServiceRange_ctl03_CheckBoxClass").prop("checked", true)
-            })
-        })
-       
-        function MoneyOnly(e) {
-            //判断输入是否为数字类型
-            e.value = e.value.replace(/\D/g,"");
-        }
-        
-    </script>
+    <script src="../dest/script/application.js"></script>
 </body>
 </html>

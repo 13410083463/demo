@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的待办</title>
+    <link rel="stylesheet" href="../../lib/datepicker/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../lib/datepicker/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="../../dest/css/myTodo.css">
+</head>
+<body>
+    <div id="myTodo">
+        <div class="title">
+            <h1>我的待办</h1>
+        </div>
+        <div class="searchPanel" style="height: 160px;">
+            <table class="formdata2">
+                <tbody>
+                    <tr>
+                        <th>
+                            申请性质：
+                        </th>
+                        <td style="width: 145px;">
+                            <select name="DDLApplyType" id="DDLApplyType">
+                                <option selected="selected" value="">全部</option>
+                                <option value="Apply">初次申请</option>
+                                <option value="Renew">复核申请</option>
+                                <option value="Update">升级申请</option>
+        
+                            </select>
+                        </td>
+                        <th>
+                            申报类型：
+                        </th>
+                        <td>
+                            <select name="DDLCorpType" id="DDLCorpType">
+                                <option selected="selected" value="">全部</option>
+                                <option value="Transport">运输型</option>
+                                <option value="Storage">仓储型</option>
+                                <option value="Service">综合服务型</option>
+        
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            申报级别：
+                        </th>
+                        <td>
+                            <select name="DDLRank" id="DDLRank">
+                                <option selected="selected" value="">全部</option>
+                                <option value="A">A</option>
+                                <option value="AA">AA</option>
+                                <option value="AAA">AAA</option>
+                                <option value="AAAA">AAAA</option>
+                                <option value="AAAAA">AAAAA</option>
+        
+                            </select>
+                        </td>
+                        <th>
+                            申报日期：
+                        </th>
+                        <td>
+                            <input name="TextBoxApplyDate1" type="text" id="TextBoxApplyDate1" class="EditBox" style="width:100px;">
+                            <img alt="" id="imgApplyDate1" align="absMiddle" height="16" src="../../dest/img/btn_calendar.gif" style="cursor: hand;" width="16">
+                            至
+                            <input name="TextBoxApplyDate2" type="text" id="TextBoxApplyDate2" class="EditBox" onclick="document.getElementById('imgApplyDate2').click();"
+                                style="width:100px;">
+                            <img alt="" id="imgApplyDate2" align="absMiddle" height="16" src="../../dest/img/btn_calendar.gif" style="cursor: hand;" width="16">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            当前状态：
+                        </th>
+                        <td>
+                            <select name="DDLCurrentStatus" id="DDLCurrentStatus">
+                                <option selected="selected" value="">全部</option>
+                                <option value="申请已提交">申请已提交</option>
+                                <option value="已通过初审">已通过初审</option>
+                                <option value="已通过再审">已通过再审</option>
+                                <option value="已下发评估计划">已下发评估计划</option>
+                                <option value="现场评估已完成">现场评估已完成</option>
+                                <option value="已发布通告">已发布通告</option>
+        
+                            </select>
+                        </td>
+                        <th>
+                            批　　次：
+                        </th>
+                        <td>
+                            <input name="TextBoxBatch" type="text" id="TextBoxBatch" style="width:120px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>企业名称：</th>
+                        <td colspan="3">
+                            <input name="TextBoxUnitName" type="text" id="TextBoxUnitName" style="width:230px;">
+                            <input type="submit" name="btnSearch" value="查 询" id="btnSearch" class="button">
+                            <input type="submit" name="btnReset" value="重 置" id="btnReset" class="button">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../../lib/jquery.min.js"></script>
+    <script src="../../lib/datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="../../lib/datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script src="../../dest/script/myTodo.js"></script>
+</body>
+</html>

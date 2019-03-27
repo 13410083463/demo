@@ -15,11 +15,11 @@ $(function(){
        
        console.log(index)
        if(index == 1){
-           $("#right iframe").attr("src","../../pages/iframe/myProfile.html")
+           $("#right iframe").attr("src","../../pages/iframe/myHave.html")
        }else if(index == 0){
-           $("#right iframe").attr("src", "../../pages/iframe/myApply.html")
+           $("#right iframe").attr("src", "../../pages/iframe/myTodo.html")
        }else if(index == 2){
-           $("#right iframe").attr("src", "../../pages/iframe/thereport.html")
+           $("#right iframe").attr("src", "../../pages/iframe/enterpriseInfo.html")
        }else if(index == 3){
            $("#right iframe").attr("src", "../../pages/iframe/resetpass.html")
        }else if(index == 4){
