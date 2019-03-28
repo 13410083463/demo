@@ -49,8 +49,29 @@ $(function () {
             TextBoxContactName = $("#TextBoxContactName").val(), TextBoxContactPosition = $("#TextBoxContactPosition").val(), TextBoxContactTelAC = $("#TextBoxContactTelAC").val(),
             TextBoxContactMobil = $("#TextBoxPostCode").val(), TextBoxContactFaxAC = $("#TextBoxContactFaxAC").val(), TextBoxPostCode = $("#TextBoxPostCode").val(),
             DDLUnitNature = $("#DDLUnitNature").val(), TextBoxIntroduction = $("#TextBoxIntroduction").val(), TextBoxContactTel = $("#TextBoxContactTel").val(),
-            TextBoxContactFax = $("#TextBoxContactFax").val();
-
+            TextBoxContactFax = $("#TextBoxContactFax").val(), RadioIsMember = $("#radio input[type='radio']:checked").val();
+        var data = {
+            account: TextBoxRegisteredID,
+            password1: TextBoxPassword1,
+            password2: TextBoxPassword2,
+            companyName: TextBoxUnitName,
+            companyAdress: TextBoxUnitSeat,
+            website: TextBoxWebSite,
+            email: TextBoxContactEmail,
+            representative: TextBoxChargePerson,
+            telephone: TextBoxCP_Tel,
+            linkMan: TextBoxContactName,
+            duty: TextBoxContactPosition,
+            linkPhone1: TextBoxContactTelAC,
+            linkPhone2: TextBoxContactTel,
+            phone: TextBoxContactMobil,
+            fax: TextBoxContactFaxAC,
+            fax2: TextBoxContactFax,
+            postcode: TextBoxPostCode,
+            Member: RadioIsMember,
+            company_type: DDLUnitNature,
+            presentation: TextBoxIntroduction
+        }
         if (TextBoxRegisteredID == ""){
             obj.code = "-请输入统一社会信用代码\n\n"
         }
@@ -105,7 +126,22 @@ $(function () {
         if (TextBoxRegisteredID == "" || TextBoxPassword1 == "" || TextBoxPassword2 == "" || TextBoxUnitName == "" || TextBoxUnitSeat == "" || TextBoxWebSite == "" || TextBoxContactEmail == "" || TextBoxChargePerson == "" || TextBoxCP_Tel == "" || TextBoxContactName == "" || TextBoxContactPosition == "" || TextBoxContactTelAC == "" || TextBoxContactMobil == "" || TextBoxContactFaxAC == "" || TextBoxPostCode == "" || DDLUnitNature == "" || TextBoxIntroduction == "" || TextBoxContactTel == "" || TextBoxContactFax == "" ){
             alert(obj.code + obj.pass + obj.qass + obj.enterprise + obj.path + obj.Website + obj.email + obj.Telephone + obj.Contacts + obj.post + obj.Contactnumber + obj.Mobile + obj.fax + obj.zipCode + obj.Unitpropery + obj.Unitintroduction + obj.Unitintroduction2);
         }else{
-            console.log("全部正确")
+            console.log(data)
+
+            $.ajax({
+                url: "http://declare.dagaimao.cn/web/index.php?r=users/deal-register&account=123&password1=1&password2=1&companyName=2&companyAdress=2&website=2&email=2&representative=2&telephone=2&linkMan=2&duty=2&linkPhone1=2&linkPhone2=22&phone=2&fax=2&fax2=2&postcode=2&Member=2&company_type=2&presentation=2",
+                type: 'post',
+                // data: data,
+                crossDomain: true,
+                processData: false,
+                success: function (res) {
+                    console.log(res)
+                },
+                error: function () {
+                    console.log("error!!!!");
+                }
+            })
+           
         }
     });
 
