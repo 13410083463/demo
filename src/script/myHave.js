@@ -13,4 +13,5 @@ $(function () {
         clearBtn: !0,
         language: "zh-CN"
     })
+   
 })

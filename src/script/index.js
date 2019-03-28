@@ -14,7 +14,7 @@ $(function(){
         $(this).addClass("li_back")
        
        console.log(index)
-       if(index == 1){
+       if(index == 1){   
            $("#right iframe").attr("src","../../pages/iframe/myHave.html")
        }else if(index == 0){
            $("#right iframe").attr("src", "../../pages/iframe/myTodo.html")
@@ -24,7 +24,7 @@ $(function(){
            $("#right iframe").attr("src", "../../pages/iframe/resetpass.html")
        }else if(index == 4){
            setTimeout(function(){
-                window.location.href = "../../login.html"
+               window.location.href = "../../login.html";
            },1500)
        }
     })
