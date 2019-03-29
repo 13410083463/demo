@@ -7,6 +7,10 @@
     console.log(data)
     if (data.auth == 0){
         $("#right iframe").attr("src", "../../pages/iframe/myApply.html")
+    } else if (data.auth == 1){
+        $("#list1").html("我的待办")
+        $("#list2").html("我的已办")
+        $("#list3").html("企业信息查询")
     }
     
     $("#LabelDisplayName").html(data.name)
@@ -23,6 +27,7 @@
         var index = $(this).index();
         $("#MenuAll li").removeClass("li_back")
         $(this).addClass("li_back")
+        console.log(index)
         if (data.auth == 0){
             if (index == 1) {
                 $("#right iframe").attr("src", "../../pages/iframe/myProfile.html")

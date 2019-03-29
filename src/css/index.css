@@ -22,7 +22,7 @@ div, form, img, ul, ol, li, dl, dt, dd, p {
 }
 #header {
     height: 115px;
-    background:blue;
+    background: url(../img/index_header.jpg) no-repeat;
     position: relative;
 }
 #header, #main, #footer, #infoMain {
