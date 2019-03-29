@@ -1,14 +1,14 @@
-$(function(){
-    console.log(getCookie("admin"))
-    var url = decodeURI(window.location.href);
-    var reg = new RegExp("#");
-    var str = url.replace(reg,"");
-    var argsIndex = str.split("?obj=");
-    var data = JSON.parse(argsIndex[1])
+// $(function(){
+    if(getCookie("admin") == null){
+        window.location.href = "../../login.html";
+    }
+
+    var data = JSON.parse(getCookie("admin"));
     console.log(data)
     if (data.auth == 0){
         $("#right iframe").attr("src", "../../pages/iframe/myApply.html")
     }
+    
     $("#LabelDisplayName").html(data.name)
     function time(){
         var date = new Date();
@@ -54,4 +54,6 @@ $(function(){
         }
        
     })
-})
+    
+// })
+

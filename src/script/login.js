@@ -1,5 +1,4 @@
 
-
 $(function(){
   
     $("form").submit(function(){
@@ -21,24 +20,27 @@ $(function(){
                 "Password": "12"
             }
             $.ajax({
-                url: "http://declared.dagaimao.cn/declare?r=users/login-check-port&UserName=" + user + "&Password=" + pass,
+                url: "http://declare.dagaimao.cn/web/index.php?r=users/login-check-port",
                 type:"post",
+                data:JSON.stringify(data),
                 headers:{
                     "content-Type":"application/x-www-form-urlencoded;charset=utf8"
                 },
                 // dataType: "json",
                 // contentType: "application/x-www-form-urlencoded;charset=utf8",
-                dataType:"jsonp",
+                // dataType:"jsonp",
+                // jsonpCallback: "onBack",
+                // jsonp:"onBack",
+                dataType:"application/json",
+                dataType:"json",
                 success: function (res) {
-                    console.log(JSON.parse(res))
-                    $.getScript("../../pubilc.js",function(){
-                        setCookie("admin", res.name, "d30")
+                    console.log(res)
+                    setCookie("admin", res, "d30")
                         console.log(getCookie('admin'))
-                    });
                    
                     // if(res){
                     //     setTimeout(function(){
-                    //         window.location.href = "../../index.html?obj="+res;
+                    //         window.location.href = "../../index.html";
                     //     },1000)
                     // }
                 },
@@ -46,7 +48,7 @@ $(function(){
                     console.log("error!!!!");
                 }
             })
-          
+           
         }
         return false;
     })
