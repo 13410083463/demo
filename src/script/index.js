@@ -1,4 +1,5 @@
 $(function(){
+    console.log(getCookie("admin"))
     var url = decodeURI(window.location.href);
     var reg = new RegExp("#");
     var str = url.replace(reg,"");
@@ -22,7 +23,6 @@ $(function(){
         var index = $(this).index();
         $("#MenuAll li").removeClass("li_back")
         $(this).addClass("li_back")
-       
         if (data.auth == 0){
             if (index == 1) {
                 $("#right iframe").attr("src", "../../pages/iframe/myProfile.html")
