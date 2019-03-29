@@ -25,7 +25,6 @@ $(function(){
                 data:JSON.stringify(data),
                 crossDomain:true,
                 processData: false,
-                contentType:"application/x-www-form-urlencoded;charset=utf8",
                 success: function (res) {
                     console.log(JSON.parse(res))
                     // if(res){

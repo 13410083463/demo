@@ -129,9 +129,9 @@ $(function () {
             console.log(data)
 
             $.ajax({
-                url: "http://declare.dagaimao.cn/web/index.php?r=users/deal-register&account=123&password1=1&password2=1&companyName=2&companyAdress=2&website=2&email=2&representative=2&telephone=2&linkMan=2&duty=2&linkPhone1=2&linkPhone2=22&phone=2&fax=2&fax2=2&postcode=2&Member=2&company_type=2&presentation=2",
+                url: "http://declare.dagaimao.cn/declare/web/index.php?r=users/deal-register",
                 type: 'post',
-                // data: data,
+                data: data,
                 crossDomain: true,
                 processData: false,
                 success: function (res) {
