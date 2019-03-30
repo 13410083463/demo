@@ -1,13 +1,18 @@
-$(function(){
-    var url = decodeURI(window.location.href);
-    var reg = new RegExp("#");
-    var str = url.replace(reg,"");
-    var argsIndex = str.split("?obj=");
-    var data = JSON.parse(argsIndex[1])
+// $(function(){
+    if(getCookie("admin") == null){
+        window.location.href = "../../login.html";
+    }
+
+    var data = JSON.parse(getCookie("admin"));
     console.log(data)
     if (data.auth == 0){
         $("#right iframe").attr("src", "../../pages/iframe/myApply.html")
+    } else if (data.auth == 1){
+        $("#list1").html("我的待办")
+        $("#list2").html("我的已办")
+        $("#list3").html("企业信息查询")
     }
+    
     $("#LabelDisplayName").html(data.name)
     function time(){
         var date = new Date();
@@ -22,7 +27,7 @@ $(function(){
         var index = $(this).index();
         $("#MenuAll li").removeClass("li_back")
         $(this).addClass("li_back")
-       
+        console.log(index)
         if (data.auth == 0){
             if (index == 1) {
                 $("#right iframe").attr("src", "../../pages/iframe/myProfile.html")
@@ -54,4 +59,6 @@ $(function(){
         }
        
     })
-})
+    
+// })
+
