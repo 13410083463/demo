@@ -16,6 +16,261 @@
        <div class="open_btn">
            <a href="../application.html">发送申请</a>
        </div>
+    <div>
+        <div style="padding: 10px; text-align: right;">
+           
+            <input type="hidden" name="HiddenViewUrl" id="HiddenViewUrl" value="window.open('../Pages/ApplicationForm.aspx?id={0}');return false;">
+            <input type="hidden" name="HiddenEditUrl" id="HiddenEditUrl" value="window.open('../Pages/EditMaterial.aspx?id={0}');return false;">
+        </div>
+        <div>
+            <table class="GridViewStyle" cellspacing="0" rules="all" border="1" id="gvInfo" style="border-collapse:collapse;">
+                <tbody>
+                    <tr class="GridViewHeaderStyle" align="center">
+                        <th scope="col" style="width:75px;"><a href="javascript:__doPostBack('gvInfo','Sort$CorpType')">申报类型</a></th>
+                        <th scope="col" style="width:75px;"><a href="javascript:__doPostBack('gvInfo','Sort$ApplyType')">申请性质</a></th>
+                        <th scope="col" style="width:65px;"><a href="javascript:__doPostBack('gvInfo','Sort$Rank')">申报级别</a></th>
+                        <th scope="col" style="width:85px;"><a href="javascript:__doPostBack('gvInfo','Sort$ApplyDate')">申报日期</a></th>
+                        <th scope="col" style="width:145px;"><a href="javascript:__doPostBack('gvInfo','Sort$ModifiedTime')">修改时间</a></th>
+                        <th scope="col"><a href="javascript:__doPostBack('gvInfo','Sort$CurrentState')">当前状态</a></th>
+                        <th scope="col" style="width:70px;">操作</th>
+                    </tr>
+                    <tr class="GridViewRowStyle" align="center" onmouseover="onMouseOverRow(this);" onmouseout="onMouseOutRow(this);">
+                        <td title="综合服务型">综合服务型</td>
+                        <td title="初次申请">初次申请</td>
+                        <td>A</td>
+                        <td>2019-03-26</td>
+                        <td>2019/3/26 16:02:23</td>
+                        <td title="草稿">草稿</td>
+                        <td>
+                            <a onclick="window.open('../Pages/EditMaterial.aspx?id=7ac7ab43-59c5-427d-9bb5-646e7102d140');return false;"
+                                id="gvInfo_ctl02_LinkButtonEdit" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl02$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要取消申请吗？');" id="gvInfo_ctl02_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl02$LinkButtonDelete", "", true, "", "", false, true))'>取消</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewAlternatingRowStyle" align="center" onmouseover="onMouseOverRow(this);" onmouseout="onMouseOutRow(this);">
+                        <td title="综合服务型">综合服务型</td>
+                        <td title="初次申请">初次申请</td>
+                        <td>A</td>
+                        <td>2019-03-26</td>
+                        <td>2019/3/26 15:59:15</td>
+                        <td title="草稿">草稿</td>
+                        <td>
+                            <a onclick="window.open('../Pages/EditMaterial.aspx?id=8ee12461-45aa-4536-9231-b55172d97fa6');return false;"
+                                id="gvInfo_ctl03_LinkButtonEdit" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl03$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要取消申请吗？');" id="gvInfo_ctl03_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl03$LinkButtonDelete", "", true, "", "", false, true))'>取消</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewRowStyle" align="center" onmouseover="onMouseOverRow(this);" onmouseout="onMouseOutRow(this);">
+                        <td title="仓储型">仓储型</td>
+                        <td title="初次申请">初次申请</td>
+                        <td>AA</td>
+                        <td>2019-03-26</td>
+                        <td>2019/3/26 15:58:53</td>
+                        <td title="草稿">草稿</td>
+                        <td>
+                            <a onclick="window.open('../Pages/EditMaterial.aspx?id=7b658a3e-baf0-44f8-9291-181e51fa1e7e');return false;"
+                                id="gvInfo_ctl04_LinkButtonEdit" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl04$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要取消申请吗？');" id="gvInfo_ctl04_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl04$LinkButtonDelete", "", true, "", "", false, true))'>取消</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewAlternatingRowStyle" align="center" onmouseover="onMouseOverRow(this);" onmouseout="onMouseOutRow(this);">
+                        <td title="运输型">运输型</td>
+                        <td title="初次申请">初次申请</td>
+                        <td>A</td>
+                        <td>2019-03-26</td>
+                        <td>2019/3/26 15:58:04</td>
+                        <td title="草稿">草稿</td>
+                        <td>
+                            <a onclick="window.open('../Pages/EditMaterial.aspx?id=cb822416-b195-4c6f-982f-998cf3533ec3');return false;"
+                                id="gvInfo_ctl05_LinkButtonEdit" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl05$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要取消申请吗？');" id="gvInfo_ctl05_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl05$LinkButtonDelete", "", true, "", "", false, true))'>取消</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewRowStyle" align="center" onmouseover="onMouseOverRow(this);" onmouseout="onMouseOutRow(this);">
+                        <td title="运输型">运输型</td>
+                        <td title="初次申请">初次申请</td>
+                        <td>A</td>
+                        <td>2019-03-26</td>
+                        <td>2019/3/26 15:06:37</td>
+                        <td title="草稿">草稿</td>
+                        <td>
+                            <a onclick="window.open('../Pages/EditMaterial.aspx?id=d6c47063-a208-4f74-93cb-2c6a50b1c857');return false;"
+                                id="gvInfo_ctl06_LinkButtonEdit" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl06$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要取消申请吗？');" id="gvInfo_ctl06_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl06$LinkButtonDelete", "", true, "", "", false, true))'>取消</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewAlternatingRowStyle" align="center" onmouseover="onMouseOverRow(this);" onmouseout="onMouseOutRow(this);">
+                        <td title="运输型">运输型</td>
+                        <td title="复核申请">复核申请</td>
+                        <td>A</td>
+                        <td>2019-03-26</td>
+                        <td>2019/3/26 15:06:13</td>
+                        <td title="草稿">草稿</td>
+                        <td>
+                            <a onclick="window.open('../Pages/EditMaterial.aspx?id=968c92d0-9999-413f-b58b-26fa1faff3f6');return false;"
+                                id="gvInfo_ctl07_LinkButtonEdit" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl07$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要取消申请吗？');" id="gvInfo_ctl07_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl07$LinkButtonDelete", "", true, "", "", false, true))'>取消</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewRowStyle" align="center" onmouseover="onMouseOverRow(this);" onmouseout="onMouseOutRow(this);">
+                        <td title="运输型">运输型</td>
+                        <td title="初次申请">初次申请</td>
+                        <td>A</td>
+                        <td>2019-03-26</td>
+                        <td>2019/3/26 15:05:47</td>
+                        <td title="草稿">草稿</td>
+                        <td>
+                            <a onclick="window.open('../Pages/EditMaterial.aspx?id=53bd41d4-e527-4eff-a6c1-351bb4c834da');return false;"
+                                id="gvInfo_ctl08_LinkButtonEdit" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl08$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要取消申请吗？');" id="gvInfo_ctl08_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl08$LinkButtonDelete", "", true, "", "", false, true))'>取消</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewAlternatingRowStyle" align="center" onmouseover="onMouseOverRow(this);" onmouseout="onMouseOutRow(this);">
+                        <td title="运输型">运输型</td>
+                        <td title="初次申请">初次申请</td>
+                        <td>A</td>
+                        <td>2019-03-26</td>
+                        <td>2019/3/26 11:40:06</td>
+                        <td title="草稿">草稿</td>
+                        <td>
+                            <a onclick="window.open('../Pages/EditMaterial.aspx?id=b0e0fcbc-0f6b-47b8-a6c5-be0a94986edc');return false;"
+                                id="gvInfo_ctl09_LinkButtonEdit" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl09$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要取消申请吗？');" id="gvInfo_ctl09_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl09$LinkButtonDelete", "", true, "", "", false, true))'>取消</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewRowStyle" align="center" onmouseover="onMouseOverRow(this);" onmouseout="onMouseOutRow(this);">
+                        <td title="运输型">运输型</td>
+                        <td title="初次申请">初次申请</td>
+                        <td>A</td>
+                        <td>2019-03-26</td>
+                        <td>2019/3/26 10:27:30</td>
+                        <td title="草稿">草稿</td>
+                        <td>
+                            <a onclick="window.open('../Pages/EditMaterial.aspx?id=77b68f6d-62d6-44e3-9dbe-f83ad3302a78');return false;"
+                                id="gvInfo_ctl10_LinkButtonEdit" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl10$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要取消申请吗？');" id="gvInfo_ctl10_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl10$LinkButtonDelete", "", true, "", "", false, true))'>取消</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewAlternatingRowStyle" align="center" onmouseover="onMouseOverRow(this);" onmouseout="onMouseOutRow(this);">
+                        <td title="运输型">运输型</td>
+                        <td title="初次申请">初次申请</td>
+                        <td>A</td>
+                        <td>2019-03-26</td>
+                        <td>2019/3/26 9:54:29</td>
+                        <td title="草稿">草稿</td>
+                        <td>
+                            <a onclick="window.open('../Pages/EditMaterial.aspx?id=d056e101-3785-4a35-9d1c-652303e1376f');return false;"
+                                id="gvInfo_ctl11_LinkButtonEdit" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl11$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要取消申请吗？');" id="gvInfo_ctl11_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl11$LinkButtonDelete", "", true, "", "", false, true))'>取消</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewRowStyle" align="center" onmouseover="onMouseOverRow(this);" onmouseout="onMouseOutRow(this);">
+                        <td title="仓储型">仓储型</td>
+                        <td title="初次申请">初次申请</td>
+                        <td>AAA</td>
+                        <td>2019-03-25</td>
+                        <td>2019/3/25 18:18:08</td>
+                        <td title="草稿">草稿</td>
+                        <td>
+                            <a onclick="window.open('../Pages/EditMaterial.aspx?id=7d5d7327-f048-485c-ae5e-f8ef8ea1ae6e');return false;"
+                                id="gvInfo_ctl12_LinkButtonEdit" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl12$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要取消申请吗？');" id="gvInfo_ctl12_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl12$LinkButtonDelete", "", true, "", "", false, true))'>取消</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewAlternatingRowStyle" align="center" onmouseover="onMouseOverRow(this);" onmouseout="onMouseOutRow(this);">
+                        <td title="运输型">运输型</td>
+                        <td title="初次申请">初次申请</td>
+                        <td>A</td>
+                        <td>2019-03-25</td>
+                        <td>2019/3/25 18:07:54</td>
+                        <td title="草稿">草稿</td>
+                        <td>
+                            <a onclick="window.open('../Pages/EditMaterial.aspx?id=2b0b5497-cbfc-4941-8a30-c1e1923a492e');return false;"
+                                id="gvInfo_ctl13_LinkButtonEdit" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl13$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要取消申请吗？');" id="gvInfo_ctl13_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl13$LinkButtonDelete", "", true, "", "", false, true))'>取消</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewRowStyle" align="center" onmouseover="onMouseOverRow(this);" onmouseout="onMouseOutRow(this);">
+                        <td title="运输型">运输型</td>
+                        <td title="初次申请">初次申请</td>
+                        <td>A</td>
+                        <td>2019-03-25</td>
+                        <td>2019/3/25 16:24:05</td>
+                        <td title="草稿">草稿</td>
+                        <td>
+                            <a onclick="window.open('../Pages/EditMaterial.aspx?id=41dfb103-4b11-485a-a2ec-e80072312b47');return false;"
+                                id="gvInfo_ctl14_LinkButtonEdit" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl14$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要取消申请吗？');" id="gvInfo_ctl14_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl14$LinkButtonDelete", "", true, "", "", false, true))'>取消</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewAlternatingRowStyle" align="center" onmouseover="onMouseOverRow(this);" onmouseout="onMouseOutRow(this);">
+                        <td title="运输型">运输型</td>
+                        <td title="复核申请">复核申请</td>
+                        <td>A</td>
+                        <td>2019-03-06</td>
+                        <td>2019/3/25 16:22:35</td>
+                        <td title="草稿">草稿</td>
+                        <td>
+                            <a onclick="window.open('../Pages/EditMaterial.aspx?id=1e3f231d-0a64-4bce-b686-8593c5983e45');return false;"
+                                id="gvInfo_ctl15_LinkButtonEdit" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl15$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要取消申请吗？');" id="gvInfo_ctl15_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl15$LinkButtonDelete", "", true, "", "", false, true))'>取消</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewRowStyle" align="center" onmouseover="onMouseOverRow(this);" onmouseout="onMouseOutRow(this);">
+                        <td title="运输型">运输型</td>
+                        <td title="复核申请">复核申请</td>
+                        <td>A</td>
+                        <td>2019-03-25</td>
+                        <td>2019/3/25 11:43:28</td>
+                        <td title="草稿">草稿</td>
+                        <td>
+                            <a onclick="window.open('../Pages/EditMaterial.aspx?id=43da5d61-c0fa-4767-9421-8cef2fdd7da2');return false;"
+                                id="gvInfo_ctl16_LinkButtonEdit" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl16$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要取消申请吗？');" id="gvInfo_ctl16_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl16$LinkButtonDelete", "", true, "", "", false, true))'>取消</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="padding-top: 5px;">
+    
+    
+            <table class="pager">
+                <tbody>
+                    <tr>
+                        <td style="text-align: left; padding-left: 10px;">
+                            当前第<span id="PageNavigator1_lbPageIndex">1</span>/<span id="PageNavigator1_lbPageCount">2</span>页，每页<span
+                                id="PageNavigator1_lbPageSize">15</span>条，共<span id="PageNavigator1_lbRecordCount">22</span>条记录
+                        </td>
+                        <td style="font-family: simsun;">
+    
+                        </td>
+                        <td style="text-align: right; padding-right: 10px;">
+                            <input type="button" name="PageNavigator1$btnFirst" value="首页" id="PageNavigator1_btnFirst"
+                                disabled="disabled" class="transparentBtn">
+                            <input type="button" name="PageNavigator1$btnForward" value="上页" id="PageNavigator1_btnForward"
+                                disabled="disabled" class="transparentBtn">
+                            <input type="button" name="PageNavigator1$btnBackward" value="下页" onclick="javascript:__doPostBack('PageNavigator1$btnBackward','')"
+                                id="PageNavigator1_btnBackward" class="transparentBtn">
+                            <input type="button" name="PageNavigator1$btnLast" value="末页" onclick="javascript:__doPostBack('PageNavigator1$btnLast','')"
+                                id="PageNavigator1_btnLast" class="transparentBtn">
+                            <span id="PageNavigator1_RangeValidator1" style="color:Red;visibility:hidden;">*</span>
+                            <input name="PageNavigator1$txtPageNum" type="text" id="PageNavigator1_txtPageNum" style="width: 35px;
+                    background: #fffff; border: 1px solid #95B0CB; cursor: text; font-family: Verdana;
+                    font-size: 10pt; padding: 1px; color: Black;"
+                                onkeypress="numOnly();" maxlength="4">
+                            <input type="button" name="PageNavigator1$btnPageGo" value="跳转" onclick="javascript:__doPostBack('PageNavigator1$btnPageGo','')"
+                                id="PageNavigator1_btnPageGo" class="imgBtn">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    
+        </div>
+        <input id="clientRefreshButton" type="button" style="display: none" onclick="clientClickServerRefreshButton();">
+        <input type="submit" name="serverRefreshButton" value="" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;serverRefreshButton&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))"
+            id="serverRefreshButton" style="display: none">
+    </div>
    </div>
    <script src="../../lib/jquery.min.js"></script>
    <script src="../../dest/script/myApply.js"></script>

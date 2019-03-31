@@ -278,24 +278,42 @@
     </div>
     <script src="../../lib/jquery.min.js"></script>
     <script src="../../lib/jquery.cityselect.js"></script>
-    <script>
-          $(function(){
-              $("#select2").citySelect({
-                  url: "../../lib/city.min.js",
-                  prov: "请选择",
-                  city: "请选择",
-                  required: false
-              });
-              $("#DDLUnitNature").on("click", function () {
-                  var value = $(this).val();
-                  console.log(value)
-                  if (value == "SOE") {
-                      $("#span_Nature").show();
-                  } else {
-                      $("#span_Nature").hide();
-                  }
-              })
-          })
+    <script>        
+            $("#select2").citySelect({
+                url: "../../lib/city.min.js",
+                prov: "请选择",
+                city: "请选择",
+                required: false
+            });
+            $("#DDLUnitNature").on("click", function () {
+                var value = $(this).val();
+                console.log(value)
+                if (value == "SOE") {
+                    $("#span_Nature").show();
+                } else {
+                    $("#span_Nature").hide();
+                }
+            })
+            $.ajax({
+                url: "http://declare.dagaimao.cn/web/index.php?r=users/my-data",
+                type: "get",
+                xhrFields:{
+                    withCredentials: true//设置显式指定浏览器发送Cookie，跨域时默认不使用
+                },
+                // crossDomain: true,
+                dataType: 'json',
+                success: function (res) {
+                    console.log(res)
+                },
+                error: function (err) {
+                    console.log("error!!!!");
+                }
+            })
+            $(function(){
+                
+            })
+
+
     </script>
 </body>
 </html>

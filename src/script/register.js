@@ -127,15 +127,16 @@ $(function () {
             alert(obj.code + obj.pass + obj.qass + obj.enterprise + obj.path + obj.Website + obj.email + obj.Telephone + obj.Contacts + obj.post + obj.Contactnumber + obj.Mobile + obj.fax + obj.zipCode + obj.Unitpropery + obj.Unitintroduction + obj.Unitintroduction2);
         }else{
             console.log(data)
-
             $.ajax({
-                url: "http://declare.dagaimao.cn/web/index.php?r=users/deal-register&account=123&password1=1&password2=1&companyName=2&companyAdress=2&website=2&email=2&representative=2&telephone=2&linkMan=2&duty=2&linkPhone1=2&linkPhone2=22&phone=2&fax=2&fax2=2&postcode=2&Member=2&company_type=2&presentation=2",
-                type: 'get',
-                // data: data,
-                crossDomain: true,
-                processData: false,
+                url: "http://declare.dagaimao.cn/web/index.php?r=users/deal-register",
+                type: 'post',
+                data: data,
+                dataType:"json",
                 success: function (res) {
-                    console.log(JSON.parse(res))
+                    if(res.status == "注册成功"){
+                        $("#DivRegister").hide();
+                        $("#DivSuccess").show();
+                    }
                 },
                 error: function () {
                     console.log("error!!!!");
@@ -144,7 +145,6 @@ $(function () {
            
         }
     });
-
     $("#DDLUnitNature").on("click",function(){
         var value = $(this).val();
         console.log(value)

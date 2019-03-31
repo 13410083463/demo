@@ -27,3 +27,47 @@ div, form, img, ul, ol, li, dl, dt, dd, p {
     font-size:12px;
     text-decoration: none;
 }
+.GridViewStyle {
+    table-layout: fixed;
+    border-right: 1px solid #D2DDF0;
+    border-bottom: 1px solid #D2DDF0;
+    border-left: 1px solid #D2DDF0;
+    border-top: 1px solid #D2DDF0;
+    font-family: verdana;
+    width: 100%;
+    border-collapse: collapse;
+}
+body{
+    font-size:12px;
+}
+.GridViewHeaderStyle {
+    border-right: medium none;
+    border-top: medium none;
+    border-left: medium none;
+    border-bottom: medium none;
+    background-color: #d8e1f9;
+    height: 20px;
+    font-size: 12px;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50, style=1, finishOpacity=100, startx=0, starty=0, finishx=0, finishy=1024);
+}
+.GridViewHeaderStyle a:link {
+    text-decoration: none;
+    color: #000;
+}
+
+.GridViewStyle a:visited {
+    text-decoration: none;
+    color: #5D7B9D;
+}
+.GridViewStyle a:link {
+    text-decoration: none;
+    color: #5D7B9D;
+}
+a:visited {
+    color: #0a4173;
+    text-decoration: none;
+}
+a:link {
+    color: #0a4173;
+    text-decoration: none;
+}

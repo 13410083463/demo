@@ -1,6 +1,5 @@
 
 $(function(){
-  
     $("form").submit(function(){
         var user = $("#UserName").val();
         var pass = $("#Password").val();
@@ -27,8 +26,14 @@ $(function(){
                 url: "http://declare.dagaimao.cn/web/index.php?r=users/login-check-port",
                 type:"post",
                 data:data,
+                async: true,
+                xhrFields:{
+                    withCredentials: true//设置显式指定浏览器发送Cookie，跨域时默认不使用
+                },
+                crossDomain: true,
                 dataType: "json",
                 success: function (res) {
+                    console.log(res)
                     var data = JSON.stringify(res);
                     setCookie("admin", data, "d30")
                     if (res.status == "账户不存在"){

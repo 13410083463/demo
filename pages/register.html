@@ -205,21 +205,38 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2" class="middle">
+                            <td colspan="2" class="middle" style="position:relative;">
                                 <div id="ValidationSummary1" style="color:Red;display:none;">
         
                                 </div>
                                 <input type="submit" name="ButtonRegister" value=""  
-                                    id="ButtonRegister" class="but_01"><a href="../login.html" target="_self" class="link_back">返回</a>
+                                    id="ButtonRegister" class="but_01"><a style="position:absolute;" href="../login.html" target="_self" class="link_back">返回</a>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         
-            <div class="clear">
+            <div class="clear"></div>
+            <div id="DivSuccess" class="login" style="display:none">
+                <table class="formTable">
+                    <tbody>
+                        <tr>
+                            <td class="message">
+                                您的注册申请已提交，请等待管理员审核。<br>
+                                一个工作日后如仍不能登录，请主动与中物联评估办(010-83775628/5631/5632)联系。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 50px 20px 0 0;">
+                                &nbsp;
+                                <a href="../login.html">关闭</a>&nbsp;
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <h2>技术支持：中国物流与采购联合会网络部&nbsp;&nbsp;&nbsp;&nbsp;联系电话：83775701</h2>
+            <h2>技术支持：深圳市物流与供应链管理协会&nbsp;联系电话：0755-83581255</h2>
         </div>
     </div>
     <script src="../lib/jquery.min.js"></script>

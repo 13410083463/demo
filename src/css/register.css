@@ -83,10 +83,29 @@ a.link_back {
     text-align: center;
     padding-top: 55px;
     padding-bottom: 40px;
+    font-size:12px;
 }
     b{
     color:red;
 }
 .prov,.city{
     width:100px;
+}
+#box2 div.login {
+    margin-left: 70px;
+    background: url(../img/back.gif) no-repeat;
+    width: 440px;
+    height: 248px;
+    padding-top: 30px;
+}
+#DivSuccess .formTable{
+    width:100%;
+    text-align: center;
+}
+#box2 div.login .message {
+    text-align: left;
+    padding: 25px 0 0 5px;
+    font-size: 18px;
+    line-height: 30px;
+    font-family: "微软雅黑";
 }
