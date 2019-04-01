@@ -36,6 +36,32 @@ function delCookie(name) {
     var cval = getCookie(name);
     if (cval != null)
     document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+} 
+var obj = {
+    url:"http://declare.dagaimao.cn/web/index.php"
 }
 
 //请求数据
+function operaterData(url,method,data,onSucess,onFail){
+    $.ajax({
+        url:obj.url + url,
+        type: method,
+        data:data,
+        xhrFields:{
+            withCredentials: true//设置显式指定浏览器发送Cookie，跨域时默认不使用
+        },
+        crossDomain: true,
+        dataType: "json",
+        success: function (res) {
+            console.log(res);
+            if (res.status == 1) {
+                onSucess(res);
+            } else {
+                onFail(res);
+            }
+        },
+        error: function () {
+            console.log("error!!!!");
+        }
+    })
+}

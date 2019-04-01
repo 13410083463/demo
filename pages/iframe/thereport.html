@@ -5,8 +5,244 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>年度财务报表</title>
+    <style>
+        body{
+            font-size:12px;
+        }
+        h1 {
+            font-size: 14px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+            font-weight: normal;
+        }
+        div, form, img, ul, ol, li, dl, dt, dd, p {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        #thereport .title{
+            border-bottom:2px solid red;
+        }
+        #thereport .title h1{
+            font-size:15px;
+        }
+        .open_btn{
+            text-align:right;
+        }
+        #sendApply{
+            border: 0;
+            background: #3293fb;
+            color: #fff;
+            font-size: 12px;
+            padding: 2px 5px;
+        }
+        .GridViewStyle {
+            table-layout: fixed;
+            border-right: 1px solid #D2DDF0;
+            border-bottom: 1px solid #D2DDF0;
+            border-left: 1px solid #D2DDF0;
+            border-top: 1px solid #D2DDF0;
+            font-family: verdana;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .GridViewHeaderStyle {
+            border-right: medium none;
+            border-top: medium none;
+            border-left: medium none;
+            border-bottom: medium none;
+            background-color: #d8e1f9;
+            height: 20px;
+            font-size: 12px;
+        }
+        .GridViewHeaderStyle th {
+            border-right: medium none;
+            border-top: medium none;
+            border-left: medium none;
+            border-bottom: medium none;
+            background-color: #d8e1f9;
+            height: 20px;
+            font-size: 12px;
+            vertical-align: middle;
+            color: #000;
+        }
+        .GridViewHeaderStyle a:visited {
+    text-decoration: none;
+    color: #000;
+}
+.GridViewHeaderStyle a:link {
+    text-decoration: none;
+    color: #000;
+}
+.GridViewStyle a:visited {
+    text-decoration: none;
+    color: #5D7B9D;
+}
+.GridViewStyle a:link {
+    text-decoration: none;
+    color: #5D7B9D;
+}
+a:visited {
+    color: #0a4173;
+    text-decoration: none;
+}
+a:link {
+    color: #0a4173;
+    text-decoration: none;
+}
+a:link, a:visited {
+    color: #2C3B79;
+    text-decoration: none;
+}
+.pager {
+    border: solid 1px #D2DDF0;
+    width: 100%;
+}
+.pager td {
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+}
+    </style>
 </head>
 <body>
-    年度财务报表
+    <div id="thereport">
+        <div class="title">
+            <h1>年度财务报表</h1>
+        </div>
+        <div class="open_btn" style="margin-top:10px;cursor: pointer;">
+            <button id="sendApply">填报财务报表</button>
+        </div>
+        <div style="margin-top:10px;">
+            <table class="GridViewStyle" cellspacing="0" rules="all" border="1" id="gvInfo" style="border-collapse:collapse;">
+                <tbody>
+                    <tr class="GridViewHeaderStyle" align="center">
+                        <th scope="col"><a href="javascript:__doPostBack('gvInfo','Sort$Year')">申报年份</a></th>
+                        <th scope="col"><a href="javascript:__doPostBack('gvInfo','Sort$Property')">企业性质</a></th>
+                        <th scope="col"><a href="javascript:__doPostBack('gvInfo','Sort$InfoType')">报表类别</a></th>
+                        <th scope="col" style="width:85px;"><a href="javascript:__doPostBack('gvInfo','Sort$ApplyDate')">最后修改日期</a></th>
+                        <th scope="col" style="width:70px;">操作</th>
+                    </tr>
+                    <tr class="GridViewRowStyle" align="center">
+                        <td>2019</td>
+                        <td title="非上市公司财务报表">非上市公司财务报表</td>
+                        <td title="资产负债表">资产负债表</td>
+                        <td>2019-03-26</td>
+                        <td>
+                            <a onclick="window.open('../Pages/Report/ReportForm0.aspx?aid=11264');return false;" id="gvInfo_ctl02_LinkButtonEdit"
+                                href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl02$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要删除吗？');" id="gvInfo_ctl02_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl02$LinkButtonDelete", "", true, "", "", false, true))'>删除</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewAlternatingRowStyle" align="center">
+                        <td>2018</td>
+                        <td title="上市财务报表">上市财务报表</td>
+                        <td title="利润表">利润表</td>
+                        <td>2018-09-21</td>
+                        <td>
+                            <a onclick="window.open('../Pages/Report/SReportForm2.aspx?aid=10861');return false;" id="gvInfo_ctl03_LinkButtonEdit"
+                                href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl03$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要删除吗？');" id="gvInfo_ctl03_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl03$LinkButtonDelete", "", true, "", "", false, true))'>删除</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewRowStyle" align="center">
+                        <td>2018</td>
+                        <td title="非上市公司财务报表">非上市公司财务报表</td>
+                        <td title="利润表">利润表</td>
+                        <td>2018-09-21</td>
+                        <td>
+                            <a onclick="window.open('../Pages/Report/ReportForm2.aspx?aid=10860');return false;" id="gvInfo_ctl04_LinkButtonEdit"
+                                href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl04$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要删除吗？');" id="gvInfo_ctl04_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl04$LinkButtonDelete", "", true, "", "", false, true))'>删除</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewAlternatingRowStyle" align="center">
+                        <td>2018</td>
+                        <td title="上市财务报表">上市财务报表</td>
+                        <td title="资产负债表">资产负债表</td>
+                        <td>2018-09-20</td>
+                        <td>
+                            <a onclick="window.open('../Pages/Report/SReportForm0.aspx?aid=10859');return false;" id="gvInfo_ctl05_LinkButtonEdit"
+                                href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl05$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要删除吗？');" id="gvInfo_ctl05_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl05$LinkButtonDelete", "", true, "", "", false, true))'>删除</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewRowStyle" align="center">
+                        <td>2018</td>
+                        <td title="非上市公司财务报表">非上市公司财务报表</td>
+                        <td title="现金流量表">现金流量表</td>
+                        <td>2018-09-20</td>
+                        <td>
+                            <a onclick="window.open('../Pages/Report/ReportForm1.aspx?aid=10858');return false;" id="gvInfo_ctl06_LinkButtonEdit"
+                                href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl06$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要删除吗？');" id="gvInfo_ctl06_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl06$LinkButtonDelete", "", true, "", "", false, true))'>删除</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewAlternatingRowStyle" align="center">
+                        <td>2018</td>
+                        <td title="上市财务报表">上市财务报表</td>
+                        <td title="现金流量表">现金流量表</td>
+                        <td>2018-09-20</td>
+                        <td>
+                            <a onclick="window.open('../Pages/Report/SReportForm1.aspx?aid=10857');return false;" id="gvInfo_ctl07_LinkButtonEdit"
+                                href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl07$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要删除吗？');" id="gvInfo_ctl07_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl07$LinkButtonDelete", "", true, "", "", false, true))'>删除</a>
+                        </td>
+                    </tr>
+                    <tr class="GridViewRowStyle" align="center">
+                        <td>2018</td>
+                        <td title="非上市公司财务报表">非上市公司财务报表</td>
+                        <td title="资产负债表">资产负债表</td>
+                        <td>2018-06-08</td>
+                        <td>
+                            <a onclick="window.open('../Pages/Report/ReportForm0.aspx?aid=10544');return false;" id="gvInfo_ctl08_LinkButtonEdit"
+                                href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl08$LinkButtonEdit", "", true, "", "", false, true))'>编辑</a>
+                            <a onclick="return confirm('确定要删除吗？');" id="gvInfo_ctl08_LinkButtonDelete" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("gvInfo$ctl08$LinkButtonDelete", "", true, "", "", false, true))'>删除</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="padding-top: 5px;">
+        
+        
+            <table class="pager">
+                <tbody>
+                    <tr>
+                        <td style="text-align: left; padding-left: 10px;">
+                            当前第<span id="PageNavigator1_lbPageIndex">1</span>/<span id="PageNavigator1_lbPageCount">2</span>页，每页<span
+                                id="PageNavigator1_lbPageSize">15</span>条，共<span id="PageNavigator1_lbRecordCount">24</span>条记录
+                        </td>
+                        <td style="font-family: simsun;">
+        
+                        </td>
+                        <td style="text-align: right; padding-right: 10px;">
+                            <input type="button" name="PageNavigator1$btnFirst" value="首页" id="PageNavigator1_btnFirst"
+                                disabled="disabled" class="transparentBtn">
+                            <input type="button" name="PageNavigator1$btnForward" value="上页" id="PageNavigator1_btnForward"
+                                disabled="disabled" class="transparentBtn">
+                            <input type="button" name="PageNavigator1$btnBackward" value="下页" onclick="javascript:__doPostBack('PageNavigator1$btnBackward','')"
+                                id="PageNavigator1_btnBackward" class="transparentBtn">
+                            <input type="button" name="PageNavigator1$btnLast" value="末页" onclick="javascript:__doPostBack('PageNavigator1$btnLast','')"
+                                id="PageNavigator1_btnLast" class="transparentBtn">
+                            <span id="PageNavigator1_RangeValidator1" style="color:Red;visibility:hidden;">*</span>
+                            <input name="PageNavigator1$txtPageNum" type="text" id="PageNavigator1_txtPageNum" style="width: 35px;
+                        background: #fffff; border: 1px solid #95B0CB; cursor: text; font-family: Verdana;
+                        font-size: 10pt; padding: 1px; color: Black;"
+                                onkeypress="numOnly();" maxlength="4">
+                            <input type="button" name="PageNavigator1$btnPageGo" value="跳转" onclick="javascript:__doPostBack('PageNavigator1$btnPageGo','')"
+                                id="PageNavigator1_btnPageGo" class="imgBtn">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        
+        </div>
+    </div>
+    
 </body>
 </html>

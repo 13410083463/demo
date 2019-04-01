@@ -14,8 +14,10 @@ div, form, img, ul, ol, li, dl, dt, dd, p {
     border: 0;
 }
 #stay .title{
-    height:30px;
-    border-bottom:1px solid;
+    border-bottom:2px solid red;
+}
+#stay .title h1{
+    font-size:15px;
 }
 .open_btn{
     text-align:right;
@@ -27,34 +29,56 @@ div, form, img, ul, ol, li, dl, dt, dd, p {
     font-size:12px;
     text-decoration: none;
 }
-.GridViewStyle {
-    table-layout: fixed;
-    border-right: 1px solid #D2DDF0;
-    border-bottom: 1px solid #D2DDF0;
-    border-left: 1px solid #D2DDF0;
-    border-top: 1px solid #D2DDF0;
-    font-family: verdana;
-    width: 100%;
-    border-collapse: collapse;
-}
 body{
     font-size:12px;
 }
-.GridViewHeaderStyle {
-    border-right: medium none;
-    border-top: medium none;
-    border-left: medium none;
-    border-bottom: medium none;
-    background-color: #d8e1f9;
-    height: 20px;
+
+#sendApply{
+    border: 0;
+    background: #3293fb;
+    color: #fff;
     font-size: 12px;
-    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50, style=1, finishOpacity=100, startx=0, starty=0, finishx=0, finishy=1024);
+    padding: 2px 5px;
+}
+
+   .GridViewStyle {
+            table-layout: fixed;
+            border-right: 1px solid #D2DDF0;
+            border-bottom: 1px solid #D2DDF0;
+            border-left: 1px solid #D2DDF0;
+            border-top: 1px solid #D2DDF0;
+            font-family: verdana;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .GridViewHeaderStyle {
+            border-right: medium none;
+            border-top: medium none;
+            border-left: medium none;
+            border-bottom: medium none;
+            background-color: #d8e1f9;
+            height: 20px;
+            font-size: 12px;
+        }
+        .GridViewHeaderStyle th {
+            border-right: medium none;
+            border-top: medium none;
+            border-left: medium none;
+            border-bottom: medium none;
+            background-color: #d8e1f9;
+            height: 20px;
+            font-size: 12px;
+            vertical-align: middle;
+            color: #000;
+        }
+        .GridViewHeaderStyle a:visited {
+    text-decoration: none;
+    color: #000;
 }
 .GridViewHeaderStyle a:link {
     text-decoration: none;
     color: #000;
 }
-
 .GridViewStyle a:visited {
     text-decoration: none;
     color: #5D7B9D;
@@ -70,4 +94,18 @@ a:visited {
 a:link {
     color: #0a4173;
     text-decoration: none;
+}
+a:link, a:visited {
+    color: #2C3B79;
+    text-decoration: none;
+}
+.pager {
+    border: solid 1px #D2DDF0;
+    width: 100%;
+}
+.pager td {
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
 }

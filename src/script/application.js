@@ -15,6 +15,28 @@ $(function () {
             $("#DDLCorpType").attr("disabled", "disabled")
             $("#DDLRank").attr("disabled", "disabled")
             $("#DivButtonNew").hide();
+            var a =$("#DDLRank option:selected").text();
+            var b = $("#DDLCorpType option:selected").val();
+            var data = {
+                rank: a,
+                type: b
+            }
+            $.ajax({
+                url:"http://declare.dagaimao.cn/web/index.php?r=apply/submit-application",
+                type:"post",
+                data:data,
+                xhrFields: {
+                    withCredentials: true//设置显式指定浏览器发送Cookie，跨域时默认不使用
+                },
+                crossDomain: true,
+                dataType: "json",
+                success:function(res){
+                    console.log(res);
+                },
+                error:function(res){
+
+                }
+            })
         }
     })
     $("#LinkButtonFill").on("click", function () {
@@ -58,7 +80,37 @@ $(function () {
     $("#RepeaterServiceRange_ctl03_CheckBoxList input").on("click", function () {
         $("#RepeaterServiceRange_ctl03_CheckBoxClass").prop("checked", true)
     })
-})
+    var userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    console.log(userInfo)
+    $("#LabelUnitName").html(userInfo.companyName)
+    $("#LabelWebSite").html(userInfo.website)
+    $("#LabelChargePerson").html(userInfo.representative)
+    $("#LabelCP_Tel").html(userInfo.telephone)
+    $("#LabelContactName").html(userInfo.linkMan)
+    $("#LabelContactPosition").html(userInfo.duty)
+    $("#LabelContactTel").html(userInfo.linkPhone1 + "  " + userInfo.linkPhone2)
+    $("#LabelContactMobil").html(userInfo.phone);
+    $("#LabelContactFax").html(userInfo.fax1 + "  " + userInfo.fax2);
+    $("#LabelContactEmail").html(userInfo.email)
+    $("#LabelUnitSeat").html(userInfo.address)
+    if (userInfo.companyType == "0") {
+        $("#LabelUnitNature").html("国有");
+    } else if (userInfo.companyType == "1") {
+        $("#LabelUnitNature").html("民营");
+    } else if (userInfo.companyType == "2") {
+        $("#LabelUnitNature").html("外商投资");
+    } else if (userInfo.companyType == "3") {
+        $("#LabelUnitNature").html("其他");
+    }
+    $("#LabelUnitNature").html()
+
+
+    $("#saveJudger").click(function(){
+        var val = $("#RadioButtonListLocal tbody tr td input[type='radio']:checked").next().html();
+        $("#LabelJudger").html(val)
+        $("#chooseJudgerModal").modal("hide")
+    })
+})  
 
 function MoneyOnly(e) {
     //判断输入是否为数字类型

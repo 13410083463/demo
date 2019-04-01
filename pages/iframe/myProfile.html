@@ -221,9 +221,9 @@
                                     <td class="tdh">
                                         是否是联合会会员：
                                     </td>
-                                    <td>
-                                        <input id="RadioIsMember" type="radio" name="Member" value="RadioIsMember"><label for="RadioIsMember">是</label>
-                                        <input id="RadioNotMember" type="radio" name="Member" value="RadioNotMember" checked="checked"><label
+                                    <td id="radio">
+                                        <input id="RadioIsMember" type="radio" name="Member" value="1"><label for="RadioIsMember">是</label>
+                                        <input id="RadioNotMember" type="radio" name="Member" value="0"><label
                                             for="RadioNotMember">不是</label>
                                     </td>
                                 </tr>
@@ -232,14 +232,12 @@
                                         <span style="color: red;">*</span>企业性质：
                                     </td>
                                     <td>
-                                        <select name="DDLUnitNature" id="DDLUnitNature">
-                                            <option value="">请选择</option>
-                                            <option value="SOE">国有企业</option>
-                                            <option selected="selected" value="Private">民营企业</option>
-                                            <option value="JointVenture">外商投资企业</option>
-                                            <option value="Other">其它</option>
-            
-                                        </select>
+                                    <select name="DDLUnitNature" id="DDLUnitNature">
+                                        <option selected="selected" value="0">国有企业</option>
+                                        <option value="1">民营企业</option>
+                                        <option value="2">外商投资企业</option>
+                                        <option value="3">其它</option>
+                                    </select>
                                         <span id="RequiredFieldUnitNature" style="color:Red;display:none;"></span>
                                         <div id="span_Nature" style="display: none;">
                                             <input id="RadioIsCEnterprises" type="radio" name="CEnterprises" value="RadioIsCEnterprises"><label
@@ -263,7 +261,7 @@
                                         <div id="ValidationSummary1" style="color:Red;display:none;">
             
                                         </div>
-                                        <input type="submit" name="ButtonSave" value="保 存"
+                                        <input type="button" name="ButtonSave" value="保 存"
                                             id="ButtonSave" class="button">
                                         &nbsp;&nbsp;
                                         <input type="button" value="打 印" class="button" onclick="window.print();">
@@ -278,41 +276,111 @@
     </div>
     <script src="../../lib/jquery.min.js"></script>
     <script src="../../lib/jquery.cityselect.js"></script>
-    <script>        
-            $("#select2").citySelect({
-                url: "../../lib/city.min.js",
-                prov: "请选择",
-                city: "请选择",
-                required: false
-            });
-            $("#DDLUnitNature").on("click", function () {
-                var value = $(this).val();
-                console.log(value)
-                if (value == "SOE") {
-                    $("#span_Nature").show();
-                } else {
-                    $("#span_Nature").hide();
-                }
-            })
-            $.ajax({
-                url: "http://declare.dagaimao.cn/web/index.php?r=users/my-data",
-                type: "get",
-                xhrFields:{
+    <script src="../../pubilc.js"></script>
+    <script>
+        $("#select2").citySelect({
+            url: "../../lib/city.min.js",
+            prov: "请选择",
+            city: "请选择",
+            required: false
+        });
+        $("#DDLUnitNature").on("click", function () {
+            var value = $(this).val();
+            if (value == "SOE") {
+                $("#span_Nature").show();
+            } else {
+                $("#span_Nature").hide();
+            }
+        })
+        
+        $("#ButtonSave").on("click",function(){
+            var companyName = $("#TextBoxUnitName").val(), address = $("#TextBoxUnitSeat").val(), website = $("#TextBoxWebSite").val(),
+                email = $("#TextBoxContactEmail").val(), representative = $("#TextBoxChargePerson").val(), telephone = $("#TextBoxCP_Tel").val(),
+                 linkMan = $("#TextBoxContactName").val(), duty =  $("#TextBoxContactPosition").val(), linkPhone1 =  $("#TextBoxContactTelAC").val(),
+                 linkPhone2 = $("#TextBoxContactTel").val(), phone = $("#TextBoxContactMobil").val(), fax1 = $("#TextBoxContactFaxAC").val(),
+                  fax2 = $("#TextBoxContactFax").val(), postcode = $("#TextBoxPostCode").val(), isVip = $("#radio input[type='radio']:checked").val(),
+                   companyType = $("#DDLUnitNature option:selected").val(), presentation = $("#TextBoxIntroduction").val();
+            var data = {
+                companyName: companyName,
+                address: address,
+                website: website,
+                email: email,
+                representative: representative,
+                telephone: telephone,
+                linkMan: linkMan,
+                duty: duty,
+                linkPhone1: linkPhone1,
+                linkPhone2: linkPhone2,
+                phone: phone,
+                fax: fax1,
+                fax2: fax2,
+                postcode: postcode,
+                isVip: isVip,
+                companyType: companyType,
+                presentation: presentation,
+
+            }
+            console.log(data)
+             $.ajax({
+                url:"http://declare.dagaimao.cn/web/index.php?r=users/save-data",
+                type: "post",
+                data:data,
+                xhrFields: {
                     withCredentials: true//设置显式指定浏览器发送Cookie，跨域时默认不使用
                 },
-                // crossDomain: true,
-                dataType: 'json',
+                crossDomain: true,
+                dataType: "json",
                 success: function (res) {
-                    console.log(res)
+                    console.log(res);
                 },
-                error: function (err) {
+                error: function () {
                     console.log("error!!!!");
                 }
             })
-            $(function(){
-                
-            })
+          
 
+        })
+
+        function saveSuccess(res){
+            console.log(res)
+        }
+        function saveFail(res){
+            console.log(res)
+        }
+        function onSuccess(res) {
+            $("#TextBoxUnitName").val(res.data.companyName);
+            $("#TextBoxUnitSeat").val(res.data.address);
+            $("#TextBoxWebSite").val(res.data.website);
+            $("#TextBoxContactEmail").val(res.data.email);
+            $("#TextBoxChargePerson").val(res.data.representative);
+            $("#TextBoxCP_Tel").val(res.data.telephone);
+            $("#TextBoxContactName").val(res.data.linkMan);
+            $("#TextBoxContactPosition").val(res.data.duty);
+            $("#TextBoxContactTelAC").val(res.data.linkPhone1);
+            $("#TextBoxContactTel").val(res.data.linkPhone2);
+            $("#TextBoxContactMobil").val(res.data.phone);
+            $("#TextBoxContactFaxAC").val(res.data.fax1);
+            $("#TextBoxContactFax").val(res.data.fax2);
+            $("#TextBoxPostCode").val(res.data.postcode);
+            $("input[value='"+res.data.isVip+"']").prop("checked",true);
+            if(res.data.companyType == "0"){
+                $("#DDLUnitNature option:selected").text("国有企业");
+            }else if(res.data.companyType == "1"){
+                 $("#DDLUnitNature option:selected").text("民营企业");
+            }else if(res.data.companyType == "2"){
+                 $("#DDLUnitNature option:selected").text("外商投资企业");
+            } else if (res.data.companyType == "3") {
+                 $("#DDLUnitNature option:selected").text("其他");
+            }
+           
+            $("#TextBoxIntroduction").val(res.data.presentation);
+        }
+        function onFail(res) {
+            console.log("失败！")
+        }
+        $(function(){
+            operaterData("?r=users/my-data","GET",'', onSuccess, onFail)
+        })
 
     </script>
 </body>

@@ -1,4 +1,19 @@
 
+function onSuccess(res){
+    var data = JSON.stringify(res);
+    setCookie("admin", data, "d30")
+    setTimeout(function () {
+        window.location.href = "../../index.html";
+    }, 1000)
+}
+function onFail(res){
+    if(res.status == 4 || res.status == 5){
+        $("#ValidationSummary1 li").eq(0).hide();
+        $("#ValidationSummary1 li").eq(1).hide();
+        $("#ValidationSummary1 li").eq(2).show();
+    }
+}
+
 $(function(){
     $("form").submit(function(){
         var user = $("#UserName").val();
@@ -18,40 +33,13 @@ $(function(){
             $("#ValidationSummary1 li").eq(2).hide();
         }
         if(user !="" && pass !=""){
+            
             var data = {
                 "UserName": user,
                 "Password": pass
             }
-            $.ajax({
-                url: "http://declare.dagaimao.cn/web/index.php?r=users/login-check-port",
-                type:"post",
-                data:data,
-                async: true,
-                xhrFields:{
-                    withCredentials: true//设置显式指定浏览器发送Cookie，跨域时默认不使用
-                },
-                crossDomain: true,
-                dataType: "json",
-                success: function (res) {
-                    console.log(res)
-                    var data = JSON.stringify(res);
-                    setCookie("admin", data, "d30")
-                    if (res.status == "账户不存在"){
-                        $("#ValidationSummary1 li").eq(0).hide();
-                        $("#ValidationSummary1 li").eq(1).hide();
-                        $("#ValidationSummary1 li").eq(2).show();
-                        console.log(res.status)
-                    } else if (res.status == 1){
-                        setTimeout(function () {
-                            window.location.href = "../../index.html";
-                        }, 1000)
-                    }
-                },
-                error: function () {
-                    console.log("error!!!!");
-                }
-            })
-           
+            operaterData("?r=users/login-check-port","POST",data,onSuccess,onFail)
+      
         }
         return false;
     })

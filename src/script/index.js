@@ -4,7 +4,6 @@
     }
 
     var data = JSON.parse(getCookie("admin"));
-    console.log(data)
     if (data.auth == 0){
         $("#right iframe").attr("src", "../../pages/iframe/myApply.html")
     } else if (data.auth == 1){

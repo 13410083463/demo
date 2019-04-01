@@ -18,7 +18,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h6>选择审核机构</h6>
-                    <i class="iconfont icon-guanbi"></i>
+                    <i class="iconfont icon-guanbi" data-dismiss="modal"></i>
                 </div>
                 <div class="modal-body" id="chooseJudgerBody">
                     <form name="form1" method="post" action="./ChooseJudgerModel.aspx?id=" id="form1">
@@ -27,11 +27,11 @@
                                 <tbody>
                                     <tr style="border:1px solid #95B0CB;">
                                         <td>
-                                            <table id="RadioButtonListCentre" class="clearformdata" 
+                                            <table id="RadioButtonListLocal" class="clearformdata" 
                                                 border="0">
                                                 <tbody>
                                                     <tr>
-                                                        <td><input id="RadioButtonListCentre_0" type="radio" name="RadioButtonListCentre"
+                                                        <td><input id="RadioButtonListCentre_0" type="radio" name="RadioButtonListLocal"
                                                                 value="1"><label for="RadioButtonListCentre_0">中物联评估办</label></td>
                                                     </tr>
                                                 </tbody>
@@ -796,9 +796,9 @@
                         </th>
                         <td>
                             <select name="DDLCorpType" id="DDLCorpType">
-                                <option selected="selected" value="Transport">供应链企业A级评估</option>
-                                <option value="Storage">供应链服务质量评级</option>
-                                <option value="Service">绿色供应链企业评级</option>
+                                <option selected="selected" value="0">供应链企业A级评估</option>
+                                <option value="1">供应链服务质量评级</option>
+                                <option value="2">绿色供应链企业评级</option>
         
                             </select>
                         </td>
@@ -1288,6 +1288,6 @@
     <script src="../lib/datepicker/js/bootstrap.min.js"></script>
     <script src="../lib/datepicker/js/bootstrap-datepicker.min.js"></script>
     <script src="../lib/datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
-    <script src="../dest/script/application.js"></script>
+    <script src="../src/script/application.js"></script>
 </body>
 </html>

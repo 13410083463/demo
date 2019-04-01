@@ -126,14 +126,18 @@ $(function () {
         if (TextBoxRegisteredID == "" || TextBoxPassword1 == "" || TextBoxPassword2 == "" || TextBoxUnitName == "" || TextBoxUnitSeat == "" || TextBoxWebSite == "" || TextBoxContactEmail == "" || TextBoxChargePerson == "" || TextBoxCP_Tel == "" || TextBoxContactName == "" || TextBoxContactPosition == "" || TextBoxContactTelAC == "" || TextBoxContactMobil == "" || TextBoxContactFaxAC == "" || TextBoxPostCode == "" || DDLUnitNature == "" || TextBoxIntroduction == "" || TextBoxContactTel == "" || TextBoxContactFax == "" ){
             alert(obj.code + obj.pass + obj.qass + obj.enterprise + obj.path + obj.Website + obj.email + obj.Telephone + obj.Contacts + obj.post + obj.Contactnumber + obj.Mobile + obj.fax + obj.zipCode + obj.Unitpropery + obj.Unitintroduction + obj.Unitintroduction2);
         }else{
-            console.log(data)
             $.ajax({
                 url: "http://declare.dagaimao.cn/web/index.php?r=users/deal-register",
                 type: 'post',
                 data: data,
+                xhrFields: {
+                    withCredentials: true//设置显式指定浏览器发送Cookie，跨域时默认不使用
+                },
+                crossDomain: true,
                 dataType:"json",
                 success: function (res) {
-                    if(res.status == "注册成功"){
+                    console.log(res)
+                    if(res.status == 1){
                         $("#DivRegister").hide();
                         $("#DivSuccess").show();
                     }
@@ -147,7 +151,6 @@ $(function () {
     });
     $("#DDLUnitNature").on("click",function(){
         var value = $(this).val();
-        console.log(value)
         if(value == "SOE"){
             $("#span_Nature").show();
         }else{
