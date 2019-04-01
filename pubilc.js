@@ -29,7 +29,6 @@ function getCookie(name) {
     else
         return null;
 }
-
 //删除cookies 
 function delCookie(name) {
     var exp = new Date();
@@ -37,4 +36,6 @@ function delCookie(name) {
     var cval = getCookie(name);
     if (cval != null)
     document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
-} 
+}
+
+//请求数据
