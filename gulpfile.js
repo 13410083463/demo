@@ -23,7 +23,7 @@ gulp.task('default',["script","style","image"], function () {
     browserSycn.init({
         server: {
             base:"/",
-            index: "login.html"
+            index: "index.html"
         },
         open: true
     });

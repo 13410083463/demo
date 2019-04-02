@@ -60,7 +60,7 @@ body{
             height: 20px;
             font-size: 12px;
         }
-        .GridViewHeaderStyle th {
+        /* .GridViewHeaderStyle th {
             border-right: medium none;
             border-top: medium none;
             border-left: medium none;
@@ -108,4 +108,4 @@ a:link, a:visited {
     border-bottom: 0;
     border-left: 0;
     border-right: 0;
-}
+} */

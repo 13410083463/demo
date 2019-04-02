@@ -13,14 +13,15 @@
     }
     
     $("#LabelDisplayName").html(data.name)
-    function time(){
-        var date = new Date();
+    function time(data){
+        var date = new Date(data * 1000);
         var year = date.getFullYear();
         var mont = date.getMonth() < 9 ? "0"+date.getMonth():date.getMonth();
         var day  = date.getDate();
         var time = year+"-"+mont+"-"+day;
         return time;
     }
+console.log(time(1554113818))
     $("#time").html(time);
     $("#MenuAll li").on("click",function(){
         var index = $(this).index();
