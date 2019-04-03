@@ -1355,12 +1355,20 @@
            }
             #nei{
                 width:0px;
-                height:30px;
+                height:100%;
                 background:#d6d5d5;
+                display: none;
+                text-align: right;
+                line-height:30px;
+                
+            }
+            #nei span{
+                font-size:13px;
+                font-weight:700;
             }
     </style>
     <div id="upfile">
-        <form action=""  enctype="multipart/form-data" method="post">
+        <form action  enctype="multipart/form-data" onsubmit="return false">
             <div class="title2">
                 <h1>文件上传</h1>
             </div>
@@ -1369,11 +1377,13 @@
             </div>
             <div class="file">
                 <div id="bar-warp">
-                    <!-- <div id="nei"></div> -->
-                    <input type="text" id="text" value="fdsfdsf" disabled>
-                    <input type="file" id="upfiles">
+                    <div id="nei">
+                        <span id="sp"></span>
+                    </div>
+                    <input type="text" id="text" value="" disabled>
+                    <input type="file" id="upfiles" onchange="Up()">
                 </div>
-                <button class="btn btn-primary">上传</button>                
+                <button class="btn btn-primary" id="shangchuan">上传</button>                
             </div>
             <div class="footer">
                 <button class="btn btn-default">取消</button>
@@ -1389,11 +1399,15 @@
     <script src="../src/script/application.js"></script>
     <script>
        var fileM = document.querySelector("#upfiles");
-        $("#upfiles").on("change",function(){
+       function Up(){
+            var fileObj = fileM.files[0];
+            $("#text").val(fileObj.name)
+       }
+        $("#shangchuan").on("click",function(){
             var fileObj = fileM.files[0];
             var formData = new FormData();
             formData.append('file', fileObj)
-            console.log(fileObj)
+            console.log(formData)
             $.ajax({
                 url:"http://declare.dagaimao.cn/web/index.php?r=apply/upload-file",
                 type:"post",
@@ -1403,18 +1417,41 @@
                 },
                 crossDomain: true,
                 dataType: "json",
-                async: false,
-                cache: false,
                 contentType: false,
                 processData: false,
+                xhr:function(){
+                     //这里我们先拿到jQuery产生的 XMLHttpRequest对象，为其增加 progress 事件绑定，然后再返回交给ajax使用
+                    var xhr = $.ajaxSettings.xhr();
+                    if (onprogress && xhr.upload) {
+                        xhr.upload.addEventListener("progress", onprogress, false);
+                        return xhr;
+                    } 
+                },
                 success:function(res){
                     console.log(res)
+                    if(res.status == "上传成功"){
+                        var query = confirm("上传成功")
+                        if(query == true){
+                            window.location.reload();
+                        }
+                    }
                 },
                 error:function(){
                     console.log("error")
                 }
             })
         })
+        function onprogress(evt){
+            var loaded = evt.loaded;     //已经上传大小情况
+            var tot = evt.total;      //附件总大小
+            var per = Math.floor(100 * loaded / tot);  //已经上传的百分比
+            $("#nei").show();
+            $("#nei").css({
+                width:per+"%"
+            })
+            $("#sp").html(per+"%");
+
+        }
     </script>
 </body>
 </html>

@@ -42,7 +42,7 @@
     </style>
 </head>
 <body>
-<form id="aspnetForm">
+<form action>
     <div class="dialogTitle" style="display: none;">
         <span id="ctl00_LableTitle" style="font-family:微软雅黑;">填报财务报表</span>
     </div>
@@ -105,8 +105,7 @@
             </tbody>
         </table>
         <div style="padding: 10px 0 30px;">
-            <input type="button"  value="保 存"  id="ctl00_ContentPlaceHolder1_BtnSave"
-                class="button">
+            <input type="submit"  value="保 存" name="ButtonSubmit"  id="ctl00_ContentPlaceHolder1_BtnSave" class="button">
             <input type="button" value="关 闭" class="button" style="margin-left: 20px;">
         </div>
     </div>
@@ -135,7 +134,7 @@
         })
     }
     var a,b;
-    $("#ctl00_ContentPlaceHolder1_BtnSave").click(function(){
+    $("form").submit(function(){
             a = "";
             b = "";
          var year = $("#ctl00_ContentPlaceHolder1_txtYear").val();
@@ -158,7 +157,6 @@
             $("#msgYear").html("请输入整数")
             var img = "<img src='../src/img/tip1.gif'>"
             $("#msgYear").prepend(img)
-            return
         }else{
              $("#msgYear").html("")
         }
@@ -187,6 +185,7 @@
                 }
             })
         }
+        return false;
     })
     $(document).ready(function(){
         ininData();
