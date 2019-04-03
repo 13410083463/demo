@@ -7,7 +7,6 @@ $(function(){
         var Pass = $("#pass").val();
         var Newpass = $("#newPass").val();
         var Confirmpass = $("#confirmPass").val();
-        console.log(Newpass,Confirmpass)
         var data = {
             original_password:Pass,
             new_password:Newpass
@@ -36,7 +35,14 @@ $(function(){
                 crossDomain: true,
                 dataType:"json",
                 success:function(res){
-                    console.log(res)
+                    if(res.status == 1){
+                        alert("密码修改成功")
+                        $("#pass").val('');
+                        $("#newPass").val('');
+                        $("#confirmPass").val('');
+                    }else{
+                        console.log("修改失败")
+                    }
                 },
                 error:function(){
                     console.log("error")

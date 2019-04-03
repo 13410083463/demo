@@ -1283,11 +1283,138 @@
             <input type="submit" name="ButtonSave" value="保存草稿" id="ButtonSave" class="button">
         </div>
     </div>
+    <style>
+        #upfile{
+            width:400px;
+            height:200px;
+            background:#fff;
+            position:fixed;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+        #bar-warp {
+            width: 220px;
+            height: 30px;
+            border: 1px solid green;
+            position:relative;
+            float:left;
+            margin-left:12px;
+        }
+        .title2{
+            background:rgba(245, 174, 58, 1)
+        }
+        .title2 h1{
+            font-size:16px;
+            color:#fff;
+            height:40px;
+            line-height:40px;
+            margin-left:15px;
+            font-weight: 700;
+        }
+         #bar-warp #upfiles{
+             opacity:0;
+             height:100%;
+             width:100%;
+             z-index:10;
+         }
+          #bar-warp #text{
+              height:100%;
+              width:100%;
+              position:absolute;
+              top:0;
+              left:0;
+              background:none;
+              border:0;
+              outline:none;
+          }
+          p{
+              padding:0;
+              margin:0;
+          }
+          .content{
+              margin-top:30px;
+              margin-bottom:10px;
+              margin-left:12px;
+          }
+          .file button{
+              padding: 0;
+              width:65px;
+              height:30px;
+              margin-left:20px;
+          }
+          .footer{
+              position:absolute;
+              bottom:12px;
+              right:10px;
+          }
+           .footer button{
+                padding: 0;
+                width:65px;
+                height:30px;
+           }
+            #nei{
+                width:0px;
+                height:30px;
+                background:#d6d5d5;
+            }
+    </style>
+    <div id="upfile">
+        <form action=""  enctype="multipart/form-data" method="post">
+            <div class="title2">
+                <h1>文件上传</h1>
+            </div>
+            <div class="content">
+                <p>请选择要上传的文件，文件大小不能超过32M</p>
+            </div>
+            <div class="file">
+                <div id="bar-warp">
+                    <!-- <div id="nei"></div> -->
+                    <input type="text" id="text" value="fdsfdsf" disabled>
+                    <input type="file" id="upfiles">
+                </div>
+                <button class="btn btn-primary">上传</button>                
+            </div>
+            <div class="footer">
+                <button class="btn btn-default">取消</button>
+            </div>
+        </form>
+    </div>
     
-    <script src="../lib/jquery.min.js"></script>
+    <!-- <script src="../lib/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="../lib/datepicker/js/bootstrap.min.js"></script>
     <script src="../lib/datepicker/js/bootstrap-datepicker.min.js"></script>
     <script src="../lib/datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
     <script src="../src/script/application.js"></script>
+    <script>
+       var fileM = document.querySelector("#upfiles");
+        $("#upfiles").on("change",function(){
+            var fileObj = fileM.files[0];
+            var formData = new FormData();
+            formData.append('file', fileObj)
+            console.log(fileObj)
+            $.ajax({
+                url:"http://declare.dagaimao.cn/web/index.php?r=apply/upload-file",
+                type:"post",
+                data: formData,
+                xhrFields: {
+                    withCredentials: true//设置显式指定浏览器发送Cookie，跨域时默认不使用
+                },
+                crossDomain: true,
+                dataType: "json",
+                async: false,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success:function(res){
+                    console.log(res)
+                },
+                error:function(){
+                    console.log("error")
+                }
+            })
+        })
+    </script>
 </body>
 </html>

@@ -37,22 +37,3 @@ $("#sendApply").on("click",function(){
     })
     
 })
-
-$(".title h1").click(function(){
-    $.ajax({
-        url: "http://declare.dagaimao.cn/web/index.php?r=apply/my-application",
-        type: "get",
-        xhrFields: {
-            withCredentials: true//设置显式指定浏览器发送Cookie，跨域时默认不使用
-        },
-        crossDomain: true,
-        dataType: "JSON",
-        success: function (res) {
-            console.log(res)
-        },
-        error: function () {
-            console.log("error!!!")
-        }
-
-    })
-})

@@ -13,15 +13,14 @@
     }
     
     $("#LabelDisplayName").html(data.name)
-    function time(data){
-        var date = new Date(data * 1000);
+    function time(){
+        var date = new Date();
         var year = date.getFullYear();
-        var mont = date.getMonth() < 9 ? "0"+date.getMonth():date.getMonth();
+        var mont = (date.getMonth()+1) < 9 ? "0"+(date.getMonth()+1):(date.getMonth()+1);
         var day  = date.getDate();
         var time = year+"-"+mont+"-"+day;
         return time;
     }
-console.log(time(1554113818))
     $("#time").html(time);
     $("#MenuAll li").on("click",function(){
         var index = $(this).index();
@@ -37,9 +36,24 @@ console.log(time(1554113818))
             } else if (index == 3) {
                 $("#right iframe").attr("src", "../../pages/iframe/resetpass.html")
             } else if (index == 4) {
-                setTimeout(function () {
-                    window.location.href = "../../login.html";
-                }, 1500)
+                $.ajax({
+                    url: "http://declare.dagaimao.cn/web/index.php?r=users/quit-login",
+                    type: "post",
+                    xhrFields: {
+                        withCredentials: true//设置显式指定浏览器发送Cookie，跨域时默认不使用
+                    },
+                    crossDomain: true,
+                    dataType: "json",
+                    success: function (res) {
+                        console.log(res)
+                        if (res.status == 1) {
+                            setTimeout(function () {
+                                window.location.href = "../../login.html";
+                            }, 1500)
+                        }
+                    }
+
+                })
             }
         }else if(data.auth == 1){
             if (index == 1) {
@@ -51,9 +65,25 @@ console.log(time(1554113818))
             } else if (index == 3) {
                 $("#right iframe").attr("src", "../../pages/iframe/resetpass.html")
             } else if (index == 4) {
-                setTimeout(function () {
-                    window.location.href = "../../login.html";
-                }, 1500)
+                $.ajax({
+                    url: "http://declare.dagaimao.cn/web/index.php?r=users/quit-login",
+                    type: "post",
+                    xhrFields: {
+                        withCredentials: true//设置显式指定浏览器发送Cookie，跨域时默认不使用
+                    },
+                    crossDomain: true,
+                    dataType: "json",
+                    success: function (res) {
+                        console.log(res)
+                        if (res.status == 1) {
+                            setTimeout(function () {
+                                window.location.href = "../../login.html";
+                            }, 1500)
+                        }
+                    }
+
+                })
+              
             }
         }
        

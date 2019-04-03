@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>填写财务报表</title>
+    
+    <style>
+        body{font-size:12px;}
+        .pForm2 {
+            margin: 0;
+            padding: 8px;
+            color: #333;
+            text-align: center;
+        }
+        table.formdata {
+            border: solid 1px #95B0CB;
+            padding: 0;
+            border-collapse: collapse;
+            font-family: verdana;
+        }
+        .fullWidth {
+            width: 100%;
+        }
+        .formdata th {
+            border: solid 1px #95B0CB;
+            /* background-color: #DCE6F2; */
+            color: #003366;
+            height: 28px;
+            text-align: right;
+            font-weight: normal;
+            white-space: nowrap;
+        }
+        .formdata td {
+            border: solid 1px #95B0CB;
+            text-align: left;
+            color: black;
+            padding: 4px 0 3px 4px;
+            font-size: 10pt;
+        }
+    </style>
+</head>
+<body>
+<form id="aspnetForm">
+    <div class="dialogTitle" style="display: none;">
+        <span id="ctl00_LableTitle" style="font-family:微软雅黑;">填报财务报表</span>
+    </div>
+    <div class="pForm2" style="width: 600px;">
+        <table class="formdata fullWidth">
+            <tbody>
+                <tr>
+                    <th style="width: 20%;">
+                        企业名称：
+                    </th>
+                    <td id="enterprise_name">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        营业执照注册号：
+                    </th>
+                    <td id="Registration_number">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <b style="color: Red">*</b>年份：
+                    </th>
+                    <td>
+                        <input name="ctl00$ContentPlaceHolder1$txtYear" type="text" maxlength="4" id="ctl00_ContentPlaceHolder1_txtYear">
+                        <span id="msgYear">数字，参考格式：2010</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <b style="color: Red">*</b>企业性质：
+                    </th>
+                    <td>
+                        <select name="ctl00$ContentPlaceHolder1$ddlProperty" id="select_enterprise">
+                            <option value="">--请选择--</option>
+                            <option value="0">非上市企业</option>
+                            <option value="1">上市企业</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <b style="color: Red">*</b>报表类型：
+                    </th>
+                    <td>
+                        <select name="ctl00$ContentPlaceHolder1$ddlInfoType" id="select_table">
+                            <option value="">--请选择--</option>
+                            <option value="0">资产负债表</option>
+                            <option value="1">现金流量表</option>
+                            <option value="2">利润表</option>
+
+                        </select>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+        <div style="padding: 10px 0 30px;">
+            <input type="button"  value="保 存"  id="ctl00_ContentPlaceHolder1_BtnSave"
+                class="button">
+            <input type="button" value="关 闭" class="button" style="margin-left: 20px;">
+        </div>
+    </div>
+</form>
+<script src="../lib/jquery.min.js"></script>
+
+<script>
+    function ininData(){
+        $.ajax({
+            url:"http://declare.dagaimao.cn/web/index.php?r=users/my-data",
+            type:"get",
+             xhrFields: {
+                withCredentials: true//设置显式指定浏览器发送Cookie，跨域时默认不使用
+            },
+            crossDomain: true,
+            dataType:"json",
+            success:function(res){
+                if(res.status == 1){
+                    $("#enterprise_name").html(res.data.companyName);
+                    $("#Registration_number").html(res.data.account);
+                }
+            },
+            error:function(){
+                console.log("error");
+            }
+        })
+    }
+    var a,b;
+    $("#ctl00_ContentPlaceHolder1_BtnSave").click(function(){
+            a = "";
+            b = "";
+         var year = $("#ctl00_ContentPlaceHolder1_txtYear").val();
+         var re = /^[0-9]+.?[0-9]*$/;
+         var enterprise = $("#select_enterprise").val();
+         var table = $("#select_table").val();
+         var data = {
+             year: year,
+             company_type: enterprise,
+             statement_tpye: table
+         }
+         if(enterprise ==''){
+             a = "请选择企业性质\n\n"
+         }
+         if(table ==''){
+             b = "请选择财务报表"
+         }
+        
+        if(!re.test(year)){
+            $("#msgYear").html("请输入整数")
+            var img = "<img src='../src/img/tip1.gif'>"
+            $("#msgYear").prepend(img)
+            return
+        }else{
+             $("#msgYear").html("")
+        }
+        if (enterprise == '' || table == '' || year =='') {
+            alert(a + b)
+        }else{
+            $.ajax({
+                url:"http://declare.dagaimao.cn/web/index.php?r=finance/affirm-finance",
+                type:"post",
+                data:data,
+                xhrFields: {
+                    withCredentials: true//设置显式指定浏览器发送Cookie，跨域时默认不使用
+                },
+                crossDomain: true,
+                dataType:"json",
+                success:function(res){
+                    console.log(res)
+                    if(res.status == 1){
+                        window.opener.location.reload();
+                        window.close();  
+                    }
+                   
+                },
+                error:function(){
+                    console.log("error")
+                }
+            })
+        }
+    })
+    $(document).ready(function(){
+        ininData();
+    })
+</script>
+</body>
+</html>
