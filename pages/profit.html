@@ -5,8 +5,381 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>上市公司利润表</title>
+    <style>
+         body{font-size:12px;}
+        .style2 {
+            color: #FF0000;
+        }
+        .style6 {
+            color: #000000;
+            font-size: 18px;
+            font-family: "宋体";
+            font-weight: bold;
+        }
+        .tab {
+            margin-top: 8px;
+            border: 1px;
+            border-color: Blue;
+            background-color: White;
+            BORDER-RIGHT: #4cb1ff 0px solid;
+            PADDING-RIGHT: 0px;
+            BORDER-TOP: #4cb1ff 1px solid;
+            PADDING-LEFT: 10px;
+            PADDING-BOTTOM: 0px;
+            BORDER-LEFT: #4cb1ff 1px solid;
+            PADDING-TOP: 0px;
+            BORDER-BOTTOM: #4cb1ff 0px solid;
+            text-align: left;
+            line-height: 30px;
+        }
+        .tab td {
+            BORDER-RIGHT: #4cb1ff 1px solid;
+            PADDING-RIGHT: 0px;
+            BORDER-TOP: #4cb1ff 0px solid;
+            PADDING-LEFT: 10px;
+            PADDING-BOTTOM: 0px;
+            BORDER-LEFT: #4cb1ff 0px solid;
+            BORDER-BOTTOM: #4cb1ff 1px solid;
+        }
+        .tab th {
+            BORDER-RIGHT: #4cb1ff 1px solid;
+            PADDING-RIGHT: 0px;
+            BORDER-TOP: #4cb1ff 0px solid;
+            PADDING-LEFT: 10px;
+            PADDING-BOTTOM: 0px;
+            BORDER-LEFT: #4cb1ff 0px solid;
+            PADDING-TOP: 8px;
+            BORDER-BOTTOM: #4cb1ff 1px solid;
+        }
+    </style>
 </head>
 <body>
+    <form name="form1" id="form1">
+        <table width="85%" border="0" cellspacing="0" cellpadding="0" align="center">
+            <tbody>
+                <tr>
+                    <td height="14" align="center" valign="bottom">
+                        <div align="center" class="style2">
+                            <div align="left">
+                                <p align="center">
+                                    <span class="style6"><strong>母公司利润表</strong></span></p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="15">
+                        <div align="left">
+                            <span class="style2"><span class="style1"></span></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="15">
+                        <div align="left" class="style2">
+                            <span class="style1"><span class="style7"><span class="style2">请按审计后的母公司利润表完整填报，所有各项均为必填项
+                                        ，单位:元 币种:人民币</span> </span></span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" height="28" class="tab">
+            <tbody>
+                <tr>
+                    <td width="20%" height="26">
+                        <div align="left">
+                            <span class="style1">年度：</span></div>
+                    </td>
+                    <td width="80%">
+                        <font size="-1">
+                            2018
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table cellspacing="0" cellpadding="0" border="0" class="tab" width="100%">
+            <thead>
+                <tr>
+                    <th>
+                        项目
+                    </th>
+                    <th>
+                        本期金额
+                    </th>
+                    <th>
+                        上期金额
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td height="25" align="left">
+                        一、营业收入 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingyeSR_e" type="text" maxlength="15" id="txtyingyeSR_e" style="width:200px;">
+                        <font color="red" size="4">&nbsp;&nbsp;&nbsp;</font>
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingyeSR" type="text" maxlength="15" id="txtyingyeSR" style="width:200px;">
+                        <font color="red" size="4">&nbsp;&nbsp;&nbsp;</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        减：营业成本 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingyeCB_e" type="text" maxlength="15" id="txtyingyeCB_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingyeCB" type="text" maxlength="15" id="txtyingyeCB" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        营业税金及附加 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingyeSJJFJ_e" type="text" maxlength="15" id="txtyingyeSJJFJ_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingyeSJJFJ" type="text" maxlength="15" id="txtyingyeSJJFJ" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        销售费用 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtxiaoshouFY_e" type="text" maxlength="15" id="txtxiaoshouFY_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtxiaoshouFY" type="text" maxlength="15" id="txtxiaoshouFY" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        管理费用 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtguanliFY_e" type="text" maxlength="15" id="txtguanliFY_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtguanliFY" type="text" maxlength="15" id="txtguanliFY" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        财务费用 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtcaiwuFY_e" type="text" maxlength="15" id="txtcaiwuFY_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtcaiwuFY" type="text" maxlength="15" id="txtcaiwuFY" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        资产减值损失 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtzichanJZSS_e" type="text" maxlength="15" id="txtzichanJZSS_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtzichanJZSS" type="text" maxlength="15" id="txtzichanJZSS" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        加：公允价值变动收益 ：<br>
+                        （损失以“－”号填列）
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtgongrunJZBDSY_e" type="text" maxlength="15" id="txtgongrunJZBDSY_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtgongrunJZBDSY" type="text" maxlength="15" id="txtgongrunJZBDSY" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        投资收益 ：<br>
+                        （损失以“－”号填列）
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txttouziSY_e" type="text" maxlength="15" id="txttouziSY_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txttouziSY" type="text" maxlength="15" id="txttouziSY" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        其中：对联营企业和合营企业的投资收益 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtduilianyingQYHHYQYDTZSY_e" type="text" maxlength="15" id="txtduilianyingQYHHYQYDTZSY_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtduilianyingQYHHYQYDTZSY" type="text" maxlength="15" id="txtduilianyingQYHHYQYDTZSY"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        二、营业利润 ：<br>
+                        （亏损以“－”号填列）
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingyeLY_e" type="text" maxlength="15" id="txtyingyeLY_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingyeLY" type="text" maxlength="15" id="txtyingyeLY" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        加：营业外收入 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingyewaiSR_e" type="text" maxlength="15" id="txtyingyewaiSR_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingyewaiSR" type="text" maxlength="15" id="txtyingyewaiSR" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        减：营业外支出 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingyewaiZC_e" type="text" maxlength="15" id="txtyingyewaiZC_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingyewaiZC" type="text" maxlength="15" id="txtyingyewaiZC" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        其中：非流动资产处置损失 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtfeiliudongZCCZSS_e" type="text" maxlength="15" id="txtfeiliudongZCCZSS_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtfeiliudongZCCZSS" type="text" maxlength="15" id="txtfeiliudongZCCZSS" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        三、利润总额：<br>
+                        （亏损总额以“－”号填列）
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtlirenZE_e" type="text" maxlength="15" id="txtlirenZE_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtlirenZE" type="text" maxlength="15" id="txtlirenZE" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        减：所得税费用 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtsuodeshuiFY_e" type="text" maxlength="15" id="txtsuodeshuiFY_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtsuodeshuiFY" type="text" maxlength="15" id="txtsuodeshuiFY" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        四、净利润 ：<br>
+                        (净亏损以“－”号填列）
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtjingliren_e" type="text" maxlength="15" id="txtjingliren_e" style="width:200px;">
+                        <font color="red" size="4">&nbsp;&nbsp;&nbsp;</font>
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtjingliren" type="text" maxlength="15" id="txtjingliren" style="width:200px;">
+                        <font color="red" size="4">&nbsp;&nbsp;&nbsp;</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        五、每股收益： ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtmeiguSY_e" type="text" maxlength="15" id="txtmeiguSY_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtmeiguSY" type="text" maxlength="15" id="txtmeiguSY" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        （一）基本每股收益 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtjibenMGSY_e" type="text" maxlength="15" id="txtjibenMGSY_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtjibenMGSY" type="text" maxlength="15" id="txtjibenMGSY" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        （二）稀释每股收益 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtxishiMGSY_e" type="text" maxlength="15" id="txtxishiMGSY_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtxishiMGSY" type="text" maxlength="15" id="txtxishiMGSY" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        六、其他综合收益 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtqitaZHSY_e" type="text" maxlength="15" id="txtqitaZHSY_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtqitaZHSY" type="text" maxlength="15" id="txtqitaZHSY" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">
+                        七、综合收益总额 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtzongheSYZE_e" type="text" maxlength="15" id="txtzongheSYZE_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtzongheSYZE" type="text" maxlength="15" id="txtzongheSYZE" style="width:200px;">
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td style="text-align: center" colspan="4">
+                        <input type="submit" name="BtnSave" value="保存" onclick="return CheckInfo();" id="BtnSave">
+                        <input type="button" value="关闭" onclick="window.close();" style="margin-left: 20px;">
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+            </tbody>
+        </table>
     
+    </form>
 </body>
 </html>

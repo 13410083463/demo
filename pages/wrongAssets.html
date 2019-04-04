@@ -5,8 +5,1121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>非上市公司资产表</title>
+    <style>
+        body{font-size:12px;}
+        .style2 {
+            color: #FF0000;
+        }
+        .style6 {
+            color: #000000;
+            font-size: 18px;
+            font-family: "宋体";
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    
+    <form name="form1" id="form1">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+            <tbody>
+                <tr>
+                    <td height="15" align="center" valign="bottom">
+                        <div align="center" class="style2">
+                            <div align="right">
+                                <p align="center">
+                                    <span class="style6">资产负债表</span></p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="15">
+                        <div align="right">
+                            <span class="style2"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="15">
+                        <div align="right" class="style2">
+                            <p class="style1">
+                                <span class="style2">请按审计后的资产负债表完整填报，所有各项均为必填项 ，单位：元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <br>
+                                </span></p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" height="28" border="1" align="center" cellpadding="1" cellspacing="0" bordercolorlight="#000099"
+            bordercolordark="#ffffff" bgcolor="#eff5fe">
+            <tbody>
+                <tr>
+                    <td width="23%" height="26">
+                        <div align="right">
+                            <span class="style1">年度：</span></div>
+                    </td>
+                    <td width="77%">
+                        <font size="-1" id="Year">
+                            2019
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" height="952" border="1" align="center" cellpadding="1" cellspacing="0" bordercolorlight="#000099"
+            bordercolordark="#ffffff" bgcolor="#eff5fe">
+            <tbody>
+                <tr class="style1">
+                    <td width="23%" height="27">
+                        <div align="left">
+                            货币资金：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="huobizj" type="text" id="huobizj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td width="23%" class="style1">
+                        <div align="left">
+                            短期借款：</div>
+                    </td>
+                    <td width="27%" class="style1">
+                        <font size="-1">
+                            <input name="duanqijk" type="text" id="duanqijk" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            短期投资：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="duanqitz" type="text" id="duanqitz" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            应付票据：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="yingfupj" type="text" id="yingfupj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="13">
+                        <div align="left">
+                            应收票据：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="yingshoupj" type="text" id="yingshoupj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            应付帐款：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="yingfuzk" type="text" id="yingfuzk" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="14">
+                        <div align="left">
+                            应收股利：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="yingshougl" type="text" id="yingshougl" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            预收帐款：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="yushouzk" type="text" id="yushouzk" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            应收利息：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="yingshoulx" type="text" id="yingshoulx" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            应付工资：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="yingfugz" type="text" id="yingfugz" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            应收帐款：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="yingshouzk" type="text" id="yingshouzk" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            应付福利费：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="yingfuflf" type="text" id="yingfuflf" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            其他应收款：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="qitaysk" type="text" id="qitaysk" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            应付股利：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="yingfugl" type="text" id="yingfugl" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            预付帐款：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="yufuzk" type="text" id="yufuzk" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            应交税金：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="chengjiaosj" type="text" id="chengjiaosj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            应收出口退税：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="yingshouckts" type="text" id="yingshouckts" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            其它应交款：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="qitayjk" type="text" id="qitayjk" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            应收补贴款：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="yingshoubtk" type="text" id="yingshoubtk" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            其它应付款：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="qitayfk" type="text" id="qitayfk" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            存货：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="cunhuo" type="text" id="cunhuo" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            预提费用：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="yutify" type="text" id="yutify" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            待摊费用：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="daitanfy" type="text" id="daitanfy" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            一年内到期的长期负债：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="yinianndqdcqfz" type="text" id="yinianndqdcqfz" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            待处理流动资产净损失：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="daichulldzcjss" type="text" id="daichulldzcjss" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            其他流动负债：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="qitaldfz" type="text" id="qitaldfz" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            一年内到期的长期债权投资：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="yinianndqdcqzqtz" type="text" id="yinianndqdcqzqtz" class="text" maxlength="15"
+                                size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            &nbsp; &nbsp; &nbsp; &nbsp;流动负债合计：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="liudongfzhj" type="text" id="liudongfzhj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            其他流动资产：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="diyansx" type="text" id="diyansx" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            长期借款：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="changqijk" type="text" id="changqijk" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            &nbsp; &nbsp; &nbsp; &nbsp; 流动资产合计：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="luidongzchj" type="text" id="luidongzchj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            应付债券：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="yingfuzq" type="text" id="yingfuzq" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            长期股权投资：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="changqigqtz" type="text" id="changqigqtz" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            长期应付款：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="changqiyfk" type="text" id="changqiyfk" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            长期债权投资：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="changqizqtz" type="text" id="changqizqtz" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        &nbsp;
+                    </td>
+                    <td class="style1">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            &nbsp; &nbsp; &nbsp; &nbsp;长期投资合计：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="changqitzhj" type="text" id="changqitzhj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            其他长期负债：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="qitacqfz" type="text" id="qitacqfz" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            固定资产原价：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="gudingzcyj" type="text" id="gudingzcyj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            &nbsp; &nbsp; &nbsp; &nbsp;长期负债合计：
+                        </div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="changqifzhj" type="text" id="changqifzhj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            &nbsp; &nbsp; &nbsp; &nbsp;减：累计折旧：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="leijizj" type="text" id="leijizj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        &nbsp;
+                    </td>
+                    <td class="style1">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            固定资产净值：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="gudingzcjz" type="text" id="gudingzcjz" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            递延税款贷项：
+                        </div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="diyanskdx" type="text" id="diyanskdx" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            &nbsp; &nbsp; &nbsp; &nbsp;减：固定资产减值准备：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="gudingzcjzzb" type="text" id="gudingzcjzzb" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            负债合计：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="fuzhaihj" type="text" id="fuzhaihj" class="text" maxlength="15" size="25">
+                            <font color="red"></font>
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="13">
+                        <div align="left">
+                            固定资产净额：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="gudingzcje" type="text" id="gudingzcje" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        &nbsp;
+                    </td>
+                    <td class="style1">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="14">
+                        固定资产清理：
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="zhufangzzj" type="text" id="zhufangzzj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        实收资本或股本：
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="shishouzbhgb" type="text" id="shishouzbhgb" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            工程物资：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="gongchengwz" type="text" id="gongchengwz" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            资本公积：
+                        </div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="zibengj" type="text" id="zibengj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            在建工程：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="zaijiangc" type="text" id="zaijiangc" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            盈余公积：
+                        </div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="yingyugj" type="text" id="yingyugj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            待处理固定资产净损失：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="daichulgdzcjss" type="text" id="daichulgdzcjss" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            &nbsp; &nbsp; &nbsp; &nbsp;其中：法定盈余公积</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="wuxingzcjqtzcqt" type="text" id="wuxingzcjqtzcqt" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            &nbsp; &nbsp; &nbsp; &nbsp;固定资产合计：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="gudingzchj" type="text" id="gudingzchj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            &nbsp; &nbsp; &nbsp; &nbsp;公益金</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="huaizhangzb" type="text" id="huaizhangzb" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            无形资产：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="wuxingzc" type="text" id="wuxingzc" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            &nbsp; &nbsp; &nbsp; &nbsp;补充流动资本</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="suoyouzqyqt" type="text" id="suoyouzqyqt" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        &nbsp; &nbsp; &nbsp; &nbsp;其中：土地使用权
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="tdsyq" type="text" id="tdsyq" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        &nbsp;
+                    </td>
+                    <td class="style1">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            递延资产：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="cunhouje" type="text" id="cunhouje" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        &nbsp;
+                    </td>
+                    <td class="style1">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            其他长期资产：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="qitacqzc" type="text" id="qitacqzc" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            未分配利润：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="weifenplr" type="text" id="weifenplr" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            &nbsp; &nbsp; &nbsp; &nbsp;无形资产及其它资产合计：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="wuxingzcjqtzchj" type="text" id="wuxingzcjqtzchj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        &nbsp;
+                    </td>
+                    <td class="style1">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            递延税款借项：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="diyanskjx" type="text" id="diyanskjx" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        所有者权益合计：
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="suoyouzqyhj" type="text" id="suoyouzqyhj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td height="27">
+                        <div align="left">
+                            资产总计：</div>
+                    </td>
+                    <td style="width: 251px">
+                        <font size="-1">
+                            <input name="zichanzj" type="text" id="zichanzj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                    <td class="style1">
+                        <div align="left">
+                            负债及所有者权益合计：</div>
+                    </td>
+                    <td class="style1">
+                        <font size="-1">
+                            <input name="fuzhaijsyzqyhj" type="text" id="fuzhaijsyzqyhj" class="text" maxlength="15" size="25">
+                        </font>
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td style="text-align: center" colspan="4">
+                        <input type="submit" name="BtnSave" value="保存" id="BtnSave">
+                        <input type="button" value="关闭" onclick="window.close();" style="margin-left: 20px;">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <script src="../lib/jquery.min.js"></script>
+    <script>
+        var url = decodeURI(window.location.href);
+        var argsIndex = url.split("?obj=");
+        var arg = argsIndex[1];
+        var urlData = JSON.parse(arg)
+        $("#Year").html(urlData.year)
+
+
+        function ininData(){
+            var data = {
+                finance_id:urlData.file_id
+            }
+            $.ajax({
+                url: "http://declare.dagaimao.cn/web/index.php?r=finance/acquire-unlisted-debt",
+                type: "post",
+                data: data,
+                xhrFields: {
+                    withCredentials: true//设置显式指定浏览器发送Cookie，跨域时默认不使用
+                },
+                crossDomain: true,
+                dataType: "json",
+                success: function (res) {
+                    if(res.status == 1){
+                        var data = res.finance_info;
+                        console.log(res)
+                        for(var i=0;i<res.finance_info.length;i++){
+                            console.log(res.finance_info[i])
+                            $("#huobizj").val(res.finance_info[i].assets)
+                        }
+                        
+                        // $("#duanqitz").val(data.short_time_investments)
+                        // $("#yingshoupj").val(data.short_time_investments)
+                        // $("#yingshougl").val(data.dividends_receivable)
+                        // $("#yingshoulx").val(data.interest_receivable)
+                        // $("#yingshouzk").val(data.receivable)
+                        // $("#qitaysk").val(data.receivable_other)
+                        // $("#yufuzk").val(data.advance_payment)
+                        // $("#yingshouckts").val(data.tax_refund_receivable)
+                        // $("#yingshoubtk").val(data.allowance_receivable)
+                        // $("#cunhuo").val(data.inventory)
+                        // $("#daitanfy").val(data.unamortized_expense)
+                        // $("#daichulldzcjss").val(data.loss_on_current_assets)
+                        // $("#yinianndqdcqzqtz").val(data.year_long_term_debt_investment)
+                        // $("#diyansx").val(data.other_current_assets)
+                        // $("#luidongzchj").val(data.total_folat_current_assets)
+                        // $("#changqigqtz").val(data.long_term_investment)
+                        // $("#changqizqtz").val(data.long_term_investment_2)
+                        // $("#changqitzhj").val(data.total_for_long_term_investment)
+                        // $("#gudingzcyj").val(data.original_value_of_fixed_assets)
+                        // $("#leijizj").val(data.accumulated_depreciation)
+                        // $("#gudingzcjz").val(data.net_value_of_fixed_assets)
+                        // $("#gudingzcjzzb").val(data.fixed_assets_depreciation_reserves)
+                        // $("#gudingzcje").val(data.net_fixed_assets)
+                        // $("#zhufangzzj").val(data.disposal_of_fixed_assets)
+                        // $("#gongchengwz").val(data.engineering_material)
+                        // $("#zaijiangc").val(data.construction_process)
+                        // $("#daichulgdzcjss").val(data.Net_loss_on_fixed_assets)
+                        // $("#gudingzchj").val(data.total_fixed_assets)
+                        // $("#wuxingzc").val(data.intangible_assets)
+                        // $("#tdsyq").val(data.land_usage_right)
+                        // $("#cunhouje").val(data.deferred_assets)
+                        // $("#qitacqzc").val(data.other_long_term_assets)
+                        // $("#wuxingzcjqtzchj").val(data.total_other_assets)
+                        // $("#diyanskjx").val(data.deferred_taxes_debit)
+                        // $("#zichanzj").val(data.total_current_assets)
+                        // $("#yingfuzk").val(data.account_payable)
+                        // $("#duanqijk").val(data.short_term_borrowing)
+                        // $("#yingfupj").val(data.notes_payable)
+                        // $("#yushouzk").val(data.deposit_received)
+                        // $("#yingfugz").val(data.wages_payable)
+                        // $("#yingfuflf").val(data.welfare_payable)
+                        // $("#yingfugl").val(data.dividends_payable)
+                        // $("#chengjiaosj").val(data.tax_payable)
+                        // $("#qitayjk").val(data.other_fees_payable)
+                        // $("#qitayfk").val(data.other_payable)
+                        // $("#yutify").val(data.accrued_expenses)
+                        // $("#yinianndqdcqfz").val(data.year_long_term_debt)
+                        // $("#qitaldfz").val(data.other_current_liability)
+                        // $("#liudongfzhj").val(data.total_current_liability)
+                        // $("#changqijk").val(data.long_term_loan)
+                        // $("#yingfuzq").val(data.bonds_payable)
+                        // $("#changqiyfk").val(data.long_term_payable)
+                        // $("#qitacqfz").val(data.other_long_term_debt)
+                        // $("#changqifzhj").val(data.total_long_term_liabilities)
+                        // $("#diyanskdx").val(data.deferred_tax_credits)
+                        // $("#fuzhaihj").val(data.total_liability)
+                        // $("#shishouzbhgb").val(data.paicl_up_capital)
+                        // $("#zibengj").val(data.capital_reserve)
+                        // $("#yingyugj").val(data.surplus_public_accumulation)
+                        // $("#wuxingzcjqtzcqt").val(data.legal_surplus)
+                        // $("#huaizhangzb").val(data.public_welfare_fund)
+                        // $("#suoyouzqyqt").val(data.supplementary_working_capital)
+                        // $("#weifenplr").val(data.undistributed_profit)
+                        // $("#suoyouzqyhj").val(data.total_owners_equity)
+                        // $("#fuzhaijsyzqyhj").val(data.total_liabilities_and_owners_equity)
+                    }
+                },
+                error: function () {
+                    console.log("error")
+                }
+            })
+        }
+        ininData();
+        $("form").submit(function(){
+            var data = {
+                finance_id: urlData.file_id,
+                assets:$("#huobizj").val(),
+                short_time_investments:$("#duanqitz").val(),
+                notes_receivable:$("#yingshoupj").val(),
+                dividends_receivable:$("#yingshougl").val(),
+                interest_receivable:$("#yingshoulx").val(),
+                receivable:$("#yingshouzk").val(),
+                receivable_other:$("#qitaysk").val(),
+                advance_payment:$("#yufuzk").val(),
+                tax_refund_receivable:$("#yingshouckts").val(),
+                allowance_receivable:$("#yingshoubtk").val(),
+                inventory:$("#cunhuo").val(),
+                unamortized_expense:$("#daitanfy").val(),
+                loss_on_current_assets:$("#daichulldzcjss").val(),
+                year_long_term_debt_investment:$("#yinianndqdcqzqtz").val(),
+                other_current_assets:$("#diyansx").val(),
+                total_folat_current_assets:$("#luidongzchj").val(),
+                long_term_investment:$("#changqigqtz").val(),
+                long_term_investment_2:$("#changqizqtz").val(),
+                total_for_long_term_investment:$("#changqitzhj").val(),
+                original_value_of_fixed_assets:$("#gudingzcyj").val(),
+                accumulated_depreciation:$("#leijizj").val(),
+                net_value_of_fixed_assets:$("#gudingzcjz").val(),
+                fixed_assets_depreciation_reserves:$("#gudingzcjzzb").val(),
+                net_fixed_assets:$("#gudingzcje").val(),
+                disposal_of_fixed_assets:$("#zhufangzzj").val(),
+                engineering_material:$("#gongchengwz").val(),
+                construction_process:$("#zaijiangc").val(),
+                Net_loss_on_fixed_assets:$("#daichulgdzcjss").val(),
+                total_fixed_assets:$("#gudingzchj").val(),
+                intangible_assets:$("#wuxingzc").val(),
+                land_usage_right:$("#tdsyq").val(),
+                deferred_assets:$("#cunhouje").val(),
+                other_long_term_assets:$("#qitacqzc").val(),
+                total_other_assets:$("#wuxingzcjqtzchj").val(),
+                deferred_taxes_debit:$("#diyanskjx").val(),
+                total_current_assets:$("#zichanzj").val(),
+                account_payable:$("#yingfuzk").val(),
+                short_term_borrowing:$("#duanqijk").val(),
+                notes_payable:$("#yingfupj").val(),
+                deposit_received:$("#yushouzk").val(),
+                wages_payable:$("#yingfugz").val(),
+                welfare_payable:$("#yingfuflf").val(),
+                dividends_payable:$("#yingfugl").val(),
+                tax_payable:$("#chengjiaosj").val(),
+                other_fees_payable:$("#qitayjk").val(),
+                other_payable:$("#qitayfk").val(),
+                accrued_expenses:$("#yutify").val(),
+                year_long_term_debt:$("#yinianndqdcqfz").val(),
+                other_current_liability:$("#qitaldfz").val(),
+                total_current_liability:$("#liudongfzhj").val(),
+                long_term_loan:$("#changqijk").val(),
+                bonds_payable:$("#yingfuzq").val(),
+                long_term_payable:$("#changqiyfk").val(),
+                other_long_term_debt:$("#qitacqfz").val(),
+                total_long_term_liabilities:$("#changqifzhj").val(),
+                deferred_tax_credits:$("#diyanskdx").val(),
+                total_liability:$("#fuzhaihj").val(),
+                paicl_up_capital:$("#shishouzbhgb").val(),
+                capital_reserve:$("#zibengj").val(),
+                surplus_public_accumulation:$("#yingyugj").val(),
+                legal_surplus:$("#wuxingzcjqtzcqt").val(),
+                public_welfare_fund:$("#huaizhangzb").val(),
+                supplementary_working_capital:$("#suoyouzqyqt").val(),
+                undistributed_profit:$("#weifenplr").val(),
+                total_owners_equity:$("#suoyouzqyhj").val(),
+                total_liabilities_and_owners_equity:$("#fuzhaijsyzqyhj").val()
+            }
+            var reg = /^[0-9|.|%|_|-|$|￥|&|@|,|]*$/;
+            if (!reg.test(data.assets)){
+                alert("请输入正确格式")
+            }else if(!reg.test(data.short_time_investments)){
+                 alert("请输入正确格式")
+            }else if(!reg.test(data.notes_receivable)){
+                 alert("请输入正确格式")
+            } else if (!reg.test(data.dividends_receivable)) {
+                 alert("请输入正确格式")
+            } else if (!reg.test(data.interest_receivable)) {
+                 alert("请输入正确格式")
+            } else if (!reg.test(data.receivable)) {
+                 alert("请输入正确格式")
+            } else if (!reg.test(data.receivable_other)) {
+                 alert("请输入正确格式")
+            } else if (!reg.test(data.advance_payment)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.tax_refund_receivable)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.allowance_receivable)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.inventory)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.unamortized_expense)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.loss_on_current_assets)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.year_long_term_debt_investment)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.other_current_assets)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.total_folat_current_assets)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.long_term_investment)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.long_term_investment_2)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.total_for_long_term_investment)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.original_value_of_fixed_assets)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.accumulated_depreciation)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.net_value_of_fixed_assets)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.fixed_assets_depreciation_reserves)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.net_fixed_assets)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.disposal_of_fixed_assets)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.engineering_material)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.construction_process)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.Net_loss_on_fixed_assets)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.total_fixed_assets)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.intangible_assets)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.land_usage_right)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.deferred_assets)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.other_long_term_assets)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.total_other_assets)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.deferred_taxes_debit)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.total_current_assets)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.account_payable)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.short_term_borrowing)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.notes_payable)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.deposit_received)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.wages_payable)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.welfare_payable)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.dividends_payable)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.tax_payable)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.other_fees_payable)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.other_payable)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.accrued_expenses)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.year_long_term_debt)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.other_current_liability)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.total_current_liability)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.long_term_loan)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.bonds_payable)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.long_term_payable)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.other_long_term_debt)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.total_long_term_liabilities)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.deferred_tax_credits)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.total_liability)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.paicl_up_capital)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.capital_reserve)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.surplus_public_accumulation)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.legal_surplus)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.public_welfare_fund)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.supplementary_working_capital)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.undistributed_profit)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.total_owners_equity)) {
+                alert("请输入正确格式")
+            } else if (!reg.test(data.total_liabilities_and_owners_equity)) {
+                alert("请输入正确格式")
+            }else{
+                console.log(data)
+                $.ajax({
+                    url:"http://declare.dagaimao.cn/web/index.php?r=finance/unlisted-debt",
+                    type:"post",
+                    data:data,
+                    xhrFields: {
+                        withCredentials: true//设置显式指定浏览器发送Cookie，跨域时默认不使用
+                    },
+                    crossDomain: true,
+                    dataType: "json",
+                    success:function(res){
+                        console.log(res)
+                        if(res.status == 1){
+                            alert("保存成功")
+                            window.close();
+                        }
+                    },
+                    error:function(){
+                        console.log("error")
+                    }
+                })
+            }
+           
+            
+            return false;
+        })
+        $(document).ready(function(){
+           
+        })
+    </script>
 </body>
 </html>

@@ -5,8 +5,841 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>上市公司资产表</title>
+    <style>
+         body{font-size:12px;}
+        .style2 {
+            color: #FF0000;
+        }
+        .style6 {
+            color: #000000;
+            font-size: 18px;
+            font-family: "宋体";
+            font-weight: bold;
+        }
+        .tab {
+            margin-top: 8px;
+            border: 1px;
+            border-color: Blue;
+            background-color: White;
+            BORDER-RIGHT: #4cb1ff 0px solid;
+            PADDING-RIGHT: 0px;
+            BORDER-TOP: #4cb1ff 1px solid;
+            PADDING-LEFT: 10px;
+            PADDING-BOTTOM: 0px;
+            BORDER-LEFT: #4cb1ff 1px solid;
+            PADDING-TOP: 0px;
+            BORDER-BOTTOM: #4cb1ff 0px solid;
+            text-align: left;
+            line-height: 30px;
+        }
+        .tab th {
+            BORDER-RIGHT: #4cb1ff 1px solid;
+            PADDING-RIGHT: 0px;
+            BORDER-TOP: #4cb1ff 0px solid;
+            PADDING-LEFT: 10px;
+            PADDING-BOTTOM: 0px;
+            BORDER-LEFT: #4cb1ff 0px solid;
+            PADDING-TOP: 8px;
+            BORDER-BOTTOM: #4cb1ff 1px solid;
+        }
+        .tab td {
+            BORDER-RIGHT: #4cb1ff 1px solid;
+            PADDING-RIGHT: 0px;
+            BORDER-TOP: #4cb1ff 0px solid;
+            PADDING-LEFT: 10px;
+            PADDING-BOTTOM: 0px;
+            BORDER-LEFT: #4cb1ff 0px solid;
+            BORDER-BOTTOM: #4cb1ff 1px solid;
+        }
+    </style>
 </head>
 <body>
+    <form name="form1" id="form1">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+            <tbody>
+                <tr>
+                    <td height="15" align="center" valign="bottom">
+                        <div align="center" class="style2">
+                            <div align="right">
+                                <p align="center">
+                                    <span class="style6">资产负债表</span></p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="15">
+                        <div align="right">
+                            <span class="style2"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="15">
+                        <div align="right" class="style2">
+                            <p class="style1">
+                                <span class="style2">请按审计后的资产负债表完整填报，所有各项均为必填项 ，单位:元
+                                    币种:人民币&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <br>
+                                </span></p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" height="28" border="1" align="center" cellpadding="1" cellspacing="0" bordercolorlight="#000099"
+            bordercolordark="#ffffff" bgcolor="#eff5fe">
+            <tbody>
+                <tr>
+                    <td width="23%" height="26">
+                        <div align="right">
+                            <span class="style1">年度：</span></div>
+                    </td>
+                    <td width="77%">
+                        <font size="-1">
+                            2018
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0" class="tab">
+            <thead>
+                <tr>
+                    <th>
+                        项目
+                    </th>
+                    <th>
+                        期末余额
+                    </th>
+                    <th>
+                        年初余额
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>流动资产：</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        货币资金 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txthuobizj_e" type="text" maxlength="15" id="txthuobizj_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txthuobizj" type="text" maxlength="15" id="txthuobizj" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        交易性金融资产 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtjiaoyixingJRZC_e" type="text" maxlength="15" id="txtjiaoyixingJRZC_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtjiaoyixingJRZC" type="text" maxlength="15" id="txtjiaoyixingJRZC" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        应收票据 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingshoupj_e" type="text" maxlength="15" id="txtyingshoupj_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingshoupj" type="text" maxlength="15" id="txtyingshoupj" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        应收账款 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingfuzk_e" type="text" maxlength="15" id="txtyingfuzk_e" style="width:200px;">
+                        <font color="red" size="4">&nbsp;&nbsp;&nbsp;</font>
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingfuzk" type="text" maxlength="15" id="txtyingfuzk" style="width:200px;">
+                        <font color="red" size="4">&nbsp;&nbsp;&nbsp;</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        预付款项 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyufukx_e" type="text" maxlength="15" id="txtyufukx_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyufukx" type="text" maxlength="15" id="txtyufukx" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        应收利息 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingshoulx_e" type="text" maxlength="15" id="txtyingshoulx_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingshoulx" type="text" maxlength="15" id="txtyingshoulx" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        应收股利 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingshougl_e" type="text" maxlength="15" id="txtyingshougl_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingshougl" type="text" maxlength="15" id="txtyingshougl" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        其他应收款 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtqitaysk_e" type="text" maxlength="15" id="txtqitaysk_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtqitaysk" type="text" maxlength="15" id="txtqitaysk" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        存货 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtcunhuo_e" type="text" maxlength="15" id="txtcunhuo_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtcunhuo" type="text" maxlength="15" id="txtcunhuo" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        一年内到期的非流动资产 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyinianneidqdfldzc_e" type="text" maxlength="15" id="txtyinianneidqdfldzc_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyinianneidqdfldzc" type="text" maxlength="15" id="txtyinianneidqdfldzc" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        其他流动资产 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtqitaldzc_e" type="text" maxlength="15" id="txtqitaldzc_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtqitaldzc" type="text" maxlength="15" id="txtqitaldzc" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        流动资产合计 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtliudongzchj_e" type="text" maxlength="15" id="txtliudongzchj_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtliudongzchj" type="text" maxlength="15" id="txtliudongzchj" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>非流动资产：</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        可供出售金融资产 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtkegongcsjrzc_e" type="text" maxlength="15" id="txtkegongcsjrzc_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtkegongcsjrzc" type="text" maxlength="15" id="txtkegongcsjrzc" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        持有至到期投资 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtchiyouzhidqtz_e" type="text" maxlength="15" id="txtchiyouzhidqtz_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtchiyouzhidqtz" type="text" maxlength="15" id="txtchiyouzhidqtz" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        长期应收款 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtchangqiysk_e" type="text" maxlength="15" id="txtchangqiysk_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtchangqiysk" type="text" maxlength="15" id="txtchangqiysk" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        长期股权投资 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtchangqigqtz_e" type="text" maxlength="15" id="txtchangqigqtz_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtchangqigqtz" type="text" maxlength="15" id="txtchangqigqtz" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        投资性房地产 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txttouzixingfdc_e" type="text" maxlength="15" id="txttouzixingfdc_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txttouzixingfdc" type="text" maxlength="15" id="txttouzixingfdc" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        固定资产 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtgudingzc_e" type="text" maxlength="15" id="txtgudingzc_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtgudingzc" type="text" maxlength="15" id="txtgudingzc" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        在建工程 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtzaijiangc_e" type="text" maxlength="15" id="txtzaijiangc_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtzaijiangc" type="text" maxlength="15" id="txtzaijiangc" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        工程物资 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtgongchengwz_e" type="text" maxlength="15" id="txtgongchengwz_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtgongchengwz" type="text" maxlength="15" id="txtgongchengwz" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        固定资产清理 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtgudingzcql_e" type="text" maxlength="15" id="txtgudingzcql_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtgudingzcql" type="text" maxlength="15" id="txtgudingzcql" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        生产性生物资产 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtshengchanxingswzc_e" type="text" maxlength="15" id="txtshengchanxingswzc_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtshengchanxingswzc" type="text" maxlength="15" id="txtshengchanxingswzc" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        油气资产 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyouqizc_e" type="text" maxlength="15" id="txtyouqizc_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyouqizc" type="text" maxlength="15" id="txtyouqizc" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        无形资产 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtwuxingzc_e" type="text" maxlength="15" id="txtwuxingzc_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtwuxingzc" type="text" maxlength="15" id="txtwuxingzc" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        开发支出 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtkaifazc_e" type="text" maxlength="15" id="txtkaifazc_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtkaifazc" type="text" maxlength="15" id="txtkaifazc" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        商誉 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtshangyu_e" type="text" maxlength="15" id="txtshangyu_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtshangyu" type="text" maxlength="15" id="txtshangyu" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        长期待摊费用 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtchangqidtfy_e" type="text" maxlength="15" id="txtchangqidtfy_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtchangqidtfy" type="text" maxlength="15" id="txtchangqidtfy" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        递延所得税资产 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtdiyansdszc_e" type="text" maxlength="15" id="txtdiyansdszc_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtdiyansdszc" type="text" maxlength="15" id="txtdiyansdszc" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        其他非流动资产 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtqitafldzc_e" type="text" maxlength="15" id="txtqitafldzc_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtqitafldzc" type="text" maxlength="15" id="txtqitafldzc" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        非流动资产合计 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtfeiliudongzchj_e" type="text" maxlength="15" id="txtfeiliudongzchj_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtfeiliudongzchj" type="text" maxlength="15" id="txtfeiliudongzchj" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        资产总计 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtzichanzj_e" type="text" maxlength="15" id="txtzichanzj_e" style="width:200px;">
+                        <font color="red" size="4">&nbsp;&nbsp;&nbsp;</font>
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtzichanzj" type="text" maxlength="15" id="txtzichanzj" style="width:200px;">
+                        <font color="red" size="4">&nbsp;&nbsp;&nbsp;</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>流动负债：</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        短期借款 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtduanqijk_e" type="text" maxlength="15" id="txtduanqijk_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtduanqijk" type="text" maxlength="15" id="txtduanqijk" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        交易性金融负债 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtjiaoyixingjrfz_e" type="text" maxlength="15" id="txtjiaoyixingjrfz_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtjiaoyixingjrfz" type="text" maxlength="15" id="txtjiaoyixingjrfz" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        应付票据 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingfupj_e" type="text" maxlength="15" id="txtyingfupj_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingfupj" type="text" maxlength="15" id="txtyingfupj" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        应付账款 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtldyingfuzk_e" type="text" maxlength="15" id="txtldyingfuzk_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtldyingfuzk" type="text" maxlength="15" id="txtldyingfuzk" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        预收款项 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyushoukx_e" type="text" maxlength="15" id="txtyushoukx_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyushoukx" type="text" maxlength="15" id="txtyushoukx" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        应付职工薪酬 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingfuzgxc_e" type="text" maxlength="15" id="txtyingfuzgxc_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingfuzgxc" type="text" maxlength="15" id="txtyingfuzgxc" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        应交税费 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingjiaosf_e" type="text" maxlength="15" id="txtyingjiaosf_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingjiaosf" type="text" maxlength="15" id="txtyingjiaosf" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        应付利息 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingfulx_e" type="text" maxlength="15" id="txtyingfulx_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingfulx" type="text" maxlength="15" id="txtyingfulx" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        应付股利 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingfugl_e" type="text" maxlength="15" id="txtyingfugl_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingfugl" type="text" maxlength="15" id="txtyingfugl" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        其他应付款 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtqitayfk_e" type="text" maxlength="15" id="txtqitayfk_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtqitayfk" type="text" maxlength="15" id="txtqitayfk" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        一年内到期的非流动负债 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyinianneidqdfldfz_e" type="text" maxlength="15" id="txtyinianneidqdfldfz_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyinianneidqdfldfz" type="text" maxlength="15" id="txtyinianneidqdfldfz" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        其他流动负债 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtqitaldfz_e" type="text" maxlength="15" id="txtqitaldfz_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtqitaldfz" type="text" maxlength="15" id="txtqitaldfz" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        流动负债合计 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtliudongfzhj_e" type="text" maxlength="15" id="txtliudongfzhj_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtliudongfzhj" type="text" maxlength="15" id="txtliudongfzhj" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>非流动负债：</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        长期借款 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtchangqijk_e" type="text" maxlength="15" id="txtchangqijk_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtchangqijk" type="text" maxlength="15" id="txtchangqijk" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        应付债券 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingfuzq_e" type="text" maxlength="15" id="txtyingfuzq_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingfuzq" type="text" maxlength="15" id="txtyingfuzq" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        长期应付款 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtchangqiyfk_e" type="text" maxlength="15" id="txtchangqiyfk_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtchangqiyfk" type="text" maxlength="15" id="txtchangqiyfk" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        专项应付款 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtzhuanxiangyfk_e" type="text" maxlength="15" id="txtzhuanxiangyfk_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtzhuanxiangyfk" type="text" maxlength="15" id="txtzhuanxiangyfk" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        预计负债 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyujifz_e" type="text" maxlength="15" id="txtyujifz_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyujifz" type="text" maxlength="15" id="txtyujifz" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        递延所得税负债 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtdiyansdsfz_e" type="text" maxlength="15" id="txtdiyansdsfz_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtdiyansdsfz" type="text" maxlength="15" id="txtdiyansdsfz" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        其他非流动负债 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtqitafldfz_e" type="text" maxlength="15" id="txtqitafldfz_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtqitafldfz" type="text" maxlength="15" id="txtqitafldfz" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        非流动负债合计 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtfeiliudongfzhj_e" type="text" maxlength="15" id="txtfeiliudongfzhj_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtfeiliudongfzhj" type="text" maxlength="15" id="txtfeiliudongfzhj" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        负债合计 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtfuzhaihj_e" type="text" maxlength="15" id="txtfuzhaihj_e" style="width:200px;">
+                        <font color="red" size="4">&nbsp;&nbsp;&nbsp;</font>
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtfuzhaihj" type="text" maxlength="15" id="txtfuzhaihj" style="width:200px;">
+                        <font color="red" size="4">&nbsp;&nbsp;&nbsp;</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>所有者权益（或股东权益）</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        实收资本（或股本） ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtshishouzb_e" type="text" maxlength="15" id="txtshishouzb_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtshihouzb" type="text" maxlength="15" id="txtshihouzb" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        资本公积 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtzibengj_e" type="text" maxlength="15" id="txtzibengj_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtzibengj" type="text" maxlength="15" id="txtzibengj" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        减：库存股 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtkucg_e" type="text" maxlength="15" id="txtkucg_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtkucg" type="text" maxlength="15" id="txtkucg" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        专项储备 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtzhuanxiangcb_e" type="text" maxlength="15" id="txtzhuanxiangcb_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtzhuanxiangcb" type="text" maxlength="15" id="txtzhuanxiangcb" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        盈余公积 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingyugj_e" type="text" maxlength="15" id="txtyingyugj_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyingyugj" type="text" maxlength="15" id="txtyingyugj" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        一般风险准备 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyibanfxzb_e" type="text" maxlength="15" id="txtyibanfxzb_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtyibanfxzb" type="text" maxlength="15" id="txtyibanfxzb" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        未分配利润 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtweifenpeiLR_e" type="text" maxlength="15" id="txtweifenpeiLR_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtweifenpeiLR" type="text" maxlength="15" id="txtweifenpeiLR" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        所有者权益（或股东权益）合计 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtsuoyouzheqyhj_e" type="text" maxlength="15" id="txtsuoyouzheqyhj_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtsuoyouzheqyhj" type="text" maxlength="15" id="txtsuoyouzheqyhj" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" align="right">
+                        负债和所有者权益（或股东权益）总计 ：
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtfuzhaihsyzqyzj_e" type="text" maxlength="15" id="txtfuzhaihsyzqyzj_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="40%" align="left">
+                        <input name="txtfuzhaihsyzqyzj" type="text" maxlength="15" id="txtfuzhaihsyzqyzj" style="width:200px;">
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td style="text-align: center" colspan="4">
+                        <input type="submit" name="BtnSave" value="保存" onclick="return CheckInfo();" id="BtnSave">
+                        <input type="button" value="关闭" onclick="window.close();" style="margin-left: 20px;">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     
+    </form>
 </body>
 </html>

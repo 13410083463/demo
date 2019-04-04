@@ -5,8 +5,604 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>上市公司现金表</title>
+    <style>
+         body{font-size:12px;}
+        .style2 {
+            color: #FF0000;
+        }
+        .style6 {
+            color: #000000;
+            font-size: 18px;
+            font-family: "宋体";
+            font-weight: bold;
+        }
+        .tab {
+            margin-top: 8px;
+            border: 1px;
+            border-color: Blue;
+            background-color: White;
+            BORDER-RIGHT: #4cb1ff 0px solid;
+            PADDING-RIGHT: 0px;
+            BORDER-TOP: #4cb1ff 1px solid;
+            PADDING-LEFT: 10px;
+            PADDING-BOTTOM: 0px;
+            BORDER-LEFT: #4cb1ff 1px solid;
+            PADDING-TOP: 0px;
+            BORDER-BOTTOM: #4cb1ff 0px solid;
+            text-align: left;
+            line-height: 30px;
+        }
+        .tab td {
+            BORDER-RIGHT: #4cb1ff 1px solid;
+            PADDING-RIGHT: 0px;
+            BORDER-TOP: #4cb1ff 0px solid;
+            PADDING-LEFT: 10px;
+            PADDING-BOTTOM: 0px;
+            BORDER-LEFT: #4cb1ff 0px solid;
+            BORDER-BOTTOM: #4cb1ff 1px solid;
+        }
+        .tab th {
+            BORDER-RIGHT: #4cb1ff 1px solid;
+            PADDING-RIGHT: 0px;
+            BORDER-TOP: #4cb1ff 0px solid;
+            PADDING-LEFT: 10px;
+            PADDING-BOTTOM: 0px;
+            BORDER-LEFT: #4cb1ff 0px solid;
+            PADDING-TOP: 8px;
+            BORDER-BOTTOM: #4cb1ff 1px solid;
+        }
+    </style>
 </head>
 <body>
+    <form name="form1" id="form1">
+        <table width="85%" border="0" cellspacing="0" cellpadding="0" align="center">
+            <tbody>
+                <tr>
+                    <td height="14" align="center" valign="bottom">
+                        <div align="center" class="style2">
+                            <div align="right">
+                                <p align="center">
+                                    <span class="style6"><strong>母公司现金流量表</strong></span></p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="15">
+                        <div align="right">
+                            <span class="style2"><span class="style1"></span></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="15">
+                        <div align="right" class="style2">
+                            <span class="style1"><span class="style7"><span class="style2">请按审计后的母公司现金流量表完整填报，所有各项均为必填项
+                                        单位:元 币种:人民币</span> </span></span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="86%" class="tab">
+            <tbody>
+                <tr>
+                    <td width="23%" height="26">
+                        <div align="right">
+                            <span class="style1">年度：</span></div>
+                    </td>
+                    <td width="77%">
+                        <font size="-1">
+                            2019
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table cellspacing="0" cellpadding="0" width="86%" border="0" class="tab">
+            <thead>
+                <tr>
+                    <th>
+                        项目
+                    </th>
+                    <th>
+                        本期金额
+                    </th>
+                    <th>
+                        上期金额
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        一、经营活动产生的现金流量： ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtjingyingHDCSDXJLL_e" type="text" value="0.00" maxlength="15" id="txtjingyingHDCSDXJLL_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtjingyingHDCSDXJLL" type="text" value="0.00" maxlength="15" id="txtjingyingHDCSDXJLL"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        销售商品、提供劳务收到的现金 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtxiaoshouSPTGLWSDDXJ_e" type="text" value="0.00" maxlength="15" id="txtxiaoshouSPTGLWSDDXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtxiaoshouSPTGLWSDDXJ" type="text" value="0.00" maxlength="15" id="txtxiaoshouSPTGLWSDDXJ"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        收到的税费返还 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtshoudaodeSFFH_e" type="text" value="0.00" maxlength="15" id="txtshoudaodeSFFH_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtshoudaodeSFFH" type="text" value="0.00" maxlength="15" id="txtshoudaodeSFFH" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        收到其他与经营活动有关的现金 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtshoudaoQTYJYHDYGDXJ_e" type="text" value="0.00" maxlength="15" id="txtshoudaoQTYJYHDYGDXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtshoudaoQTYJYHDYGDXJ" type="text" value="0.00" maxlength="15" id="txtshoudaoQTYJYHDYGDXJ"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        经营活动现金流入小计 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtjingyingHDXJLRXJ_e" type="text" value="0.00" maxlength="15" id="txtjingyingHDXJLRXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtjingyingHDXJLRXJ" type="text" value="0.00" maxlength="15" id="txtjingyingHDXJLRXJ"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        购买商品、接受劳务支付的现金 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtgoumaiSPJSLWZFDXJ_e" type="text" value="0.00" maxlength="15" id="txtgoumaiSPJSLWZFDXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtgoumaiSPJSLWZFDXJ" type="text" value="0.00" maxlength="15" id="txtgoumaiSPJSLWZFDXJ"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        支付给职工以及为职工支付的现金 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtzhifugeiZGYJWZGZFDXJ_e" type="text" value="0.00" maxlength="15" id="txtzhifugeiZGYJWZGZFDXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtzhifugeiZGYJWZGZFDXJ" type="text" value="0.00" maxlength="15" id="txtzhifugeiZGYJWZGZFDXJ"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        支付的各项税费 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtzhifudeGXSF_e" type="text" value="0.00" maxlength="15" id="txtzhifudeGXSF_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtzhifudeGXSF" type="text" value="0.00" maxlength="15" id="txtzhifudeGXSF" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        支付其他与经营活动有关的现金 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtzhifuQTYJYHDYGDXJ_e" type="text" value="0.00" maxlength="15" id="txtzhifuQTYJYHDYGDXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtzhifuQTYJYHDYGDXJ" type="text" value="0.00" maxlength="15" id="txtzhifuQTYJYHDYGDXJ"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        经营活动现金流出小计 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtjingyingHDXJLCXJ_e" type="text" value="0.00" maxlength="15" id="txtjingyingHDXJLCXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtjingyingHDXJLCXJ" type="text" value="0.00" maxlength="15" id="txtjingyingHDXJLCXJ"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        经营活动产生的现金流量净额 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtjingyingHDCSDXJLLJE_e" type="text" value="0.00" maxlength="15" id="txtjingyingHDCSDXJLLJE_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtjingyingHDCSDXJLLJE" type="text" value="0.00" maxlength="15" id="txtjingyingHDCSDXJLLJE"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        二、投资活动产生的现金流量 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txttouziHDCCDXJLL_e" type="text" value="0.00" maxlength="15" id="txttouziHDCCDXJLL_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txttouziHDCCDXJLL" type="text" value="0.00" maxlength="15" id="txttouziHDCCDXJLL"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        收回投资收到的现金 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtshouhuiTZSDDXJ_e" type="text" value="0.00" maxlength="15" id="txtshouhuiTZSDDXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtshouhuiTZSDDXJ" type="text" value="0.00" maxlength="15" id="txtshouhuiTZSDDXJ"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        取得投资收益收到的现金 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtqudeTZSYSDDXJ_e" type="text" value="100.00" maxlength="15" id="txtqudeTZSYSDDXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtqudeTZSYSDDXJ" type="text" value="0.00" maxlength="15" id="txtqudeTZSYSDDXJ" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        处置固定资产、无形资产和其他长期资产收回的现金净额 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtzhuzhiGDZCWXZCHQTCQZCSHDXJJE_e" type="text" value="0.00" maxlength="15" id="txtzhuzhiGDZCWXZCHQTCQZCSHDXJJE_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtzhuzhiGDZCWXZCHQTCQZCSHDXJJE" type="text" value="0.00" maxlength="15" id="txtzhuzhiGDZCWXZCHQTCQZCSHDXJJE"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        处置子公司及其他营业单位收到的现金净额 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtzhuzhiZGSYQTYYDWDWSDDXJJE_e" type="text" value="0.00" maxlength="15" id="txtzhuzhiZGSYQTYYDWDWSDDXJJE_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtzhuzhiZGSYQTYYDWDWSDDXJJE" type="text" value="0.00" maxlength="15" id="txtzhuzhiZGSYQTYYDWDWSDDXJJE"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        收到其他与投资活动有关的现金 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtshoudaoQTYTZHDYGDXJ_e" type="text" value="0.00" maxlength="15" id="txtshoudaoQTYTZHDYGDXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtshoudaoQTYTZHDYGDXJ" type="text" value="0.00" maxlength="15" id="txtshoudaoQTYTZHDYGDXJ"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        投资活动现金流入小计 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txttouziHDXJLRXJ_e" type="text" value="0.00" maxlength="15" id="txttouziHDXJLRXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txttouziHDXJLRXJ" type="text" value="0.00" maxlength="15" id="txttouziHDXJLRXJ" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        购建固定资产、无形资产和其他长期资产支付的现金 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtgoujianGDZCWXZCHQTCQZCZFDXJ_e" type="text" value="0.00" maxlength="15" id="txtgoujianGDZCWXZCHQTCQZCZFDXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtgoujianGDZCWXZCHQTCQZCZFDXJ" type="text" value="0.00" maxlength="15" id="txtgoujianGDZCWXZCHQTCQZCZFDXJ"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        投资支付的现金 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txttouziZFDXJ_e" type="text" value="0.00" maxlength="15" id="txttouziZFDXJ_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txttouziZFDXJ" type="text" value="0.00" maxlength="15" id="txttouziZFDXJ" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        取得子公司及其他营业单位支付的现金净额
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtqudezigongsiJQTYYDWZFDXJJE_e" type="text" maxlength="15" id="txtqudezigongsiJQTYYDWZFDXJJE_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtqudezigongsiJQTYYDWZFDXJJE" type="text" maxlength="15" id="txtqudezigongsiJQTYYDWZFDXJJE"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        支付其他与投资活动有关的现金
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtzhifuqitaTZHDYGDXJ_e" type="text" maxlength="15" id="txtzhifuqitaTZHDYGDXJ_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtzhifuqitaTZHDYGDXJ" type="text" maxlength="15" id="txtzhifuqitaTZHDYGDXJ" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        投资活动现金流出小计
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txttouziHDXJLXJ_e" type="text" maxlength="15" id="txttouziHDXJLXJ_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txttouziHDXJLXJ" type="text" maxlength="15" id="txttouziHDXJLXJ" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        投资活动产生的现金流量净额 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txttouziHDCSDXJLLJE_e" type="text" value="0.00" maxlength="15" id="txttouziHDCSDXJLLJE_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txttouziHDCSDXJLLJE" type="text" value="0.00" maxlength="15" id="txttouziHDCSDXJLLJE"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        三、筹资活动产生的现金流量： ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtchouziHDCSDXJLL_e" type="text" value="0.00" maxlength="15" id="txtchouziHDCSDXJLL_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtchouziHDCSDXJLL" type="text" value="0.00" maxlength="15" id="txtchouziHDCSDXJLL"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        吸收投资收到的现金 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtxishouTZSDDXJ_e" type="text" value="0.00" maxlength="15" id="txtxishouTZSDDXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtxishouTZSDDXJ" type="text" value="0.00" maxlength="15" id="txtxishouTZSDDXJ" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        取得借款收到的现金 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtqudeJKSDDXJ_e" type="text" value="0.00" maxlength="15" id="txtqudeJKSDDXJ_e" style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtqudeJKSDDXJ" type="text" value="0.00" maxlength="15" id="txtqudeJKSDDXJ" style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        收到其他与筹资活动有关的现金 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtshoudaoQTYCZHDYGDXJ_e" type="text" value="0.00" maxlength="15" id="txtshoudaoQTYCZHDYGDXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtshoudaoQTYCZHDYGDXJ" type="text" value="0.00" maxlength="15" id="txtshoudaoQTYCZHDYGDXJ"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        筹资活动现金流入小计 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtchouziHDXJLRXJ_e" type="text" value="0.00" maxlength="15" id="txtchouziHDXJLRXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtchouziHDXJLRXJ" type="text" value="0.00" maxlength="15" id="txtchouziHDXJLRXJ"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        偿还债务支付的现金 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtchanghuanZWZFDXJ_e" type="text" value="0.00" maxlength="15" id="txtchanghuanZWZFDXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtchanghuanZWZFDXJ" type="text" value="0.00" maxlength="15" id="txtchanghuanZWZFDXJ"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        分配股利、利润或偿付利息支付的现金 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtfenpeiGXLRHCFLXZFDXJ_e" type="text" value="0.00" maxlength="15" id="txtfenpeiGXLRHCFLXZFDXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtfenpeiGXLRHCFLXZFDXJ" type="text" value="0.00" maxlength="15" id="txtfenpeiGXLRHCFLXZFDXJ"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        支付其他与筹资活动有关的现金 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtzhifuQTYCZHDYGDXJ_e" type="text" value="0.00" maxlength="15" id="txtzhifuQTYCZHDYGDXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtzhifuQTYCZHDYGDXJ" type="text" value="0.00" maxlength="15" id="txtzhifuQTYCZHDYGDXJ"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        筹资活动现金流出小计 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtchouziHDXJLCXJ_e" type="text" value="0.00" maxlength="15" id="txtchouziHDXJLCXJ_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtchouziHDXJLCXJ" type="text" value="0.00" maxlength="15" id="txtchouziHDXJLCXJ"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        筹资活动产生的现金流量净额 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtchouziHDCSDJXLLJE_e" type="text" value="0.00" maxlength="15" id="txtchouziHDCSDJXLLJE_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtchouziHDCSDJXLLJE" type="text" value="0.00" maxlength="15" id="txtchouziHDCSDJXLLJE"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        四、汇率变动对现金及现金等价物的影响 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txthuilvBDDXJJXJDJWDYX_e" type="text" value="0.00" maxlength="15" id="txthuilvBDDXJJXJDJWDYX_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txthuilvBDDXJJXJDJWDYX" type="text" value="0.00" maxlength="15" id="txthuilvBDDXJJXJDJWDYX"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        五、现金及现金等价物净增加额 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtxianjinJXJDJWJZJE_e" type="text" value="0.00" maxlength="15" id="txtxianjinJXJDJWJZJE_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtxianjinJXJDJWJZJE" type="text" value="0.00" maxlength="15" id="txtxianjinJXJDJWJZJE"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        加：期初现金及现金等价物余额 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtqichuXJJXJDJWYE_e" type="text" value="0.00" maxlength="15" id="txtqichuXJJXJDJWYE_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtqichuXJJXJDJWYE" type="text" value="0.00" maxlength="15" id="txtqichuXJJXJDJWYE"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="25" width="30%" align="right">
+                        六、期末现金及现金等价物余额 ：
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtqimoXJJXJDJWYE_e" type="text" value="0.00" maxlength="15" id="txtqimoXJJXJDJWYE_e"
+                            style="width:200px;">
+                    </td>
+                    <td height="25" width="35%" align="left">
+                        <input name="txtqimoXJJXJDJWYE" type="text" value="0.00" maxlength="15" id="txtqimoXJJXJDJWYE"
+                            style="width:200px;">
+                    </td>
+                </tr>
+                <tr class="style1">
+                    <td style="text-align: center" colspan="4">
+                        <input type="submit" name="BtnSave" value="保存" onclick="return CheckInfo();" id="BtnSave">
+                        <input type="button" value="关闭" onclick="window.close();" style="margin-left: 20px;">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     
+    </form>
 </body>
 </html>

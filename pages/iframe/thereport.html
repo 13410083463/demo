@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <base target="_blank">
     <title>年度财务报表</title>
     <link rel="stylesheet" href="../../src/css/style.bundle.css">
     <link rel="stylesheet" href="../../src/css/datatables.bundle.css">
@@ -138,11 +139,6 @@ a:link, a:visited {
         </div>
         <div class="m-portlet__body">
             <table id="gvInfo" class="table table-striped- table-bordered table-hover table-checkable">
-                <tbody>
-                    <tr>
-                        <th>fdsfdsf</th>
-                    </tr>
-                </tbody>
             </table>
         </div>
     </div>
@@ -267,11 +263,34 @@ a:link, a:visited {
                     'data': 'finance_id',
                     'title': '操作',
                     "render": function (data, type, row, meta) {
-                        return "<span class='edit'>编辑</span><span class='cancel'>删除</span>"
+                        var rowData = JSON.stringify(row);
+                        return "<a  href='javascript:void(0)' class='edit' onclick='editTable("+rowData+")'>编辑</a><span class='cancel'>删除</span>"
                     } 
                 }]
 
             });
+
+            function editTable(data){
+                var Data = {
+                    file_id: data.finance_id,
+                    year: data.year
+                }
+                if(data.company_type == 0 && data.statement_tpye == 0){
+                   $(".edit").attr("href","../wrongAssets.html?obj="+JSON.stringify(Data))
+                }else if(data.company_type == 0 && data.statement_tpye == 1){
+                    $(".edit").attr("href", "../wrongCash.html")
+                }else if(data.company_type == 0 && data.statement_tpye == 2){
+                    $(".edit").attr("href", "../wrongProfit.html")
+                }else if(data.company_type == 1 && data.statement_tpye == 0){
+                    $(".edit").attr("href", "../assets.html")
+                }else if(data.company_type == 1 && data.statement_tpye == 1){
+                    $(".edit").attr("href", "../cash.html")
+                }else if(data.company_type == 1 && data.statement_tpye == 2){
+                     $(".edit").attr("href", "../profit.html")
+                }
+
+                return false;
+            }
             $(document).ready(function(){
                 
             })
