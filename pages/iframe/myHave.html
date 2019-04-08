@@ -5,9 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>我的已办</title>
+    <link rel="stylesheet" href="../../src/css/style.bundle.css">
+    <link rel="stylesheet" href="../../src/css/datatables.bundle.css">
     <link rel="stylesheet" href="../../lib/datepicker/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../lib/datepicker/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="../../dest/css/myHave.css">
+    <style>
+          @media (max-width: 1024px){
+        .dataTables_wrapper .dataTables_pager {
+            margin-top: -2rem;
+            text-align: right;
+            }
+        }
+        #gvInfo_processing {
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+            text-align:center;
+        }
+        .Handle{
+            cursor: pointer;
+        }
+        .custom-select{
+            line-height:15px;
+        }
+    
+    </style>
 </head>
 <body>
     <div id="myHave">
@@ -97,10 +121,175 @@
                 </tbody>
             </table>
         </div>
+        <div class="m-portlet__body">
+            <table id="gvInfo" class="table table-striped- table-bordered table-hover table-checkable">
+        
+            </table>
+        </div>
     </div>
     <script src="../../lib/jquery.min.js"></script>
+    <script src="../../src/script/scripts.bundle.js"></script>
+    <script src="../../src/script/datatables.bundle.js"></script>
     <script src="../../lib/datepicker/js/bootstrap-datepicker.min.js"></script>
     <script src="../../lib/datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
     <script src="../../dest/script/myHave.js"></script>
+    
+
+    <script>
+          function time(data) {
+                var date = new Date(data * 1000);
+                var year = date.getFullYear();
+                var mont = (date.getMonth() + 1) < 9 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1);
+                var day = date.getDate();
+                var time = year + "-" + mont + "-" + day;
+                return time;
+            }
+            window.table = $("#gvInfo").DataTable({
+                processing: true,  //隐藏加载提示,自行处理
+                searching: false,  //禁用原生搜索
+                ordering: false,
+                lengthChange: false,
+                bLengthChange: true,
+                displayStart: 0,
+                bDeferRender: true,
+                pageLength: 2,
+                serverSide: !0,
+                dom: "<'row'<'col-sm-12'tr>>\n\t\t\t<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>",
+                lengthMenu: [2, 4, 8, 10],
+                language: {
+                    "sProcessing": "处理中...",
+                    "sLengthMenu": "显示 _MENU_ ",
+                    "sZeroRecords": "没有匹配结果",
+                    "sInfo": "显示第 _START_ 至 _END_ ，共 _TOTAL_ 项",
+                    "sInfoEmpty": "显示第 0 至 0 ，共 0 项",
+                    "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+                    "sInfoPostFix": "",
+                    "sSearch": "搜索:",
+                    "sUrl": "",
+                    "sEmptyTable": "表中数据为空",
+                    "sLoadingRecords": "载入中...",
+                    "sInfoThousands": ",",
+                    "oPaginate": {
+                        "sFirst": "首页",
+                        "sPrevious": "上页",
+                        "sNext": "下页",
+                        "sLast": "末页"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": 以升序排列此列",
+                        "sSortDescending": ": 以降序排列此列"
+                    }
+                },
+                ajax: function (data, callback, settings) {
+                    var pageNum = settings._iDisplayStart / settings._iDisplayLength;
+                    var types = "unfinish";
+                    var data = {
+                        page: (pageNum + 1),
+                        pageData: settings._iDisplayLength,
+                        type: types
+                    }
+                    $.ajax({
+                        url: "http://declare.dagaimao.cn/web/index.php?r=apply/my-task",
+                        type: "post",
+                        data: data,
+                        xhrFields: {
+                            withCredentials: true//设置显式指定浏览器发送Cookie，跨域时默认不使用
+                        },
+                        crossDomain: true,
+                        dataType: "json",
+                        success: function (res) {
+                            console.log(res)
+                            var dataList = res.declareInfo;
+                            console.log(dataList)
+                            var returnData = {};
+                            returnData.aaData = dataList;
+                            returnData.iTotalDisplayRecords = res.totalCount;
+                            returnData.iTotalRecords = res.totalCount;
+                            callback(returnData);
+                        }
+                    })
+                },
+                columnDefs: [{
+                    targets: [0],
+                    'title': '企业名称',
+                    "data": "account",
+                    "render": function (data, type, row, meta) {
+                        return "<span>" + data + "</span>"
+                    }
+                }, {
+                    targets: [1],
+                    'data': 'type',
+                    'title': '申报类型',
+                    "render": function (data, type, row, meta) {
+                        if (row.type == 0) {
+                            return "<span>供应链企业A级评估</span>"
+                        } else if (row.type == 1) {
+                            return "<span>供应链服务质量评级</span>"
+                        } else if (row.type == 2) {
+                            return "<span>绿色供应链企业评级</span>"
+                        }
+
+                    }
+                }, {
+                    targets: [2],
+                    'data': 'type',
+                    'title': '申请性质',
+                    "render": function (data, type, row, meta) {
+                        if (row.nature == 0) {
+                            return "<span>初次申请</span>"
+                        } else if (row.nature == 1) {
+                            return "<span>复合申请</span>"
+                        } else if (row.nature == 2) {
+                            return "<span>升级申请</span>"
+                        }
+
+                    }
+                }, {
+                    targets: [3],
+                    'data': 'rank',
+                    'title': '申报级别',
+                    "width": '80px',
+                    "render": function (data, type, row, meta) {
+                        if (row.rank == "A") {
+                            return "<span>A</span>"
+                        } else if (row.rank == "AA") {
+                            return "<span>AA</span>"
+                        } else if (row.rank == "AAA") {
+                            return "<span>AAA</span>"
+                        }
+
+                    }
+                }, {
+                    targets: [4],
+                    'data': 'data',
+                    'title': '申报日期',
+                    "render": function (data, type, row, meta) {
+                        var Time = time(151321231)
+                        return "<span>" + Time + "</span>"
+                    }
+                }, {
+                    targets: [5],
+                    'title': '批次',
+                    "render": function (data, type, row, meta) {
+                        var Time = time(151321231)
+                        return "<span>1</span>"
+                    }
+                }, {
+                    targets: [6],
+                    'data': 'first_opinion',
+                    'title': '当前状态',
+                    "render": function (data, type, row, meta) {
+                        return "<span>" + data + "</span>"
+                    }
+                }, {
+                    targets: [7],
+                    'title': '操作',
+                    "render": function (data, type, row, meta) {
+                        return "<span class='Handle'>查看</span>"
+                    }
+                }]
+            });
+    
+    </script>
 </body>
 </html>

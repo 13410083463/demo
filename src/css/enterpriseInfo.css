@@ -48,3 +48,23 @@ table.formdata2 {
     border: 1px #93b9dc solid;
     background: url(../img/button_bg.gif) repeat;
 }
+.registerInfo,.AssessmentInfo,.financial{
+    margin-right:5px;
+    cursor:pointer;
+}
+@media (max-width: 1024px){
+.dataTables_wrapper .dataTables_pager {
+    margin-top: -2rem;
+    text-align: right;
+    }
+}
+#gvInfo_processing {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+}
+ .custom-select{
+    line-height:15px;
+}

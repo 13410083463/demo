@@ -31,7 +31,9 @@ $(function () {
                 crossDomain: true,
                 dataType: "json",
                 success:function(res){
-                    console.log(res);
+                    if(res.status == 1){
+                        declare_id = res.declare_id;
+                    }
                 },
                 error:function(res){
 

@@ -115,6 +115,7 @@
                             crossDomain: true,
                             dataType: "json",
                             success: function (res) {
+                                console.log(res)
                                 var dataList = res.declareInfo;
                                 function sorj(a, b) {
                                     return parseInt(a.declare_id) + parseInt(b.declare_id);
