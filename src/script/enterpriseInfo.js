@@ -81,14 +81,14 @@ window.table = $("#gvInfo").DataTable({
         'data': 'type',
         'title': '申报类型',
         "render": function (data, type, row, meta) {
-            if (row.type == 0) {
-                return "<span>供应链企业A级评估</span>"
-            } else if (row.type == 1) {
-                return "<span>供应链服务质量评级</span>"
-            } else if (row.type == 2) {
-                return "<span>绿色供应链企业评级</span>"
-            }
-
+            // if (row.type == 0) {
+            //     return "<span>供应链企业A级评估</span>"
+            // } else if (row.type == 1) {
+            //     return "<span>供应链服务质量评级</span>"
+            // } else if (row.type == 2) {
+            //     return "<span>绿色供应链企业评级</span>"
+            // }
+            return "<span>fds</span>"
         }
     }, {
         targets: [2],
@@ -96,13 +96,14 @@ window.table = $("#gvInfo").DataTable({
         'title': '申报级别',
         "width": '80px',
         "render": function (data, type, row, meta) {
-            if (row.rank == "A") {
-                return "<span>A</span>"
-            } else if (row.rank == "AA") {
-                return "<span>AA</span>"
-            } else if (row.rank == "AAA") {
-                return "<span>AAA</span>"
-            }
+            // if (row.rank == "A") {
+            //     return "<span>A</span>"
+            // } else if (row.rank == "AA") {
+            //     return "<span>AA</span>"
+            // } else if (row.rank == "AAA") {
+            //     return "<span>AAA</span>"
+            // }
+            return "<span>A</span>"
 
         }
     }, {
@@ -122,6 +123,7 @@ window.table = $("#gvInfo").DataTable({
     }, {
         targets: [5],
         'title': '状态',
+        "width": '80px',
         "render": function (data, type, row, meta) {
             return "<span>成功<span>"
         }

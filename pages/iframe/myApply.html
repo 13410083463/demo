@@ -165,21 +165,14 @@
                         'title': '申报级别',
                         "width": '80px',
                         "render": function (data, type, row, meta) {
-                            if (row.rank == "A") {
-                                return "<span>A</span>"
-                            } else if (row.rank == "AA") {
-                                return "<span>AA</span>"
-                            } else if (row.rank == "AAA") {
-                                return "<span>AAA</span>"
-                            }
-
+                            return "<span>"+data+"</span>"
                         }
                     }, {
                         targets: [3],
-                        'data': 'data',
+                        'data': 'date',
                         'title': '申报日期',
                         "render": function (data, type, row, meta) {
-                            var Time = time2(151321231)
+                            var Time = time2(data)
                             return "<span>" + Time + "</span>"
                         }
                     }, {
@@ -207,7 +200,7 @@
                         'title': '操作',
                         "render": function (data, type, row, meta) {
                             var rowData = JSON.stringify(row);
-                            return "<span class='edit'>编辑</span><span class='cancel' onclick='cancelApply(" + data + ")'>取消</span>"
+                            return "<a href='javascript:void(0)' class='edit' onclick='editFile("+data+")'>编辑</a><span class='cancel' onclick='cancelApply(" + data + ")'>取消</span>"
                         }
                     }]
                 });
@@ -230,6 +223,14 @@
                         
                     })
                 }
+
+                function editFile(data){
+                    localStorage.setItem("applyEditId",data)
+                    $(".edit").attr("href","../application.html")
+                }
+                $("#sendApply").click(function () {
+                    localStorage.setItem("applyEditId","")
+                })
             $(document).ready(function(){
                 
 
