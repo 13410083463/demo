@@ -32,7 +32,7 @@ $("#formdata").submit(function () {
     var formData = new FormData();
     formData.append('file', fileObj)
     formData.append('category', category)
-    formData.append('type', 'list')
+    formData.append('type', fileType)
     formData.append('declare_id', declare_id)
 
     var xhr = new XMLHttpRequest();
@@ -72,7 +72,7 @@ $("#fileCancel").click(function () {
 })
 $(".showFile").click(function () {
     category = $(this).attr("filename");
-    console.log(declare_id)
+    fileType = $(this).attr("fileType")
     $("#upfile").show();
     $("#back").show();
 })
@@ -182,7 +182,7 @@ $(function () {
                 success:function(res){
                     console.log(res)
                     if(res.status == 1){
-                        declare_id = res.declare_id
+                        localStorage.setItem("applyEditId", res.declare_id)
                     }
                 },
                 error:function(res){
@@ -374,8 +374,9 @@ $(function () {
                 dataType: "json",
                 success: function (res) {
                     if (res.status == 1) {
+                        var path = "http://filed.dagaimao.cn/";
+                        console.log(res)
                         var data = res.declareInfo;
-                        console.log(data)
                         var date = time2(data.date)
                         var DDLCorpType = $("#DDLCorpType option:selected").val();
                         var DDLApplyType = $("#DDLApplyType option:selected").val();
@@ -397,6 +398,51 @@ $(function () {
                         $("#TextBoxApplyDate").val(date)
                         $("#DDLCorpType").attr("disabled", "disabled")
                         $("#DDLRank").attr("disabled", "disabled")
+                        $("#LabelJudger").html(res.organization)
+                        $("#TextBoxEmployeesNum").val(data.staff_total)
+                        $("#TextBoxCertificate").val(data.credential_condition)
+                        //附表
+                        var warehouse_self = data.warehouse_self ? path + data.warehouse_self.slice(35):"";
+                        var warehouse_rent = data.warehouse_rent ? path + data.warehouse_rent.slice(35) : "";
+                        var trucks_self = data.trucks_self ? path + data.trucks_self.slice(35) : "";
+                        var trucks_rent = data.trucks_rent ? path + data.trucks_rent.slice(35) : "";
+                        var manager = data.manager ? path + data.manager.slice(35) : "";
+                        var salesman = data.salesman ? path + data.salesman.slice(35) : "";
+                        var site_listing = data.site_listing ? path + data.site_listing.slice(35) : "";
+                        $(".showFile[filename='warehouse_self']").after("<a style='margin-right:15px' class='" + (warehouse_self == "" ? "active" : "") +"' href='" + (warehouse_self == "" ? "javascript:void(0)" : warehouse_self) + "' alt>自有仓储设施清单.xls</a><a class='" + (warehouse_self==""?"active":"")+"' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='warehouse_rent']").after("<a style='margin-right:15px' class='" + (warehouse_rent == "" ? "active" : "") + "' href='" + (warehouse_rent == "" ? "javascript:void(0)" : warehouse_rent) + "' alt>租用仓储设施清单.xls</a><a class='" + (warehouse_rent == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='trucks_self']").after("<a style='margin-right:15px' class='" + (trucks_self == "" ? "active" : "") + "' href='" + (trucks_self == "" ? "javascript:void(0)" : trucks_self) + "' alt>自有货运车辆清单.xls</a><a class='" + (trucks_self == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='trucks_rent']").after("<a style='margin-right:15px' class='" + (trucks_rent == "" ? "active" : "") + "' href='" + (trucks_rent == "" ? "javascript:void(0)" : trucks_rent) + "' alt>中高层管理人员清单.xls</a><a class='" + (trucks_rent == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='manager']").after("<a style='margin-right:15px' class='" + (manager == "" ? "active" : "") + "' href='" + (manager == "" ? "javascript:void(0)" : manager) + "' alt>业务人员清单.xls</a><a class='" + (manager == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='salesman']").after("<a style='margin-right:15px' class='" + (salesman == "" ? "active" : "") + "' href='" + (salesman == "" ? "javascript:void(0)" : salesman) + "' alt>运营网点清单.xls</a><a class='" + (salesman == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='site_listing']").after("<a style='margin-right:15px' class='" + (site_listing == "" ? "active" : "") + "' href='" + (site_listing == "" ? "javascript:void(0)" : site_listing) + "' alt>物流服务方案与实施.xls</a><a class='" + (site_listing == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        // 附件
+                        var company_introduce = data.company_introduce ? path + data.company_introduce.slice(35) : "";
+                        var company_license = data.company_license ? path + data.company_license.slice(35) : "";
+                        var organization_code = data.organization_code ? path + data.organization_code.slice(35) : "";
+                        var tax_certificate = data.tax_certificate ? path + data.tax_certificate.slice(35) : "";
+                        var company_articles = data.company_articles ? path + data.company_articles.slice(35) : "";
+                        var transport_license = data.transport_license ? path + data.transport_license.slice(35) : "";
+                        var auditing_report = data.auditing_report ? path + data.auditing_report.slice(35) : "";
+                        var business_range = data.business_range ? path + data.business_range.slice(35) : "";
+                        var log_scheme = data.log_scheme ? path + data.log_scheme.slice(35) : "";
+                        var organization_structure = data.organization_structure ? path + data.organization_structure.slice(35) : "";
+                        var info_introduce = data.info_introduce ? path + data.info_introduce.slice(35) : "";
+                        var other = data.other ? path + data.other.slice(35) : "";
+                        var initiation = data.initiation ? path + data.initiation.slice(35) : "";
+                        $(".showFile[filename='company_introduce']").after("<a style='margin-right:15px' class='" + (company_introduce == "" ? "active" : "") + "' href='" + (company_introduce == "" ? "javascript:void(0)" : company_introduce) + "' alt>企业简介.xls</a><a class='" + (company_introduce == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='company_license']").after("<a style='margin-right:15px' class='" + (company_license == "" ? "active" : "") + "' href='" + (company_license == "" ? "javascript:void(0)" : company_license) + "' alt>营业执照(扫描上传.xls</a><a class='" + (company_license == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='organization_code']").after("<a style='margin-right:15px' class='" + (organization_code == "" ? "active" : "") + "' href='" + (organization_code == "" ? "javascript:void(0)" : organization_code) + "' alt>组织机构代码.xls</a><a class='" + (organization_code == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='tax_certificate']").after("<a style='margin-right:15px' class='" + (tax_certificate == "" ? "active" : "") + "' href='" + (tax_certificate == "" ? "javascript:void(0)" : tax_certificate) + "' alt>税务登记证.xls</a><a class='" + (tax_certificate == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='company_articles']").after("<a style='margin-right:15px' class='" + (company_articles == "" ? "active" : "") + "' href='" + (company_articles == "" ? "javascript:void(0)" : company_articles) + "' alt>企业章程.xls</a><a class='" + (company_articles == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='transport_license']").after("<a style='margin-right:15px' class='" + (transport_license == "" ? "active" : "") + "' href='" + (transport_license == "" ? "javascript:void(0)" : transport_license) + "' alt>其他专业资质证书.xls</a><a class='" + (transport_license == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='auditing_report']").after("<a style='margin-right:15px' class='" + (auditing_report == "" ? "active" : "") + "' href='" + (auditing_report == "" ? "javascript:void(0)" : auditing_report) + "' alt>审计报告.xls</a><a class='" + (auditing_report == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='business_range']").after("<a style='margin-right:15px' class='" + (business_range == "" ? "active" : "") + "' href='" + (business_range == "" ? "javascript:void(0)" : business_range) + "' alt>ISO9001或其他质量管理体系认证证书.xls</a><a class='" + (business_range == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='log_scheme']").after("<a style='margin-right:15px' class='" + (log_scheme == "" ? "active" : "") + "' href='" + (log_scheme == "" ? "javascript:void(0)" : log_scheme) + "' alt>业务辐射面分布图.xls</a><a class='" + (log_scheme == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='organization_structure']").after("<a style='margin-right:15px' class='" + (organization_structure == "" ? "active" : "") + "' href='" + (organization_structure == "" ? "javascript:void(0)" : organization_structure) + "' alt>组织机构图及相关指标职能分配表.xls</a><a class='" + (organization_structure == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='info_introduce']").after("<a style='margin-right:15px' class='" + (info_introduce == "" ? "active" : "") + "' href='" + (info_introduce == "" ? "javascript:void(0)" : info_introduce) + "' alt>信息化简介.xls</a><a class='" + (info_introduce == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='other']").after("<a style='margin-right:15px' class='" + (other == "" ? "active" : "") + "' href='" + (other == "" ? "javascript:void(0)" : other) + "' alt>其他.xls</a><a class='" + (other == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
+                        $(".showFile[filename='initiation']").after("<a style='margin-right:15px' class='" + (initiation == "" ? "active" : "") + "' href='" + (initiation == "" ? "javascript:void(0)" : initiation) + "' alt>入会申请表.xls</a><a class='" + (initiation == "" ? "active" : "") + "' href='javascript:void(0)'>删除</a>");
                     }
 
                 },
@@ -416,7 +462,6 @@ $(function () {
         $("#chooseJudgerModal").modal("hide")
     })
 })  
-
 function MoneyOnly(e) {
     //判断输入是否为数字类型
     e.value = e.value.replace(/\D/g, "");

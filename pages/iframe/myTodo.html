@@ -255,21 +255,14 @@
                     'title': '申报级别',
                     "width": '80px',
                     "render": function (data, type, row, meta) {
-                        if (row.rank == "A") {
-                            return "<span>A</span>"
-                        } else if (row.rank == "AA") {
-                            return "<span>AA</span>"
-                        } else if (row.rank == "AAA") {
-                            return "<span>AAA</span>"
-                        }
-
+                        return "<span>"+data+"</span>"
                     }
                 },{
                     targets: [4],
-                    'data': 'data',
+                    'data': 'date',
                     'title': '申报日期',
                     "render": function (data, type, row, meta) {
-                        var Time = time(151321231)
+                        var Time = time(data)
                         return "<span>" + Time + "</span>"
                     }
                 },{

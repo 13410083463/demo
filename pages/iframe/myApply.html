@@ -191,8 +191,17 @@
                             if (row.status == 0) {
                                 return "<span>草稿</span>"
                             } else if (row.status == 1) {
+                                return "<span>申请已提交</span>"
+                            } else if (row.status == 2) {
+                                return "<span>已通过再审</span>"
+                            } else if (row.status == 3) {
+                                return "<span>已下发评估计划</span>"
+                            } else if (row.status == 4) {
+                                return "<span>现在评估已完成</span>"
+                            } else if (row.status == 5) {
                                 return "<span>已发布通告</span>"
                             }
+                           
                         }
                     }, {
                         targets: [6],

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>综合评估申请表</title>
+</head>
+<body>
+    <form name="form1" id="form1">
+        <div class="mainCon">
+            <div class="pForm">
+                <table class="titleForm fullWidth">
+                    <tbody>
+                        <tr>
+                            <th style="width: 365px; text-align: left;">
+    
+                            </th>
+                            <td style="text-align: right;">
+                                <div class="btnLinl linkPrint" onmouseenter="showDialog();" onmouseleave="hideDialog();">
+                                    <a id="LinkButtonPrint" accesskey="P" class="linkBtn" href="">
+                                        <img id="imgShowDialog" src="../App_Themes/Default/Images/printBizForm.gif" alt="打印申请表">&nbsp;打印申请表</a>
+                                    <div id="printDialog" class="dialog" style="display: none;">
+                                        <div style="width: 303px; height: 25px; font-size: 0; background-image: url(../App_Themes/Default/Images/top.gif);">
+                                        </div>
+                                        <table cellpadding="0" cellspacing="0" style="width: 303px;">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="border-left: solid 1px #969681; border-right: solid 1px #969681; padding: 5px 0 5px 10px; color: black; font-size: 15px;
+                                                background-color: #ffffe1;">
+                                                        <b>打印提示</b>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border-left: solid 1px #969681; border-right: solid 1px #969681; padding: 2px 5px 5px 10px; color: black; font-size: 13px;
+                                                background-color: #ffffe1;">
+                                                        请使用IE内核浏览器进行打印操作。<br>
+                                                        如需更多帮助，请点击<a style="color: Blue;" href="PrintSetup.htm" target="_blank">这里</a>。
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div style="width: 303px; height: 6px; font-size: 0; background-image: url(../App_Themes/Default/Images/bottom.gif);">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btnLinl">
+                                    <a id="LinkButtonTrace" class="linkBtn" href="javascript:__doPostBack('LinkButtonTrace','')">
+                                    <img src="../App_Themes/Default/Images/log.gif" alt="">&nbsp;流转日志</a></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3 class="title">
+                    A级企业综合评估申请表
+                </h3>
+            </div>
+            <div class="pForm">
+                <table class="titleForm fullWidth">
+                    <tbody>
+                        <tr>
+                            <th>
+                                申请性质：
+                            </th>
+                            <td style="width: 345px;">
+                                <span id="LabelApplyType">复核申请</span>
+                            </td>
+                            <th>
+                                申报类型：
+                            </th>
+                            <td>
+                                <span id="LabelCorpType">综合服务型</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                申报级别：
+                            </th>
+                            <td>
+                                <span id="LabelRank">AA</span>
+                                <span id="LabelLastRank"></span>
+                            </td>
+                            <th>
+                                申报日期：
+                            </th>
+                            <td>
+                                <span id="LabelApplyDate">2013-03-26</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                审核机构：
+                            </th>
+                            <td>
+                                <span id="LabelJudger">深圳市评估办（供应链）</span>
+                                <input name="TextBoxJudger" type="text" id="TextBoxJudger" style="display: none;">
+                                <input type="hidden" name="HiddenFieldJudgerId" id="HiddenFieldJudgerId">
+                                <input type="hidden" name="HiddenFieldJudgerType" id="HiddenFieldJudgerType">
+    
+    
+                                <span id="RequiredFieldValidatorJudger" style="color:Red;display:none;"></span>
+                            </td>
+                            <th>
+                                批　　次：
+                            </th>
+                            <td>
+    
+                                <input name="TextBoxBatch" type="text" value="16" maxlength="32" id="TextBoxBatch">
+                                <span id="RequiredFieldValidatorBatch" style="color:Red;display:none;"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pForm">
+                <table class="formTable fullWidth">
+                    <thead>
+                        <tr>
+                            <th colspan="4">
+                                企业信息
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th style="width: 12%">
+                                企业名称：
+                            </th>
+                            <td style="width: 38%">
+                                <span id="LabelUnitName">深圳市益嘉物流有限公司</span>
+                            </td>
+                            <th style="width: 12%">
+                                网址：
+                            </th>
+                            <td style="width: 38%">
+                                <span id="LabelWebSite">www.yihaikerry.net.cn</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                法人代表：
+                            </th>
+                            <td>
+                                <span id="LabelChargePerson">盛岩</span>
+                            </td>
+                            <th>
+                                电话：
+                            </th>
+                            <td>
+                                <span id="LabelCP_Tel">0755-29924790</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                联系人：
+                            </th>
+                            <td>
+                                <span id="LabelContactName">张璐</span>
+                            </td>
+                            <th>
+                                职务：
+                            </th>
+                            <td>
+                                <span id="LabelContactPosition">人事行政部经理</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                联系电话：
+                            </th>
+                            <td>
+                                <span id="LabelContactTel">0755-29924790</span>
+                            </td>
+                            <th>
+                                手机：
+                            </th>
+                            <td>
+                                <span id="LabelContactMobil">13794456792</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                传真：
+                            </th>
+                            <td>
+                                <span id="LabelContactFax">0755-29608415</span>
+                            </td>
+                            <th>
+                                E-mail：
+                            </th>
+                            <td>
+                                <span id="LabelContactEmail">zhanglu1@wilmar-intl.com</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                地址：
+                            </th>
+                            <td>
+                                <span id="LabelUnitSeat">南山区蛇口工业区海湾路8号</span>
+                            </td>
+                            <th>
+                                企业性质：
+                            </th>
+                            <td>
+                                <span id="LabelUnitNature">民营</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pForm">
+                <table class="formTable fullWidth" style="margin-top: 8px;">
+                    <tbody>
+                        <tr>
+                            <th style="width: 12%">
+                                员工总数：
+                            </th>
+                            <td>
+                                <span id="LabelEmployeeNum">75</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                服务模式：
+                            </th>
+                            <td>
+                                <span id="LabelServiceMode">运输（公路），仓储，船代，配送</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                服务领域：
+                            </th>
+                            <td class="verticalAlign">
+                                <span id="LabelServiceRange">快速消费品</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                已获得资质&nbsp;
+                                <br>
+                                证书情况：
+                            </th>
+                            <td>
+                                <span id="LabelCertificate">道路运输经营许可证、国际船舶代理经营资格登记证、ISO9001:2008、商检认可进口食品存放仓库。</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pForm">
+    
+    
+    
+                <table class="formTable fullWidth">
+                    <thead>
+                        <tr>
+                            <th colspan="4">
+                                申报信息
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th style="width: 12%">
+                                评估指标表：
+                            </th>
+                            <td>
+                                <a id="ServiceView1_LinkButtonFill" href="javascript:__doPostBack('ServiceView1$LinkButtonFill','')"><img src="../App_Themes/Default/Images/chakan.gif" alt="查看申请表"> 查看</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                附表：
+                            </th>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a id="ServiceView1_LinkButtonIncomeView" href="javascript:__doPostBack('ServiceView1$LinkButtonIncomeView','')">附表一：物流业务收入构成清单</a>
+    
+                                    </li>
+                                    <li>
+                                        <a id="ServiceView1_LinkButtonOtherIncomeView" href="javascript:__doPostBack('ServiceView1$LinkButtonOtherIncomeView','')">附表二：非物流业务收入构成清单</a>
+    
+                                    </li>
+                                    <li>
+                                        <a id="ServiceView1_HyperLinkStorageOwn" target="_blank">附表三：自有仓储设备设施清单</a>
+                                    </li>
+                                    <li>
+                                        <a id="ServiceView1_HyperLinkStorageRent" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/StorageRent/%E9%99%84%E8%A1%A8%E5%9B%9B%EF%BC%9A%E7%A7%9F%E7%94%A8%E4%BB%93%E5%82%A8%E8%AE%BE%E6%96%BD%E6%B8%85%E5%8D%95.xls"
+                                            target="_blank">附表四：租用仓储设施清单</a>
+                                    </li>
+                                    <li>
+                                        <a id="ServiceView1_HyperLinkCarrierOwn" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/CarrierOwn/%E9%99%84%E8%A1%A8%E4%BA%94%EF%BC%9A%E8%87%AA%E6%9C%89%E8%B4%A7%E8%BF%90%E8%BD%A6%E8%BE%86%E6%B8%85%E5%8D%95.xls"
+                                            target="_blank">附表五：自有货运车辆清单</a>
+                                    </li>
+                                    <li>
+                                        <a id="ServiceView1_HyperLinkCarrierRent" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/CarrierRent/%E9%99%84%E8%A1%A8%E5%85%AD%EF%BC%9A%E7%A7%9F%E7%94%A8%E8%B4%A7%E8%BF%90%E8%BD%A6%E8%BE%86%E6%B8%85%E5%8D%95.xls"
+                                            target="_blank">附表六：租用货运车辆清单</a>
+                                    </li>
+                                    <li>
+                                        <a id="ServiceView1_HyperLinkEmploeeManager" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/EmploeeManager/%E9%99%84%E8%A1%A8%E4%B8%83%EF%BC%9A%E4%B8%AD%E9%AB%98%E5%B1%82%E7%AE%A1%E7%90%86%E4%BA%BA%E5%91%98%E6%B8%85%E5%8D%95.xls"
+                                            target="_blank">附表七：中高层管理人员清单</a>
+                                    </li>
+                                    <li>
+                                        <a id="ServiceView1_HyperLinkEmploeeSalesMan" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/EmploeeSalesMan/%E9%99%84%E8%A1%A8%E5%85%AB%EF%BC%9A%E4%B8%9A%E5%8A%A1%E4%BA%BA%E5%91%98%E6%B8%85%E5%8D%95.xls"
+                                            target="_blank">附表八：业务人员清单</a>
+                                    </li>
+                                    <li>
+                                        <a id="ServiceView1_HyperLinkNetwork" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/Network/%E8%BF%90%E8%90%A5%E7%BD%91%E7%82%B9%E6%B8%85%E5%8D%95.xlsx"
+                                            target="_blank">附表九：运营网点清单</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                附件：
+                            </th>
+                            <td>
+                                <ul>
+                                    <li>企业简介
+                                        <a id="ServiceView1_HyperLinkIntro" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/Intro/%E5%85%AC%E5%8F%B8%E7%AE%80%E4%BB%8B.docx"
+                                            target="_blank" style="word-break: break-all;">公司简介.docx</a>
+                                    </li>
+                                    <li>营业执照
+                                        <a id="ServiceView1_HyperLinkLicense" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/License/%E8%90%A5%E4%B8%9A%E6%89%A7%E7%85%A7%E5%89%AF%E6%9C%AC%EF%BC%88%E6%9C%80%E6%96%B0%EF%BC%89.pdf"
+                                            target="_blank" style="word-break: break-all;">营业执照副本（最新）.pdf</a>
+                                    </li>
+                                    <li>组织机构代码
+                                        <a id="ServiceView1_HyperLinkCode" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/Code/%E7%BB%84%E7%BB%87%E6%9C%BA%E6%9E%84%E4%BB%A3%E7%A0%812012.pdf"
+                                            target="_blank" style="word-break: break-all;">组织机构代码2012.pdf</a>
+                                    </li>
+                                    <li>税务登记证
+                                        <a id="ServiceView1_HyperLinkTax" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/Tax/%E7%A8%8E%E5%8A%A1%E7%99%BB%E8%AE%B0%E8%AF%81.pdf"
+                                            target="_blank" style="word-break: break-all;">税务登记证.pdf</a>
+                                    </li>
+                                    <li>企业章程
+                                        <a id="ServiceView1_HyperLinkConstitution" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/Constitution/%E6%B7%B1%E5%9C%B3%E7%9B%8A%E5%98%89%E7%89%A9%E6%B5%81%E4%BC%81%E4%B8%9A%E7%AB%A0%E7%A8%8B.pdf"
+                                            target="_blank" style="word-break: break-all;">深圳益嘉物流企业章程.pdf</a>
+                                    </li>
+                                    <li>道路运输经营许可证或其他专业资质证书
+                                        <a id="ServiceView1_HyperLinkCert" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/Cert/%E9%81%93%E8%B7%AF%E8%BF%90%E8%BE%93%E7%BB%8F%E8%90%A5%E8%AE%B8%E5%8F%AF%E8%AF%81.pdf"
+                                            target="_blank" style="word-break: break-all;">道路运输经营许可证.pdf</a>
+                                    </li>
+                                    <li>审计报告
+                                        <a id="ServiceView1_HyperLinkReport" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/Report/%E5%AE%A1%E8%AE%A1%E6%8A%A5%E5%91%8A2012.pdf"
+                                            target="_blank" style="word-break: break-all;">审计报告2012.pdf</a>
+                                    </li>
+                                    <li>ISO9001或其他质量管理体系认证证书
+                                        <a id="ServiceView1_HyperLinkQuality" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/Quality/ISO9001%E8%AE%A4%E8%AF%81%E5%AE%A1%E6%A0%B8%E5%90%88%E6%A0%BC%E9%80%9A%E7%9F%A5%E4%B9%A6.pdf"
+                                            target="_blank" style="word-break: break-all;">ISO9001认证审核合格通知书.pdf</a></li>
+                                    <li>业务辐射面分布图
+                                        <a id="ServiceView1_HyperLinkBusiness" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/Business/%E4%B8%9A%E5%8A%A1%E8%BE%90%E5%B0%84%E8%8C%83%E5%9B%B4.jpg"
+                                            target="_blank" style="word-break: break-all;">业务辐射范围.jpg</a>
+                                    </li>
+                                    <li>物流方案设计与实施简介
+                                        <a id="ServiceView1_HyperLinkProject" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/Project/%E7%89%A9%E6%B5%81%E6%96%B9%E6%A1%88%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E6%96%BD%E7%AE%80%E4%BB%8B.docx"
+                                            target="_blank" style="word-break: break-all;">物流方案设计与实施简介.docx</a>
+                                    </li>
+                                    <li>组织机构图及相关指标职能分配表
+                                        <a id="ServiceView1_HyperLinkOrganization" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/Organization/%E7%9B%8A%E5%98%89%E7%89%A9%E6%B5%81%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84%E5%9B%BE2013-5-1.vsd"
+                                            target="_blank" style="word-break: break-all;">益嘉物流组织架构图2013-5-1.vsd</a></li>
+                                    <li>信息化简介
+                                        <a id="ServiceView1_HyperLinkInfomation" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/Infomation/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D--AA.doc"
+                                            target="_blank" style="word-break: break-all;">信息系统介绍--AA.doc</a>
+                                    </li>
+                                    <li>其他
+                                        <a id="ServiceView1_HyperLinkOther" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/Others/%E5%9B%BD%E9%99%85%E8%88%B9%E8%88%B6%E4%BB%A3%E7%90%86%E8%B5%84%E6%A0%BC%E8%AE%B8%E5%8F%AF%E8%AF%81%EF%BC%88%E5%89%AF%E6%9C%AC%EF%BC%89.jpg"
+                                            target="_blank" style="word-break: break-all;">国际船舶代理资格许可证（副本）.jpg</a>
+                                    </li>
+                                    <li id="ServiceView1_MembershipView">入会申请表
+                                        <a id="ServiceView1_HyperLinkMembership" target="_blank" style="word-break: break-all;"></a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+    
+            </div>
+            <div class="pForm">
+                <table class="formTable fullWidth">
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                审批信息
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th style="width: 12%">
+                                初审意见：
+                            </th>
+                            <td class="CheckInfoScope">
+                                <span id="FirstTrialOpinion_LabelOpinion">资料齐全，通过</span>
+    
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="width: 12%">
+                                再审意见：
+                            </th>
+                            <td class="CheckInfoScope">
+                                <span id="RetrialOpinion_LabelOpinion"></span>
+                            </td>
+                        </tr>
+                        <tr id="RowOnSiteRenew">
+                            <th>
+                                是否需要进行现场复核：
+                            </th>
+                            <td colspan="3">
+                                <table id="RadioButtonListOnSiteRenew" class="clearformdata" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td><input id="RadioButtonListOnSiteRenew_0" type="radio" name="RadioButtonListOnSiteRenew"
+                                                    value="1" checked="checked" onclick="setFlag(this);"><label for="RadioButtonListOnSiteRenew_0">需要</label></td>
+                                            <td><input id="RadioButtonListOnSiteRenew_1" type="radio" name="RadioButtonListOnSiteRenew"
+                                                    value="2" onclick="setFlag(this);"><label for="RadioButtonListOnSiteRenew_1">不需要</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+    
+                            </td>
+                        </tr>
+    
+                    </tbody>
+                </table>
+            </div>
+            <div class="pForm">
+                <table class="formTable fullWidth">
+                    <thead>
+                        <tr>
+                            <th colspan="4">
+                                评估信息
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th style="width: 12%;">
+                                评估计划：
+                            </th>
+                            <td style="width: 38%;">
+                                <input type="hidden" name="HiddenOnSiteRenewFlag" id="HiddenOnSiteRenewFlag" value="1">
+                                <a id="LinkButtonValuatePlan" href="javascript:__doPostBack('LinkButtonValuatePlan','')"><img src="../App_Themes/Default/Images/bianji.gif" alt="填写评估计划"> 填写</a>
+                                <ul style="margin: 5px 0 5px 20px; padding: 0;">
+                                    <li>
+                                        <a id="HyperLinkPlan" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/ValuatePlan/faacc341-523e-4de0-a165-aaa32dae6b4e.docx"
+                                            target="_blank" style="word-break: break-all;">评估计划</a>
+                                    </li>
+                                    <li>
+                                        <a id="HyperLinkNotice" href="../upload/1dad3427-b565-4e5f-a354-35312552f39b/Notice/dcd23615-2055-4f40-b8eb-90f190783560.docx"
+                                            target="_blank" style="word-break: break-all;">评估任务通知书</a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <th style="width: 12%;">
+                                评估报告：
+                            </th>
+                            <td style="width: 38%;">
+    
+                                <ul style="margin: 5px 0 5px 20px; padding: 0;">
+                                    <li>
+                                        <a id="HyperLinkReport" target="_blank" style="word-break: break-all;">现场评估报告</a>
+                                    </li>
+    
+                                </ul>
+                            </td>
+                        </tr>
+    
+                    </tbody>
+                </table>
+            </div>
+            <div id="ValidationSummaryChooseJudger" style="color:Red;display:none;">
+    
+            </div>
+            <div id="ButtonArea" class="pForm" style="padding: 10px 0 25px;">
+                <input type="submit" name="ButtonLocalEvaluate" value="完 成"  id="ButtonLocalEvaluate"
+                    class="button" style="margin-left:10px;;">
+                <input type="button" value="关 闭" onclick="window.close();" class="button" style="margin-left: 10px;">
+            </div>
+            <input id="clientRefreshButton" type="button" style="display: none">
+            <input type="submit" name="serverRefreshButton" value="" id="serverRefreshButton" style="display: none">
+        </div>
+    
+    </form>
+</body>
+</html>

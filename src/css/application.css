@@ -223,3 +223,6 @@ table.formdata {
     #frameModalLabel{
     font-size:18px;
 }
+.active{
+    display:none;
+}
